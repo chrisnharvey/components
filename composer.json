@@ -1,0 +1,45 @@
+{
+    "name": "encorephp/framework",
+    "description": "The EncorePHP Framework.",
+    "keywords": ["framework", "encorephp"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-wxwidgets": "*",
+        "classpreloader/classpreloader": "1.0.*",
+        "doctrine/dbal": "2.4.*",
+        "ircmaxell/password-compat": "1.0.*",
+        "jeremeamia/superclosure": "1.0.*",
+        "monolog/monolog": "1.*",
+        "nesbot/carbon": "1.*",
+        "patchwork/utf8": "1.1.*",
+        "symfony/finder": "2.3.*",
+        "symfony/process": "2.3.*",
+        "symfony/dependency-injection": "2.5.*",
+        "illuminate/config": "4.0.*",
+        "illuminate/view": "4.0.*",
+        "illuminate/events": "4.0.*",
+        "illuminate/translation": "4.0.*",
+        "illuminate/validation": "4.0.*",
+        "illuminate/encryption": "4.0.*",
+        "illuminate/pagination": "4.0.*",
+        "illuminate/database": "4.0.*",
+        "illuminate/filesystem": "4.0.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Encore": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
