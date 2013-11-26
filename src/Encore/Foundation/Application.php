@@ -2,13 +2,17 @@
 
 namespace Encore\Foundation;
 
-class Application 
+use Illuminate\Container\Container;
+
+class Application extends Container
 {
+    private $wxApp;
+
     public function __construct()
     {
-        $this->app = new App;
+        $this->wxApp = new WxApplication;
 
-        wxApp::SetInstance($this->app);
+        wxApp::SetInstance($this->wxApp);
         wxApp::SetAppName('EncorePHP');
         wxApp::SetVendorName('EncorePHP');
     }
