@@ -23,7 +23,6 @@
         "symfony/process": "2.3.*",
         "symfony/dependency-injection": "2.5.*",
         "illuminate/config": "4.0.*",
-        "illuminate/view": "4.0.*",
         "illuminate/events": "4.0.*",
         "illuminate/translation": "4.0.*",
         "illuminate/validation": "4.0.*",
