@@ -38,7 +38,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Encore": "src/"
+            "": "src/"
         }
     },
     "minimum-stability": "dev"
