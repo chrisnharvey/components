@@ -4,8 +4,8 @@ namespace Encore\View;
 
 class Manager
 {
-    public function test()
+    public function make($view)
     {
-        
+        return new View($view);
     }
 }
