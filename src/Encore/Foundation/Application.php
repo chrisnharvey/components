@@ -12,8 +12,11 @@ class Application extends Container
     private $wxApp;
     private $appPath;
     private $vendorPath;
+    private $booted = false;
 
     protected $env;
+    protected $serviceProviders = array();
+    protected $loadedProviders = array();
 
     public function __construct($appPath, $vendorPath)
     {
