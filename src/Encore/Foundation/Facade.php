@@ -4,8 +4,8 @@ namespace Encore\Foundation;
 
 abstract class Facade
 {
-    private static $app;
-    private static $resolved;
+    protected static $app;
+    protected static $resolved;
 
     public static function getFacade()
     {
