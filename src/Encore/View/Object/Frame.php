@@ -2,6 +2,9 @@
 
 namespace Encore\View\Object;
 
+use Closure;
+use Encore\View\ClosureCallback;
+
 class Frame extends Object
 {
     protected $xml;
@@ -17,27 +20,13 @@ class Frame extends Object
             throw new \RuntimeException("Object with name '{$name}' was not found");
         }
 
-        if ($callback instanceof \Closure) {
-            $callbackId = uniqid();
-            $this->closures[$callbackId] = $callback;
-
-            $callback = array($this, "call_{$callbackId}");
+        if ($callback instanceof Closure) {
+            $callback = array(new ClosureCallback($callback), "call");
         }
 
         $this->object->Connect($objectId, $event, $callback);
 
         return $this;
-    }
-
-    public function __call($method, $args)
-    {
-        $closure = str_replace('call_', '', $method);
-
-        if ( ! array_key_exists($closure, $this->closures)) {
-            return parent::__call($method, $args);
-        }
-
-        return $this->closures[$closure]();
     }
 
     protected function findEvent($event)
