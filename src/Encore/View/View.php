@@ -9,7 +9,6 @@ class View
     public function __construct($path)
     {
         // Initialize wxXmlResource and load the view
-        $xrc = new wxXmlResource();
         wxXmlResource::Get()->InitAllHandlers();
         wxXmlResource::Get()->Load($path);
     }
