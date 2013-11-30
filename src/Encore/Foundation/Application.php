@@ -64,11 +64,16 @@ class Application extends Container
 
     public function run()
     {
-        $this->wxApp = new WxApplication($this);
+        $this->wxApp = new WxApplication;
+        $this->wxApp->setApplication($this);
 
         \wxApp::SetInstance($this->wxApp);
 
         $this['events']->fire('app.launching');
+
+        $this->booted = true;
+
+        WxEntry();
     }
 
     public function quit()

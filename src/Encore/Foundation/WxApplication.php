@@ -4,7 +4,9 @@ namespace Encore\Foundation;
 
 class WxApplication extends \wxApp 
 {
-    public function __construct(Application $app)
+    private $app;
+
+    public function setApplication(Application $app)
     {
         $this->app = $app;
     }
