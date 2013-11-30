@@ -82,4 +82,43 @@ class Application extends Container
 
         exit;
     }
+
+    public function register($provider, $options = array())
+    {
+        // If the given "provider" is a string, we will resolve it, passing in the
+        // application instance automatically for the developer. This is simply
+        // a more convenient way of specifying your service provider classes.
+        if (is_string($provider)) {
+                $provider = new $provider($this);
+        }
+
+        $provider->register();
+
+        // Once we have registered the service we will iterate through the options
+        // and set each of them on the application so they will be available on
+        // the actual loading of the service objects and for developer usage.
+        foreach ($options as $key => $value) $this[$key] = $value;
+
+        $this->markAsRegistered($provider);
+
+        // If the application has already booted, we will call this boot method on
+        // the provider class so it has an opportunity to do its boot logic and
+        // will be ready for any usage by the developer's application logics.
+        if ($this->booted) $provider->boot();
+
+        return $provider;
+    }
+
+    /**
+     * Mark the given provider as registered.
+     *
+     * @param \Illuminate\Support\ServiceProvider
+     * @return void
+     */
+    protected function markAsRegistered($provider)
+    {
+        $this->serviceProviders[] = $provider;
+
+        $this->loadedProviders[get_class($provider)] = true;
+    }
 }
