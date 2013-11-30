@@ -16,6 +16,6 @@ class WxApplication extends \wxApp
 
     public function OnExit()
     {
-        // Run application afters
+        $this->app->quit();
     }
 }
