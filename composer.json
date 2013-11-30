@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "ext-wxwidgets": "*",
         "classpreloader/classpreloader": "1.0.*",
         "doctrine/dbal": "2.4.*",
         "ircmaxell/password-compat": "1.0.*",
@@ -30,9 +31,6 @@
         "illuminate/pagination": "4.0.*",
         "illuminate/database": "4.0.*",
         "illuminate/filesystem": "4.0.*"
-    },
-    "suggest": {
-        "ext-wxwidgets": "Allows the ability to create GUI apps with wxWidgets"
     },
     "require-dev": {
         "mockery/mockery": "0.8.0",
