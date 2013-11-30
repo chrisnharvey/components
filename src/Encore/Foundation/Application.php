@@ -61,11 +61,9 @@ class Application extends Container
 
     public function run()
     {
-        $this->wxApp = new WxApplication;
+        $this->wxApp = new WxApplication($this);
 
         \wxApp::SetInstance($this->wxApp);
-        \wxApp::SetAppName($config->get('app.name'));
-        \wxApp::SetVendorName($config->get('app.vendor'));
 
         $this['events']->fire('app.launching');
     }
