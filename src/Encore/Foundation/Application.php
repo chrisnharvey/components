@@ -23,8 +23,11 @@ class Application extends Container
         $config = new Config(new FileLoader(new Filesystem, $this->appPath.'/config'), 'production');
 
         $this->instance('config', $config);
-        $this->singleton('events', function() {
-            return new \Illuminate\Events\Dispatcher($this);
+
+        $that = $this;
+
+        $this->singleton('events', function() use ($that) {
+            return new \Illuminate\Events\Dispatcher($that);
         });
 
         // Register service providers
