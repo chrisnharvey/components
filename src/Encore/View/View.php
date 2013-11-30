@@ -9,15 +9,15 @@ class View
     public function __construct($path)
     {
         // Initialize wxXmlResource and load the view
-        wxXmlResource::Get()->InitAllHandlers();
-        wxXmlResource::Get()->Load($path);
+        \wxXmlResource::Get()->InitAllHandlers();
+        \wxXmlResource::Get()->Load($path);
     }
 
     public function getFrame($frame)
     {
-        $frame = new wxFrame;
-        wxXmlResource::Get()->LoadFrame($frame, null, $frame);
+        $instance = new \wxFrame;
+        \wxXmlResource::Get()->LoadFrame($instance, null, $frame);
 
-        return new Frame($frame);
+        return new Frame($instance);
     }
 }
