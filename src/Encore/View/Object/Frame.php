@@ -5,12 +5,13 @@ namespace Encore\View\Object;
 class Frame extends Object
 {
     protected $xml;
+    protected $closures = array();
 
     public function bind($name, $event, $callback)
     {
         $event = $this->findEvent($event);
 
-        $objectId = wxXmlResource::Get()->GetXRCID($name);
+        $objectId = \wxXmlResource::Get()->GetXRCID($name);
 
         if ($objectId === false) {
             throw new \RuntimeException("Object with name '{$name}' was not found");
@@ -33,7 +34,7 @@ class Frame extends Object
         $closure = str_replace('call_', '', $method);
 
         if ( ! array_key_exists($closure, $this->closures)) {
-            parent::__call($method, $args);
+            return parent::__call($method, $args);
         }
 
         return $this->closures[$closure]();
