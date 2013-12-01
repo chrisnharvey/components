@@ -22,6 +22,7 @@
         "symfony/finder": "2.3.*",
         "symfony/process": "2.3.*",
         "symfony/dependency-injection": "2.5.*",
+        "illuminate/support": "4.0.*",
         "illuminate/container": "4.0.*",
         "illuminate/config": "4.0.*",
         "illuminate/events": "4.0.*",
