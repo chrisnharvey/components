@@ -15,6 +15,11 @@ class ClosureCallback
 
     public function call()
     {
-        return call_user_func($this->closure);
+        return $this->getClosure()();
+    }
+    
+    protected function getClosure()
+    {
+        return $this->closure;
     }
 }
