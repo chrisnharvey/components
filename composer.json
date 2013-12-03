@@ -14,9 +14,6 @@
         "mockery/mockery": "0.8.0",
         "phpunit/phpunit": "3.7.*",
     },
-    "replace": {
-        "ext-wxwidgets": "*"
-    },
     "autoload": {
         "psr-0": {
             "": "src/"
