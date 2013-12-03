@@ -1,0 +1,26 @@
+{
+    "name": "encorephp/testing",
+    "description": "The EncorePHP unit testing package.",
+    "keywords": ["unit testing", "encorephp"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*",
+    },
+    "replace": {
+        "ext-wxwidgets": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
