@@ -34,9 +34,14 @@
         "illuminate/filesystem": "4.0.*"
     },
     "require-dev": {
-        "mockery/mockery": "0.8.0",
-        "phpunit/phpunit": "3.7.*"
+        "encorephp/testing": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/encorephp/testing"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "": "src/"
