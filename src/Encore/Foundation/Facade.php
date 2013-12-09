@@ -18,6 +18,11 @@ abstract class Facade
 
         if (isset(static::$resolved[$name])) return static::$resolved[$name];
 
+        if (static::$app[$name] instanceof \Closure) {
+            $closure = static::$app[$name];
+            return static::$resolved[$name] = $closure();
+        }
+
         return static::$resolved[$name] = static::$app[$name];
     }
 
