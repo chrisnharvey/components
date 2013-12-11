@@ -65,25 +65,26 @@ class Application extends Container
         if ($this->environment != 'development') ini_set('display_errors', 0);
     }
 
-    public function run()
+    public function boot()
     {
         $this->wxApp = new WxApplication;
         $this->wxApp->setApplication($this);
 
         \wxApp::SetInstance($this->wxApp);
 
-        $this['events']->fire('app.launching');
-
         $this->booted = true;
 
         WxEntry();
     }
 
+    public function launch()
+    {
+        $this['events']->fire('app.launching');
+    }
+
     public function quit()
     {
         $this['events']->fire('app.quitting');
-
-        exit;
     }
 
     public function register($provider, $options = array())
