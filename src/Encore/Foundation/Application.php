@@ -92,6 +92,8 @@ class Application extends Container
     public function quit()
     {
         $this['events']->fire('app.quitting');
+
+        exit;
     }
 
     public function register($provider, $options = array())
