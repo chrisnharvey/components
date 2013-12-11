@@ -13,7 +13,7 @@ class WxApplication extends \wxApp
 
     public function OnInit()
     {
-        // Run application befores
+        $this->app->launch();
     }
 
     public function OnExit()
