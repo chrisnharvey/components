@@ -2,6 +2,7 @@
 
 namespace Encore\Foundation;
 
+use Encore\Testing\Testing;
 use Illuminate\Container\Container;
 use Illuminate\Config\FileLoader;
 use Illuminate\Filesystem\Filesystem;
@@ -67,6 +68,12 @@ class Application extends Container
 
     public function boot()
     {
+        if (defined('PHPUNIT_RUNNING')) {
+            Testing::start();
+        } elseif ( ! extension_loaded('wxwidgets')) {
+            dl('wxwidgets.' . PHP_SHLIB_SUFFIX);
+        }
+
         $this->wxApp = new WxApplication;
         $this->wxApp->setApplication($this);
 
