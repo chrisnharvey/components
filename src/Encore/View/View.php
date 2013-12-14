@@ -5,6 +5,7 @@ namespace Encore\View;
 use Encore\View\Object\Frame;
 use Encore\View\Object\Dialog;
 use Encore\View\Object\Panel;
+use Encore\View\Object\Menu;
 
 class View
 {
@@ -37,5 +38,10 @@ class View
         \wxXmlResource::Get()->LoadPanel($instance, null, $name);
 
         return new Panel($instance);
+    }
+
+    public function getMenu($name)
+    {
+        return new Menu(\wxXmlResource::Get()->LoadMenu($name));
     }
 }
