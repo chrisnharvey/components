@@ -24,10 +24,14 @@ class Application extends Container
         $this->appPath = $appPath;
         $this->vendorPath = $vendorPath;
 
+        // First things first... Register this as the app
+        $this->instance('app', $this);
+
         $config = new Config(new FileLoader(new Filesystem, $this->appPath.'/config'), 'production');
 
         $this->instance('config', $config);
 
+        // Events shit should go into a service provider
         $that = $this;
 
         $this->singleton('events', function() use ($that) {
@@ -43,8 +47,6 @@ class Application extends Container
         foreach ($config->get('app.aliases') as $alias => $class) {
             class_alias($class, $alias);
         }
-
-        $this->instance('app', $this);
     }
 
     public function launching($callback)
