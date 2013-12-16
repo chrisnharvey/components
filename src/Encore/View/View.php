@@ -18,30 +18,21 @@ class View
 
     public function getFrame($name)
     {
-        $instance = new \wxFrame;
-        \wxXmlResource::Get()->LoadFrame($instance, null, $name);
-
-        return new Frame($instance);
+        return new Frame($name);
     }
 
     public function getDialog($name)
     {
-        $instance = new \wxDialog;
-        \wxXmlResource::Get()->LoadDialog($instance, null, $name);
-
-        return new Dialog($instance);
+        return new Dialog($name);
     }
 
     public function getPanel($name)
     {
-        $instance = new \wxPanel;
-        \wxXmlResource::Get()->LoadPanel($instance, null, $name);
-
-        return new Panel($instance);
+        return new Panel($name);
     }
 
     public function getMenu($name)
     {
-        return new Menu(\wxXmlResource::Get()->LoadMenu($name));
+        return new Menu($name);
     }
 }
