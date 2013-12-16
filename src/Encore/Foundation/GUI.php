@@ -2,7 +2,7 @@
 
 namespace Encore\Foundation;
 
-class WxApplication extends \wxApp
+class GUI extends \wxApp
 {
     private $app;
 
