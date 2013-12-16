@@ -91,6 +91,11 @@ class Application extends Container
         exit;
     }
 
+    public function get()
+    {
+        return $this;
+    }
+
     public function register($provider, $options = array())
     {
         // If the given "provider" is a string, we will resolve it, passing in the
