@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Foundation\Facade;
+namespace Encore\View;
 
-class View extends \Encore\Foundation\Facade
+class Facade extends \Encore\Foundation\Facade
 {
     public static function getFacade()
     {
