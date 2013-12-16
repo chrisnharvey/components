@@ -70,20 +70,13 @@ class Application extends Container
 
     public function boot()
     {
-        if (defined('PHPUNIT_RUNNING')) {
-            Testing::start();
-        } elseif ( ! extension_loaded('wxwidgets')) {
-            dl('wxwidgets.' . PHP_SHLIB_SUFFIX);
-        }
-
-        $this->wxApp = new WxApplication;
-        $this->wxApp->setApplication($this);
-
-        \wxApp::SetInstance($this->wxApp);
+        array_walk($this->serviceProviders, function($p) {
+            $p->boot(); 
+        });
 
         $this->booted = true;
 
-        WxEntry();
+        $this['console']->run();
     }
 
     public function launch()
