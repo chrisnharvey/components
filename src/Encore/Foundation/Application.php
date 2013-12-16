@@ -10,7 +10,7 @@ use Illuminate\Config\Repository as Config;
 
 class Application extends Container
 {
-    private $wxApp;
+    const VERSION = '0.1';
     private $appPath;
     private $vendorPath;
     private $booted = false;
