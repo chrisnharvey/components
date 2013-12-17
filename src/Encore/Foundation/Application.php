@@ -19,8 +19,6 @@ class Application extends Container
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
-    protected $kept = array();
-
     public function __construct($appPath, $vendorPath)
     {
         $this->appPath = $appPath;
@@ -115,11 +113,6 @@ class Application extends Container
         if ($this->booted) $provider->boot();
 
         return $provider;
-    }
-
-    public function keep($object)
-    {
-        $this->kept[] = $object;
     }
 
     public function get()
