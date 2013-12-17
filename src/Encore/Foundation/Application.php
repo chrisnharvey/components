@@ -62,11 +62,11 @@ class Application extends Container
 
     public function setEnvironment($env)
     {
-        $this->environment = $env;
+        $this->environment = empty($env) ? 'dev' : $env;
 
         error_reporting(E_ALL);
 
-        if ($this->environment != 'development') ini_set('display_errors', 0);
+        if ($this->environment != 'dev') ini_set('display_errors', 0);
     }
 
     public function boot()
