@@ -64,6 +64,7 @@ class Application extends Container
     {
         $this->environment = empty($env) ? 'dev' : $env;
 
+        ini_set('display_errors', 1);
         error_reporting(E_ALL);
 
         if ($this->environment != 'dev') ini_set('display_errors', 0);
