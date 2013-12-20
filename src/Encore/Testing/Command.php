@@ -9,6 +9,7 @@ class Command extends \Encore\Console\Command
 
     public function fire()
     {
+        $_SERVER['argv'] = array_slice($_SERVER['argv'], 2);
         \PHPUnit_TextUI_Command::main(false);
     }
 }
