@@ -34,13 +34,18 @@
         "illuminate/filesystem": "4.0.*"
     },
     "require-dev": {
-        "encorephp/testing": "*"
+        "encorephp/testing": "*",
+        "encorephp/compiler": "*"
     },
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/encorephp/testing"
-        }
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/encorephp/compiler"
+        },
     ],
     "autoload": {
         "psr-0": {
