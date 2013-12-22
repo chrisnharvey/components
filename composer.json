@@ -45,7 +45,7 @@
         {
             "type": "vcs",
             "url": "https://github.com/encorephp/compiler"
-        },
+        }
     ],
     "autoload": {
         "psr-0": {
