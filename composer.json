@@ -14,7 +14,7 @@
         "encorephp/framework": "dev-master",
         "alchemy/zippy": "0.1.*@dev",
         "guzzle/guzzle": "3.8.*",
-        "phine/phar": "1.0.*"
+        "symfony/finder": "2.3.*"
     },
     "autoload": {
         "psr-0": {
