@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     char* dir = dirname(buf);
 
     php_embed_module.php_ini_ignore = 0;
-    php_embed_module.php_ini_path_override = "./embed.ini";
+    php_embed_module.php_ini_path_override = "./encore.ini";
 
     PHP_EMBED_START_BLOCK(argc,argv);
     zend_alter_ini_entry("extension_dir", 14, dir, strlen(dir), PHP_INI_ALL, PHP_INI_STAGE_ACTIVATE);
