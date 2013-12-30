@@ -7,7 +7,6 @@ use Illuminate\Container\Container;
 use Illuminate\Config\FileLoader;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Config\Repository as Config;
-use Symfony\Component\Console\Input\ArgvInput;
 
 class Application extends Container
 {
@@ -76,13 +75,9 @@ class Application extends Container
             $p->boot(); 
         });
 
-        $input = new ArgvInput;
-
-        $this->setEnvironment($input->getParameterOption('--env'));
+        require $this->appPath.'/bootstrap.php';
 
         $this->booted = true;
-
-        $this['console']->run($input);
     }
 
     public function launch()
