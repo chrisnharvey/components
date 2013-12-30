@@ -130,6 +130,16 @@ class Application extends Container
         return $this;
     }
 
+    public function path()
+    {
+        return $this->appPath;
+    }
+
+    public function vendorPath()
+    {
+        return $this->vendorPath;
+    }
+
     /**
      * Mark the given provider as registered.
      *
