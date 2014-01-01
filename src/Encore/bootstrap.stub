@@ -1,4 +1,10 @@
+#!/usr/bin/env php
 <?php
+
+Phar::interceptFileFuncs();
+Phar::mapPhar('app.phar');
+
+require 'phar://app.phar/vendor/autoload.php';
 
 // Instantiate the application
 $app = new Encore\Foundation\Application(__DIR__.'/app', __DIR__.'/vendor');
@@ -24,7 +30,9 @@ $gui = new Encore\Foundation\GUI;
 $gui->setApplication($app);
 
 // Set the wxApp instance
-wxApp::SetInstance($this->gui);
+wxApp::SetInstance($gui);
 
 // Ensure the app does not close
 WxEntry();
+
+__HALT_COMPILER();
