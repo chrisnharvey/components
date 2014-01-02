@@ -49,7 +49,10 @@
     "autoload": {
         "psr-0": {
             "": "src/"
-        }
+        },
+        "files": [
+            "src/Encore/Foundation/helpers.php"
+        ]
     },
     "minimum-stability": "dev"
 }
