@@ -27,26 +27,12 @@ class Application extends Container
         // First things first... Register this as the app
         $this->instance('app', $this);
 
-        $config = new Config(new FileLoader(new Filesystem, $this->appPath.'/config'), 'production');
-
-        $this->instance('config', $config);
-
         // Events shit should go into a service provider
         $that = $this;
 
         $this->singleton('events', function() use ($that) {
             return new \Illuminate\Events\Dispatcher($that);
         });
-
-        // Register service providers
-        foreach ($config->get('app.providers') as $provider) {
-            $this->register($provider);
-        }
-
-        // Register aliases
-        foreach ($config->get('app.aliases') as $alias => $class) {
-            class_alias($class, $alias);
-        }
     }
 
     public function launching($callback)
@@ -61,18 +47,33 @@ class Application extends Container
 
     public function setEnvironment($env)
     {
-        $this->environment = empty($env) ? 'dev' : $env;
+        $this->env = empty($env) ? 'dev' : $env;
 
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
 
-        if ($this->environment != 'dev') ini_set('display_errors', 0);
+        if ($this->env != 'dev') ini_set('display_errors', 0);
     }
 
     public function boot()
     {
+        $config = new Config(new FileLoader(new Filesystem, $this->appPath.'/config'), $this->env);
+
+        $this->instance('config', $config);
+
+        // Register service providers
+        foreach ($config->get('app.providers') as $provider) {
+            $this->register($provider);
+        }
+
+        // Register aliases
+        foreach ($config->get('app.aliases') as $alias => $class) {
+            class_alias($class, $alias);
+        }
+
+        // Now run boot events on service providers
         array_walk($this->serviceProviders, function($p) {
-            $p->boot(); 
+            $p->boot();
         });
 
         require $this->appPath.'/bootstrap.php';
