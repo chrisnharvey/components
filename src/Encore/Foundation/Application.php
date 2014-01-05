@@ -4,13 +4,18 @@ namespace Encore\Foundation;
 
 use Encore\Testing\Testing;
 use Illuminate\Container\Container;
-use Illuminate\Config\FileLoader;
+use Encore\Config\Loader;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Config\Repository as Config;
 
 class Application extends Container
 {
     const VERSION = '0.1';
+    const OS_OSX = 'osx';
+    const OS_WIN = 'win';
+    const OS_LINUX = 'linux';
+    const OS_OTHER = 'other';
+
     private $appPath;
     private $vendorPath;
     private $booted = false;
@@ -134,6 +139,28 @@ class Application extends Container
     public function vendorPath()
     {
         return $this->vendorPath;
+    }
+
+    public function getOS()
+    {
+        return isset($this->os) ? $this->os : $this->findOS();
+    }
+
+    protected function findOS()
+    {
+        switch (true) {
+            case stristr(PHP_OS, 'DAR'):
+                return $this->os = static::OS_OSX;
+
+            case stristr(PHP_OS, 'WIN'):
+                return $this->os = static::OS_WIN;
+
+            case stristr(PHP_OS, 'LINUX'):
+                return $this->os = static::OS_LINUX;
+
+            default:
+                return $this->os = static::OS_OTHER;
+        }
     }
 
     /**
