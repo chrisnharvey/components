@@ -62,7 +62,7 @@ class Application extends Container
 
     public function boot()
     {
-        $config = new Config(new FileLoader(new Filesystem, $this->appPath.'/config'), $this->env);
+        $config = new Config(new Loader(new Filesystem, $this->appPath.'/config', $this->getOS()), $this->env);
 
         $this->instance('config', $config);
 
