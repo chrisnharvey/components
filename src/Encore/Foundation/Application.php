@@ -108,11 +108,7 @@ class Application extends Container
         // If the given "provider" is a string, we will resolve it, passing in the
         // application instance automatically for the developer. This is simply
         // a more convenient way of specifying your service provider classes.
-        if (is_string($provider)) {
-            if ( ! class_exists($provider)) return;
-
-            $provider = new $provider($this);
-        }
+        if (is_string($provider)) $provider = new $provider($this);
 
         $provider->register();
 
