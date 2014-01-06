@@ -82,7 +82,11 @@ class Application extends Container
             $p->boot();
         });
 
-        require $this->appPath.'/bootstrap.php';
+        if (file_exists($bootstrap = $this->appPath."/bootstrap/{$this->env}.php")) {
+            require $bootstrap;
+        }
+
+        require $this->appPath.'/start.php';
 
         $this->booted = true;
     }
