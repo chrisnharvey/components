@@ -11,6 +11,7 @@ use Illuminate\Config\Repository as Config;
 class Application extends Container
 {
     const VERSION = '0.1';
+
     const OS_OSX = 'osx';
     const OS_WIN = 'win';
     const OS_LINUX = 'linux';
