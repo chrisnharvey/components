@@ -44,32 +44,6 @@ class Application extends \Symfony\Component\Console\Application
     }
 
     /**
-     * Get the default input definitions for the applications.
-     *
-     * @return \Symfony\Component\Console\Input\InputDefinition
-     */
-    protected function getDefaultInputDefinition()
-    {
-        $definition = parent::getDefaultInputDefinition();
-
-        $definition->addOption($this->getEnvironmentOption());
-
-        return $definition;
-    }
-
-    /**
-     * Get the global environment option for the definition.
-     *
-     * @return \Symfony\Component\Console\Input\InputOption
-     */
-    protected function getEnvironmentOption()
-    {
-        $message = 'The environment the command should run under.';
-
-        return new InputOption('--env', null, InputOption::VALUE_OPTIONAL, $message);
-    }
-
-    /**
      * Render the given exception.
      *
      * @param  \Exception  $e
