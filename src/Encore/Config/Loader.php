@@ -61,4 +61,9 @@ class Loader extends \Illuminate\Config\FileLoader
 
         return $items;
     }
+
+    protected function mergeEnvironment(array $items, $file)
+    {
+        return array_merge_recursive($items, $this->files->getRequire($file));
+    }
 }
