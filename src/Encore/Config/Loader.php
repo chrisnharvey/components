@@ -41,14 +41,14 @@ class Loader extends \Illuminate\Config\FileLoader
         $file = "{$path}/{$this->os}/{$group}.php";
 
         if ($this->files->exists($file)) {
-            $items = $this->mergeEnvironment($items, $file);
+            $items = $this->mergeMode($items, $file);
         }
 
         // Check for a global mode config file (not OS specific)
         $file = "{$path}/{$mode}/{$group}.php";
 
         if ($this->files->exists($file)) {
-            $items = $this->mergeEnvironment($items, $file);
+            $items = $this->mergeMode($items, $file);
         }
 
         // And lastly we'll check if we have an mode and OS specific
