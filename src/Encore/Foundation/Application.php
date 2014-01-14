@@ -21,7 +21,7 @@ class Application extends Container
     private $vendorPath;
     private $booted = false;
 
-    protected $env;
+    protected $mode;
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
@@ -51,19 +51,19 @@ class Application extends Container
         $this['events']->listen('app.quitting', $callback);
     }
 
-    public function setEnvironment($env)
+    public function setMode($mode)
     {
-        $this->env = empty($env) ? 'dev' : $env;
+        $this->mode = empty($mode) ? 'dev' : $mode;
 
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
 
-        if ($this->env != 'dev') ini_set('display_errors', 0);
+        if ($this->mode != 'dev') ini_set('display_errors', 0);
     }
 
     public function boot()
     {
-        $config = new Config(new Loader(new Filesystem, $this->appPath.'/config', $this->getOS()), $this->env);
+        $config = new Config(new Loader(new Filesystem, $this->appPath.'/config', $this->getOS()), $this->mode);
 
         $this->instance('config', $config);
 
@@ -82,7 +82,7 @@ class Application extends Container
             $p->boot();
         });
 
-        if (file_exists($bootstrap = $this->appPath."/bootstrap/{$this->env}.php")) {
+        if (file_exists($bootstrap = $this->appPath."/bootstrap/{$this->mode}.php")) {
             require $bootstrap;
         }
 
