@@ -33,11 +33,8 @@ class Application extends Container
         // First things first... Register this as the app
         $this->instance('app', $this);
 
-        // Events shit should go into a service provider
-        $that = $this;
-
-        $this->singleton('events', function() use ($that) {
-            return new \Illuminate\Events\Dispatcher($that);
+        $this->singleton('events', function() {
+            return new \Illuminate\Events\Dispatcher($this);
         });
     }
 
