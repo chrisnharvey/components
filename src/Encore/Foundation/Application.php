@@ -135,6 +135,11 @@ class Application extends Container
         return $this->appPath;
     }
 
+    public function resourcesPath()
+    {
+        return $this->resourcesPath;
+    }
+
     public function vendorPath()
     {
         return $this->vendorPath;
