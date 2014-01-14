@@ -8,8 +8,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('console', function() {
-            return new Console('EncorePHP', $this->app::VERSION);
+        $app = $this->app;
+
+        $this->app->singleton('console', function() use ($app) {
+            return new Console('EncorePHP', $app::VERSION);
         });
     }
 }
