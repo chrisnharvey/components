@@ -15,13 +15,6 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
 class Application extends \Symfony\Component\Console\Application
 {
     /**
-     * The exception handler instance.
-     *
-     * @var \Illuminate\Exception\Handler
-     */
-    protected $exceptionHandler;
-
-    /**
      * Run an Artisan console command by name.
      *
      * @param  string  $command
@@ -41,38 +34,6 @@ class Application extends \Symfony\Component\Console\Application
         $input = new ArrayInput($parameters);
 
         return $this->find($command)->run($input, $output);
-    }
-
-    /**
-     * Render the given exception.
-     *
-     * @param  \Exception  $e
-     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
-     * @return void
-     */
-    public function renderException($e, $output)
-    {
-        // If we have an exception handler instance, we will call that first in case
-        // it has some handlers that need to be run first. We will pass "true" as
-        // the second parameter to indicate that it's handling a console error.
-        if (isset($this->exceptionHandler)) {
-            $this->exceptionHandler->handleConsole($e);
-        }
-
-        parent::renderException($e, $output);
-    }
-
-    /**
-     * Set the exception handler instance.
-     *
-     * @param  \Illuminate\Exception\Handler  $handler
-     * @return \Illuminate\Console\Application
-     */
-    public function setExceptionHandler($handler)
-    {
-        $this->exceptionHandler = $handler;
-
-        return $this;
     }
 
     /**
