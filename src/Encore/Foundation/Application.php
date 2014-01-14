@@ -25,9 +25,10 @@ class Application extends Container
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
-    public function __construct($appPath, $vendorPath)
+    public function __construct($appPath, $resourcesPath, $vendorPath)
     {
         $this->appPath = $appPath;
+        $this->resourcesPath = $resourcesPath;
         $this->vendorPath = $vendorPath;
 
         // First things first... Register this as the app
