@@ -5,6 +5,7 @@ namespace Encore\Foundation;
 use Encore\Testing\Testing;
 use Illuminate\Container\Container;
 use Encore\Config\Loader;
+use Symfony\Component\Debug\Debug;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Config\Repository as Config;
 
@@ -53,10 +54,7 @@ class Application extends Container
     {
         $this->mode = empty($mode) ? 'dev' : $mode;
 
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
-
-        if ($this->mode != 'dev') ini_set('display_errors', 0);
+        Debug::enable(E_ALL, $this->mode === 'dev');
     }
 
     public function boot()
