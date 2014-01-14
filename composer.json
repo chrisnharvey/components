@@ -12,38 +12,28 @@
     "require": {
         "php": ">=5.4.0",
         "classpreloader/classpreloader": "1.0.*",
-        "doctrine/dbal": "2.4.*",
         "ircmaxell/password-compat": "1.0.*",
         "jeremeamia/superclosure": "1.0.*",
         "monolog/monolog": "1.*",
         "nesbot/carbon": "1.*",
         "patchwork/utf8": "1.1.*",
-        "symfony/console": "2.3.*",
         "symfony/finder": "2.3.*",
-        "symfony/process": "2.3.*",
         "illuminate/support": "4.0.*",
         "illuminate/container": "4.0.*",
         "illuminate/config": "4.0.*",
         "illuminate/events": "4.0.*",
         "illuminate/translation": "4.0.*",
-        "illuminate/validation": "4.0.*",
         "illuminate/encryption": "4.0.*",
-        "illuminate/pagination": "4.0.*",
         "illuminate/database": "4.0.*",
         "illuminate/filesystem": "4.0.*"
     },
     "require-dev": {
-        "encorephp/testing": "*",
-        "encorephp/compiler": "*"
+        "encorephp/develpment": "*"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/encorephp/testing"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/encorephp/compiler"
+            "url": "https://github.com/encorephp/development"
         }
     ],
     "autoload": {
