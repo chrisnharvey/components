@@ -11,9 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "classpreloader/classpreloader": "1.0.*",
         "ircmaxell/password-compat": "1.0.*",
-        "jeremeamia/superclosure": "1.0.*",
         "monolog/monolog": "1.*",
         "nesbot/carbon": "1.*",
         "patchwork/utf8": "1.1.*",
