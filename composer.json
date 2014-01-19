@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "encorephp/testing": "*",
-        "encorephp/compiler": "*"
+        "encorephp/testing": "dev-master",
+        "encorephp/compiler": "dev-master"
     },
     "repositories": [
         {
