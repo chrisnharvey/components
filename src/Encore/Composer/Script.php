@@ -2,6 +2,7 @@
 
 namespace Encore\Composer;
 
+use Symfony\Component\Finder\Finder;
 use Composer\Script\Event;
 
 class Script
@@ -28,9 +29,17 @@ class Script
     public static function postInstall(Event $event)
     {
         static::init();
+
+        $event->getIO()->write('<info>Writing resources.lock file');
+
         $installed = json_decode(file_get_contents(static::$vendorPath.'/composer/installed.json'));
 
         $data = [];
+
+        $finder = (new Finder)
+            ->directories()
+            ->ignoreVCS(true)
+            ->in(static::$resourcesPath.'/packages');
 
         foreach ($installed as $package) {
             if ( ! property_exists($package, 'extra')) continue;
@@ -43,12 +52,20 @@ class Script
 
             foreach ($resources as $resource => $namespaces) {
                 foreach ($namespaces as $namespace => $path) {
+                    $finder->exclude($namespace);
+
                     $data[$resource][$namespace] = $path;
                 }
             }
         }
 
-        file_put_contents(static::$resourcesPath.'/resources.lock', json_encode($data));
+        // We turn the iterator to an array to
+        // prevent an exception when we delete the directorys
+        foreach (iterator_to_array($finder) as $file) {
+            \Filesystem::deleteDirectory($file->getPathname());
+        }
+
+        file_put_contents(static::$resourcesPath.'/resources.lock', json_encode($data, JSON_PRETTY_PRINT));
     }
 
     public static function postUpdate(Event $event)
