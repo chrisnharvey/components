@@ -11,18 +11,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "encorephp/console": "dev-master",
         "encorephp/testing": "dev-master",
         "encorephp/compiler": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/encorephp/testing"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/encorephp/compiler"
-        }
-    ],
     "minimum-stability": "dev"
 }
