@@ -1,7 +1,7 @@
 {
-    "name": "encorephp/framework",
-    "description": "The EncorePHP Framework.",
-    "keywords": ["framework", "encorephp"],
+    "name": "encorephp/kernel",
+    "description": "The EncorePHP Kernel.",
+    "keywords": ["framework", "kernel", "encorephp"],
     "license": "MIT",
     "authors": [
         {
