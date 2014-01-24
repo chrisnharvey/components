@@ -26,8 +26,7 @@
         "illuminate/filesystem": "4.0.*"
     },
     "require-dev": {
-        "encorephp/testing": "dev-master",
-        "encorephp/compiler": "dev-master"
+        "encorephp/development": "dev-master"
     },
     "repositories": [
         {
