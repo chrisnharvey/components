@@ -1,0 +1,25 @@
+{
+    "name": "encorephp/container",
+    "description": "Dependency injection container with service providers and facades.",
+    "keywords": ["ioc", "container", "dependency injection", "di", "service provider", "facade"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "league/di": "1.2.x"
+    },
+    "suggest": {
+        "illuminate/events": "Allows registration of service providers when events are fired"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Container\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
