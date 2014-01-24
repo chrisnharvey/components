@@ -3,7 +3,7 @@
 namespace Encore\Foundation;
 
 use Encore\Testing\Testing;
-use Illuminate\Container\Container;
+use Encore\Container\Container;
 use Encore\Config\Loader;
 use Symfony\Component\Debug\Debug;
 use Illuminate\Filesystem\Filesystem;
@@ -35,7 +35,7 @@ class Application extends Container
         // First things first... Register this as the app
         $this->instance('app', $this);
 
-        $this->singleton('events', function() {
+        $this->bind('events', function() {
             return new \Illuminate\Events\Dispatcher($this);
         });
     }
@@ -61,7 +61,7 @@ class Application extends Container
     {
         $config = new Config(new Loader(new Filesystem, $this->appPath.'/config', $this->getOS()), $this->mode);
 
-        $this->instance('config', $config);
+        $this->bind('config', $config);
 
         // Register service providers
         foreach ($config->get('app.providers') as $provider) {
@@ -97,30 +97,6 @@ class Application extends Container
         $this['events']->fire('app.quitting');
 
         exit;
-    }
-
-    public function register($provider, $options = array())
-    {
-        // If the given "provider" is a string, we will resolve it, passing in the
-        // application instance automatically for the developer. This is simply
-        // a more convenient way of specifying your service provider classes.
-        if (is_string($provider)) $provider = new $provider($this);
-
-        $provider->register();
-
-        // Once we have registered the service we will iterate through the options
-        // and set each of them on the application so they will be available on
-        // the actual loading of the service objects and for developer usage.
-        foreach ($options as $key => $value) $this[$key] = $value;
-
-        $this->markAsRegistered($provider);
-
-        // If the application has already booted, we will call this boot method on
-        // the provider class so it has an opportunity to do its boot logic and
-        // will be ready for any usage by the developer's application logics.
-        if ($this->booted) $provider->boot();
-
-        return $provider;
     }
 
     public function get()
@@ -163,18 +139,5 @@ class Application extends Container
             default:
                 return $this->os = static::OS_OTHER;
         }
-    }
-
-    /**
-     * Mark the given provider as registered.
-     *
-     * @param \Illuminate\Support\ServiceProvider
-     * @return void
-     */
-    protected function markAsRegistered($provider)
-    {
-        $this->serviceProviders[] = $provider;
-
-        $this->loadedProviders[get_class($provider)] = true;
     }
 }
