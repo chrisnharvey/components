@@ -2,9 +2,10 @@
 
 namespace Encore\Container;
 
+use ArrayAccess;
 use League\Di\Container as BaseContainer;
 
-class Container extends BaseContainer
+class Container extends BaseContainer implements ArrayAccess
 {
     protected $event = null;
     protected $provides = [];
@@ -15,6 +16,29 @@ class Container extends BaseContainer
         $this->event = $event;
 
         parent::__construct($parent);
+    }
+
+    public function offsetExists($offset)
+    {
+        return array_key_exists($offset, $this->bindings)
+            or array_key_exists($offset, $this->provides);
+    }
+
+    public function offsetGet($offset)
+    {
+        return $this->resolve($offset);
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->bind($offset, $value);
+    }
+
+    public function offsetUnset($offset)
+    {
+        if (array_key_exists($offset, $this->bindings)) {
+            unset($this->bindings[$offset]);
+        }
     }
 
     public function addProvider($provider)
