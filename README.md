@@ -1,4 +1,4 @@
-framework
+Kernel
 =========
 
-The core of the EncorePHP framework
+The EncorePHP components kernel
