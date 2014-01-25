@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Foundation;
+namespace Encore\Kernel;
 
 use Encore\Testing\Testing;
 use Encore\Container\Container;

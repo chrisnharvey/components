@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Foundation;
+namespace Encore\Kernel;
 
 class Collection implements \ArrayAccess
 {

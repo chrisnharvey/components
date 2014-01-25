@@ -1,12 +1,12 @@
 <?php
 
-namespace Encore\Foundation;
+namespace Encore\Kernel;
 
 abstract class Controller
 {
     public function __destruct()
     {
-        $collection = \App::make('collection');
+        $collection = $this->app->resolve('collection');
 
         // Assign the object to another var
         $that = $this;
@@ -18,5 +18,10 @@ abstract class Controller
 
         // Save public properties in the collection
         $collection[] = $savable(); 
+    }
+
+    public function setApp(Application $app)
+    {
+        $this->app = $app;
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Foundation\Command;
+namespace Encore\Kernel\Command;
 
-use Encore\Foundation\GUI;
+use Encore\Kernel\GUI;
 
 class Run extends \Encore\Console\Command
 {
