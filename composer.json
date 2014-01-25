@@ -1,0 +1,22 @@
+{
+    "name": "encorephp/resource",
+    "description": "Unified resource loader.",
+    "keywords": ["resource", "loader"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/filesystem": "2.4.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Resource\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
