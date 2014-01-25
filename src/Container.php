@@ -29,6 +29,11 @@ class Container extends BaseContainer
         $this->registerProvider($provider);
     }
 
+    public function initializeFacaces()
+    {
+        Facade::setContainer($this);
+    }
+
     public function createChild()
     {
         return new static($this->events, $this);
