@@ -5,7 +5,7 @@ namespace Encore\Container;
 abstract class ServiceProvider
 {
     /**
-     * The application instance.
+     * The container instance.
      *
      * @var \Encore\Container\Container
      */
