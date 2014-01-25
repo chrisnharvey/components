@@ -91,7 +91,7 @@ class Container extends BaseContainer implements ArrayAccess
 
     protected function registerEvents(ServiceProvider $provider)
     {
-        if (is_null($this->events)) return;
+        if (is_null($this->event)) return;
 
         foreach ($provider->when() as $event) {
             $this->event->listen($event, function() use ($provider) {
