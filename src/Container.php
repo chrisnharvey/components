@@ -31,7 +31,7 @@ class Container extends BaseContainer
 
     public function createChild()
     {
-        return new static($this->events, $this)
+        return new static($this->events, $this);
     }
 
     public function registerProvidersFor($binding)
