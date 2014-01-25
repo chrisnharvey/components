@@ -1,0 +1,23 @@
+{
+    "name": "encorephp/config",
+    "description": "Config loader with OS and mode options.",
+    "keywords": ["config"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/config": "2.4.x",
+        "symfony/filesystem": "2.4.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Config\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
