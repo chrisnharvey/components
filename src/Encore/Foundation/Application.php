@@ -33,7 +33,7 @@ class Application extends Container
         $this->vendorPath = $vendorPath;
 
         // First things first... Register this as the app
-        $this->instance('app', $this);
+        $this->bind('app', $this);
 
         $this->bind('events', function() {
             return new \Illuminate\Events\Dispatcher($this);
@@ -65,7 +65,7 @@ class Application extends Container
 
         // Register service providers
         foreach ($config->get('app.providers') as $provider) {
-            $this->register($provider);
+            $this->addProvider($provider);
         }
 
         // Register aliases
