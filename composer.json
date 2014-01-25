@@ -14,7 +14,7 @@
         "league/di": "1.2.x"
     },
     "suggest": {
-        "illuminate/events": "Allows registration of service providers when events are fired"
+        "encorephp/events": "Allows registration of service providers when events are fired"
     },
     "autoload": {
         "psr-4": {
