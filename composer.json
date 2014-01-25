@@ -16,14 +16,7 @@
         "monolog/monolog": "1.*",
         "nesbot/carbon": "1.*",
         "patchwork/utf8": "1.1.*",
-        "symfony/finder": "2.3.*",
-        "symfony/debug": "2.3.*",
-        "illuminate/config": "4.0.*",
-        "illuminate/events": "4.0.*",
-        "illuminate/translation": "4.0.*",
-        "illuminate/encryption": "4.0.*",
-        "illuminate/database": "4.0.*",
-        "illuminate/filesystem": "4.0.*"
+        "symfony/debug": "2.3.*"
     },
     "require-dev": {
         "encorephp/development": "dev-master"
