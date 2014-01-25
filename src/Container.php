@@ -120,4 +120,9 @@ class Container extends BaseContainer implements ArrayAccess
             $this->provides[$binding][] = $provider;
         }
     }
+
+    protected function objectNotClosure($instance)
+    {
+        return is_object($instance) and ! $instance instanceof Closure;
+    }
 }
