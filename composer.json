@@ -22,8 +22,8 @@
         "encorephp/development": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "Encore\\": "src/"
         },
         "files": [
             "src/Encore/Kernel/helpers.php"
