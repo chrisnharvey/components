@@ -1,0 +1,22 @@
+{
+    "name": "encorephp/events",
+    "description": "Events dispatcher.",
+    "keywords": ["events", "dispatcher"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/event-dispatcher": "2.4.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Events\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
