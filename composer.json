@@ -28,12 +28,6 @@
     "require-dev": {
         "encorephp/development": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/encorephp/development"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "": "src/"
