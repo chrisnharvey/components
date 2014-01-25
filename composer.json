@@ -30,7 +30,7 @@
             "Encore\\": "src/"
         },
         "files": [
-            "src/Encore/Kernel/helpers.php"
+            "src/Kernel/helpers.php"
         ]
     },
     "minimum-stability": "dev"
