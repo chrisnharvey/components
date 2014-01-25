@@ -12,6 +12,10 @@
     "require": {
         "php": ">=5.4.0",
         "encorephp/container": "dev-master",
+        "encorephp/config": "dev-master",
+        "encorephp/events": "dev-master",
+        "encorephp/resource": "dev-master",
+        "encorephp/view": "dev-master",
         "ircmaxell/password-compat": "1.0.*",
         "monolog/monolog": "1.*",
         "nesbot/carbon": "1.*",
