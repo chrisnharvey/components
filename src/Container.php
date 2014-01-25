@@ -2,7 +2,9 @@
 
 namespace Encore\Container;
 
+use Closure;
 use ArrayAccess;
+use League\Di\Definition;
 use League\Di\Container as BaseContainer;
 
 class Container extends BaseContainer implements ArrayAccess
@@ -60,7 +62,27 @@ class Container extends BaseContainer implements ArrayAccess
 
     public function createChild()
     {
-        return new static($this->events, $this);
+        return new static($this->event, $this);
+    }
+
+    public function build($concrete)
+    {
+        if (is_object($concrete)) {
+           return $concrete; 
+        }
+
+        return parent::build($concrete);
+    }
+
+    public function bind($abstract, $concrete = null)
+    {
+        if ($this->objectNotClosure($concrete)) {
+            $concrete = new Definition($this, $concrete);
+
+            return $this->bindings[$abstract] = $concrete;
+        }
+
+        return parent::bind($abstract, $concrete);
     }
 
     public function registerProvidersFor($binding)
