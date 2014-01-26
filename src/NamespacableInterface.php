@@ -10,7 +10,7 @@ namespace Encore\Namespacer;
 interface NamespacableInterface
 {
     /**
-     * Add a namespace for the specified resource
+     * Add a namespace and provide a hint
      *
      * @param string $namespace
      * @param string $hint
