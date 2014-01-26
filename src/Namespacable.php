@@ -7,7 +7,7 @@
 
 namespace Encore\Namespacer;
 
-abstract class Namespacable
+abstract class Namespacable extends Resolver implements NamespacableInterface
 {
     /**
      * All of the namespace hints.
