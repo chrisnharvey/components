@@ -1,0 +1,21 @@
+{
+    "name": "encorephp/namespacer",
+    "description": "String namespace resolver and abstracts",
+    "keywords": ["namespacer", "namespace", "string", "loader"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Namespacer\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
