@@ -30,7 +30,7 @@ class Script
     {
         static::init();
 
-        $event->getIO()->write('<info>Writing resources.lock file');
+        $event->getIO()->write('<info>Writing resources.lock file</info>');
 
         $installed = json_decode(file_get_contents(static::$vendorPath.'/composer/installed.json'));
 
