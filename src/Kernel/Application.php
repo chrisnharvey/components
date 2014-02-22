@@ -34,10 +34,6 @@ class Application extends Container
 
         // First things first... Register this as the app
         $this->bind('app', $this);
-
-        $this->bind('events', function() {
-            return new \Illuminate\Events\Dispatcher($this);
-        });
     }
 
     public function launching($callback)
