@@ -2,12 +2,9 @@
 
 namespace Encore\Kernel;
 
-use Encore\Testing\Testing;
 use Encore\Container\Container;
-use Encore\Config\Loader;
 use Symfony\Component\Debug\Debug;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Config\Repository as Config;
+use Encore\Config\ServiceProvider as ConfigServiceProvider;
 
 class Application extends Container
 {
@@ -55,9 +52,7 @@ class Application extends Container
 
     public function boot()
     {
-        $config = new Config(new Loader(new Filesystem, $this->appPath.'/config', $this->getOS()), $this->mode);
-
-        $this->bind('config', $config);
+        $this->addProvider(new ConfigServiceProvider($this));
 
         // Register service providers
         foreach ($config->get('app.providers') as $provider) {
