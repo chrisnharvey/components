@@ -8,6 +8,7 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
     {
-        $this->container->bind('console', new Console('EncorePHP', $this->container::VERSION));
+        $container = $this->container;
+        $this->container->bind('console', new Console('EncorePHP', $container::VERSION));
     }
 }
