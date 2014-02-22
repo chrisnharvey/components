@@ -16,9 +16,13 @@ class Application extends Container
     const OS_OTHER = 'other';
 
     private $appPath;
+    private $resourcesPath;
     private $vendorPath;
-    private $booted = false;
 
+    private $booted = false;
+    private $os;
+
+    protected $mode;
     protected $mode;
     protected $serviceProviders = array();
     protected $loadedProviders = array();
