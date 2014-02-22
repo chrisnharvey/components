@@ -121,6 +121,8 @@ class Application extends Container
 
     protected function findOS()
     {
+        if (isset($this->os)) return $this->os;
+
         switch (true) {
             case stristr(PHP_OS, 'DAR'):
                 return $this->os = static::OS_OSX;
