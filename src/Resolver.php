@@ -48,6 +48,23 @@ class Resolver
         return $this->parsed[$key] = $parsed;
     }
 
+    public function resolveKey($key, $array, $default = null)
+    {
+        if (is_null($key)) return $array;
+
+        if (isset($array[$key])) return $array[$key];
+
+        foreach (explode('.', $key) as $segment) {
+            if ( ! is_array($array) or ! array_key_exists($segment, $array)) {
+                return $default;
+            }
+
+            $array = $array[$segment];
+        }
+
+        return $array;
+    }
+
     /**
      * Parse an array of basic segments.
      *
