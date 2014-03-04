@@ -4,7 +4,7 @@ namespace Encore\Config;
 
 use Symfony\Component\Filesystem\Filesystem;
 
-class FileLoader
+class FileLoader implements LoaderInterface
 {
     public function __construct(Filesystem $fs)
     {
