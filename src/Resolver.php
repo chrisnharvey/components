@@ -7,7 +7,7 @@
 
 namespace Encore\Namespacer;
 
-class Resolver
+class Resolver implements ResolverInterface
 {
     /**
      * A cache of the parsed items.
