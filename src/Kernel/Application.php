@@ -23,7 +23,6 @@ class Application extends Container
     private $os;
 
     protected $mode;
-    protected $mode;
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
