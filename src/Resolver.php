@@ -48,7 +48,7 @@ class Resolver
         return $this->parsed[$key] = $parsed;
     }
 
-    public function resolveKey($key, $array, $default = null)
+    public function resolveKey($key, array $array, $default = null)
     {
         if (is_null($key)) return $array;
 
