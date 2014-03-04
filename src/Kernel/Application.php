@@ -58,12 +58,12 @@ class Application extends Container
         $this->addProvider(new ConfigServiceProvider($this));
 
         // Register service providers
-        foreach ($config->get('app.providers') as $provider) {
+        foreach ($this['config']->get('app.providers') as $provider) {
             $this->addProvider($provider);
         }
 
         // Register aliases
-        foreach ($config->get('app.aliases') as $alias => $class) {
+        foreach ($this['config']->get('app.aliases') as $alias => $class) {
             class_alias($class, $alias);
         }
 
