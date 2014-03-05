@@ -98,7 +98,7 @@ class Application extends Container
         return $this;
     }
 
-    public function path()
+    public function appPath()
     {
         return $this->appPath;
     }
