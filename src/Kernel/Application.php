@@ -113,7 +113,7 @@ class Application extends Container
         return $this->vendorPath;
     }
 
-    public function getOS()
+    public function os()
     {
         return isset($this->os) ? $this->os : $this->findOS();
     }
