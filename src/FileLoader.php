@@ -6,7 +6,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class FileLoader implements LoaderInterface
 {
-    public function __construct(Filesystem $fs, $path, $os)
+    public function __construct(Filesystem $fs, $path, $os = null)
     {
         $this->fs = $fs;
         $this->path = $path;
