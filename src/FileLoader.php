@@ -6,10 +6,11 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class FileLoader implements LoaderInterface
 {
-    public function __construct(Filesystem $fs, $path)
+    public function __construct(Filesystem $fs, $path, $os)
     {
         $this->fs = $fs;
         $this->path = $path;
+        $this->os = $os;
     }
 
     /**
