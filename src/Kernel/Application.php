@@ -46,6 +46,11 @@ class Application extends Container
         $this['events']->listen('app.quitting', $callback);
     }
 
+    public function mode()
+    {
+        return $this->mode;
+    }
+
     public function setMode($mode)
     {
         $this->mode = empty($mode) ? 'dev' : $mode;
