@@ -23,13 +23,6 @@ abstract class ServiceProvider
     }
 
     /**
-     * Callback on application boot.
-     *
-     * @return void
-     */
-    public function boot() {}
-
-    /**
      * Register the service provider.
      *
      * @return void
