@@ -11,7 +11,7 @@ interface ResourceFinderInterface
      * @param string $name
      * @return string
      */
-    public function find($resource, $name);
+    public function find($name);
 
     /**
      * Set the name of this resource so we know where to look.
