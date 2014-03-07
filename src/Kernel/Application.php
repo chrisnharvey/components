@@ -73,8 +73,8 @@ class Application extends Container
         }
 
         // Now run boot events on service providers
-        array_walk($this->serviceProviders, function($p) {
-            $p->boot();
+        array_walk($this->registered, function($p) {
+            if (method_exists($p, 'boot')) $p->boot();
         });
 
         if (file_exists($bootstrap = $this->appPath."/bootstrap/{$this->mode}.php")) {
