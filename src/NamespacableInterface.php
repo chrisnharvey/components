@@ -17,4 +17,11 @@ interface NamespacableInterface
      * @return void
      */
     public function addNamespace($namespace, $hint);
+
+    /**
+     * Return an array of all the registered namespaces
+     *
+     * @return array
+     */
+    public function getNamespaces();
 }

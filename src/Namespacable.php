@@ -27,4 +27,14 @@ abstract class Namespacable extends Resolver implements NamespacableInterface
     {
         $this->hints[$namespace] = $hint;
     }
+
+    /**
+     * Return an array of all the registered namespaces
+     *
+     * @return array
+     */
+    public function getNamespaces()
+    {
+        return $this->hints;
+    }
 }
