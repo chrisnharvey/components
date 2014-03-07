@@ -23,11 +23,18 @@ abstract class ServiceProvider
     }
 
     /**
+     * Callback on application boot.
+     *
+     * @return void
+     */
+    public function boot() {}
+
+    /**
      * Register the service provider.
      *
      * @return void
      */
-    abstract public function register();
+    public function register() {}
 
     /**
      * Get the services provided by the provider.
