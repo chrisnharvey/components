@@ -2,7 +2,7 @@
 
 namespace Encore\Console;
 
-class Facade extends \Encore\Foundation\Facade
+class Facade extends \Encore\Container\Facade
 {
     public static function getFacade()
     {
