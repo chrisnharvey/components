@@ -22,21 +22,27 @@ interface ResourceFinderInterface
     public function setResource($name);
 
     /**
-     * Get the fully qualified location of the resource.
+     * Set the extensions for this resource.
      *
-     * @param string $resource
      * @param array $extensions
      * @return void
      */
-    public function setExtensions($resource, array $extensions);
+    public function setExtensions(array $extensions);
 
     /**
-     * Add a namespace for the specified resource
+     * Add a location for the current resource
      *
-     * @param string $resource
-     * @§param string $namespace
      * @param string $location
      * @return void
      */
-    public function addNamespace($resource, $namespace, $location);
+    public function addLocation($location);
+
+    /**
+     * Add a namespace for the current resource
+     *
+     * @param string $namespace
+     * @param string $location
+     * @return void
+     */
+    public function addNamespace($namespace, $location);
 }
