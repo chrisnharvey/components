@@ -4,17 +4,17 @@ namespace Encore\Resource;
 
 use Encore\Resource\Command\Publish as PublishCommand;
 
-class ServiceProvider extends \Encore\Foundation\ServiceProvider
+class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
     {
-        $this->app->bind('resource', function() {
-            return new Manager($this->app->resourcePath());
+        $this->container->bind('resource', function() {
+            return new Manager($this->container->resourcePath());
         });
     }
 
     public function boot()
     {
-        $this->app['console']->add(new PublishCommand($this->app));
+        $this->container['console']->add(new PublishCommand($this->container));
     }
 }
