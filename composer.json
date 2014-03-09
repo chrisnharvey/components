@@ -1,0 +1,22 @@
+{
+    "name": "encorephp/migration",
+    "description": "Database migration package",
+    "keywords": ["database", "migrations", "migration", "schema"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/database": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Migration\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
