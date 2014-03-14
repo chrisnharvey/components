@@ -1,0 +1,21 @@
+{
+    "name": "encorephp/giml",
+    "description": "Graphical Interface Markup Language (GIML) parser",
+    "keywords": ["giml", "parser", "graphical", "interface", "markup", "language"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\GIML\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
