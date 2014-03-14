@@ -2,7 +2,9 @@
 
 namespace Encore\Config;
 
-interface LoaderInterface
+use Encore\Namespacer\NamespacableInterface;
+
+interface LoaderInterface extends NamespacableInterface
 {
     /**
     * Load the given configuration group.
@@ -22,21 +24,4 @@ interface LoaderInterface
     * @return bool
     */
     public function exists($group, $namespace = null);
-
-    /**
-    * Add a new namespace to the loader.
-    *
-    * @param string $namespace
-    * @param string $hint
-    * @return void
-    */
-    public function addNamespace($namespace, $hint);
-
-    /**
-    * Returns all registered namespaces with the config
-    * loader.
-    *
-    * @return array
-    */
-    public function getNamespaces();
 }
