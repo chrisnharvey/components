@@ -17,7 +17,8 @@
         "ircmaxell/password-compat": "1.0.*",
         "monolog/monolog": "1.*",
         "nesbot/carbon": "1.*",
-        "symfony/debug": "2.4.*"
+        "symfony/debug": "2.4.*",
+        "symfony/filesystem": "2.4.*"
     },
     "require-dev": {
         "encorephp/development": "dev-master"
