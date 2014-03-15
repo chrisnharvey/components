@@ -61,6 +61,8 @@ class Application extends Container
 
     public function boot()
     {
+        if ($this->booted) return;
+
         $this->addProvider(new ConfigServiceProvider($this));
 
         // Register service providers
