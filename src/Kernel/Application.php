@@ -123,6 +123,22 @@ class Application extends Container
         return isset($this->os) ? $this->os : $this->findOS();
     }
 
+    /**
+     * Register a service provider
+     *
+     * @param ServiceProvider $provider The service provider object.
+     * @param bool $force Force register (register whether needed or not)
+     * @return void
+     */
+    protected function registerProvider(ServiceProvider $provider, $force = false)
+    {
+        parent::registerProvider();
+
+        if ($this->booted and method_exists($provider, 'booted')) {
+            $provider->boot();
+        }
+    }
+
     protected function findOS()
     {
         if (isset($this->os)) return $this->os;
