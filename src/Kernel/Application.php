@@ -4,6 +4,7 @@ namespace Encore\Kernel;
 
 use Encore\Container\Container;
 use Symfony\Component\Debug\Debug;
+use Encore\Container\ServiceProvider;
 use Encore\Config\ServiceProvider as ConfigServiceProvider;
 
 class Application extends Container
@@ -132,7 +133,9 @@ class Application extends Container
      */
     protected function registerProvider(ServiceProvider $provider, $force = false)
     {
-        parent::registerProvider();
+        parent::registerProvider($provider, $force);
+
+        if ( ! in_array($provider, $this->registered)) return;
 
         if ($this->booted and method_exists($provider, 'booted')) {
             $provider->boot();
