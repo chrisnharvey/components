@@ -15,7 +15,7 @@ class Script
 
     public static function init()
     {
-        static::$appPath = \App::path();
+        static::$appPath = \App::appPath();
         static::$vendorPath = \App::vendorPath();
         static::$resourcesPath = \App::resourcesPath();
 
