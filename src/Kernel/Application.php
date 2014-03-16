@@ -139,7 +139,7 @@ class Application extends Container
 
         if ( ! in_array($provider, $this->registered)) return;
 
-        if ($this->booted and method_exists($provider, 'booted')) {
+        if ($this->booted and method_exists($provider, 'boot')) {
             $provider->boot();
         }
     }
