@@ -2,11 +2,11 @@
 
 namespace Encore\Container;
 
-abstract class Facade
+abstract class Proxy
 {
 
     /**
-     * The container instance being facaded.
+     * The container instance being proxied.
      *
      * @var \Encore\Container\Container
      */
@@ -17,37 +17,34 @@ abstract class Facade
      *
      * @var array
      */
-    protected static $resolvedInstance;
+    protected static $instance;
 
     /**
-     * Hotswap the underlying instance behind the facade.
+     * Hotswap the underlying instance behind the proxy.
      *
      * @param  mixed  $instance
      * @return void
      */
     public static function swap($instance)
     {
-        static::$resolvedInstance[static::getFacadeAccessor()] = $instance;
+        static::$instance[static::getConcreteBinding()] = $instance;
 
-        static::$container->instance(static::getFacadeAccessor(), $instance);
+        static::$container->instance(static::getConcreteBinding(), $instance);
     }
 
     /**
-     * Initiate a mock expectation on the facade.
+     * Initiate a mock expectation on the proxy.
      *
      * @param  dynamic
      * @return \Mockery\Expectation
      */
     public static function shouldReceive()
     {
-        $name = static::getFacadeAccessor();
+        $name = static::getConcreteBinding();
 
-        if (static::isMock())
-        {
-            $mock = static::$resolvedInstance[$name];
-        }
-        else
-        {
+        if (static::isMock()) {
+            $mock = static::$instance[$name];
+        } else {
             $mock = static::createFreshMockInstance($name);
         }
 
@@ -62,7 +59,7 @@ abstract class Facade
      */
     protected static function createFreshMockInstance($name)
     {
-        static::$resolvedInstance[$name] = $mock = static::createMockByName($name);
+        static::$instance[$name] = $mock = static::createMockByName($name);
 
         if (isset(static::$container)) {
             static::$container->instance($name, $mock);
@@ -85,15 +82,15 @@ abstract class Facade
     }
 
     /**
-     * Determines whether a mock is set as the instance of the facade.
+     * Determines whether a mock is set as the instance of the proxy.
      *
      * @return bool
      */
     protected static function isMock()
     {
-        $name = static::getFacadeAccessor();
+        $name = static::getConcreteBinding();
 
-        return isset(static::$resolvedInstance[$name]) && static::$resolvedInstance[$name] instanceof MockInterface;
+        return isset(static::$instance[$name]) && static::$instance[$name] instanceof MockInterface;
     }
 
     /**
@@ -103,17 +100,17 @@ abstract class Facade
      */
     protected static function getMockableClass()
     {
-        if ($root = static::getFacadeRoot()) return get_class($root);
+        if ($root = static::getConcreteInstance()) return get_class($root);
     }
 
     /**
-     * Get the root object behind the facade.
+     * Get the root object behind the proxy.
      *
      * @return mixed
      */
-    public static function getFacadeRoot()
+    public static function getConcreteInstance()
     {
-        return static::resolveFacadeInstance(static::getFacadeAccessor());
+        return static::resolveProxyInstance(static::getConcreteBinding());
     }
 
     /**
@@ -123,38 +120,37 @@ abstract class Facade
      *
      * @throws \RuntimeException
      */
-    protected static function getFacadeAccessor()
+    protected static function getConcreteBinding()
     {
-        throw new \RuntimeException("Facade does not implement getFacadeAccessor method.");
+        throw new \RuntimeException("Proxy does not implement getConcreteBinding method.");
     }
 
     /**
-     * Resolve the facade root instance from the container.
+     * Resolve the proxy binding instance from the container.
      *
      * @param  string  $name
      * @return mixed
      */
-    protected static function resolveFacadeInstance($name)
+    protected static function resolveProxyInstance($name)
     {
         if (is_object($name)) return $name;
 
-        if (isset(static::$resolvedInstance[$name]))
-        {
-            return static::$resolvedInstance[$name];
+        if (isset(static::$instance[$name])) {
+            return static::$instance[$name];
         }
 
-        return static::$resolvedInstance[$name] = static::$container[$name];
+        return static::$instance[$name] = static::$container[$name];
     }
 
     /**
-     * Clear a resolved facade instance.
+     * Clear a resolved proxy instance.
      *
      * @param  string  $name
      * @return void
      */
     public static function clearResolvedInstance($name)
     {
-        unset(static::$resolvedInstance[$name]);
+        unset(static::$instance[$name]);
     }
 
     /**
@@ -164,11 +160,11 @@ abstract class Facade
      */
     public static function clearResolvedInstances()
     {
-        static::$resolvedInstance = array();
+        static::$instance = array();
     }
 
     /**
-     * Get the container instance behind the facade.
+     * Get the container instance behind the proxy.
      *
      * @return \Encore\Container\Container
      */
@@ -197,10 +193,9 @@ abstract class Facade
      */
     public static function __callStatic($method, $args)
     {
-        $instance = static::resolveFacadeInstance(static::getFacadeAccessor());
+        $instance = static::resolveProxyInstance(static::getConcreteBinding());
 
-        switch (count($args))
-        {
+        switch (count($args)) {
             case 0:
                 return $instance->$method();
 
