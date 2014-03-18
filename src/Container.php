@@ -62,13 +62,13 @@ class Container extends BaseContainer implements ArrayAccess
     }
 
     /**
-     * Initialize the facades with this instance of the container
+     * Initialize the proxies with this instance of the container
      *
      * @return void
      */
-    public function initializeFacaces()
+    public function initializeProxies()
     {
-        Facade::setContainer($this);
+        Proxy::setContainer($this);
     }
 
     /**

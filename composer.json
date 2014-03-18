@@ -1,7 +1,7 @@
 {
     "name": "encorephp/container",
-    "description": "Dependency injection container with service providers and facades.",
-    "keywords": ["ioc", "container", "dependency injection", "di", "service provider", "facade"],
+    "description": "Dependency injection container with service providers and proxies.",
+    "keywords": ["ioc", "container", "dependency injection", "di", "service provider", "proxy"],
     "license": "MIT",
     "authors": [
         {
