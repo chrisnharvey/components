@@ -91,12 +91,12 @@ class Application extends Container
 
     public function launch()
     {
-        $this['events']->fire('app.launching');
+        $this['events']->fire('app.launching', [$this]);
     }
 
     public function quit()
     {
-        $this['events']->fire('app.quitting');
+        $this['events']->fire('app.quitting', [$this]);
 
         exit;
     }
