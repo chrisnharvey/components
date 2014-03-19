@@ -2,11 +2,16 @@
 
 namespace Encore\Kernel;
 
-abstract class Controller
+use Encore\Container\ContainerAwareTrait;
+use Encore\Container\ContainerAwareInterface;
+
+abstract class Controller implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     public function __destruct()
     {
-        $collection = $this->app->resolve('collection');
+        $collection = $this->container->resolve('collection');
 
         // Assign the object to another var
         $that = $this;
@@ -18,10 +23,5 @@ abstract class Controller
 
         // Save public properties in the collection
         $collection[] = $savable(); 
-    }
-
-    public function setApp(Application $app)
-    {
-        $this->app = $app;
     }
 }
