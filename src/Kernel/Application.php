@@ -56,7 +56,7 @@ class Application extends Container
     {
         $this->mode = empty($mode) ? 'dev' : $mode;
 
-        Debug::enable(E_ALL, $this->mode === 'dev');
+        ini_set('display_errors', $this->mode === 'dev');
     }
 
     public function boot()
