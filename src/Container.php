@@ -83,7 +83,7 @@ class Container implements \ArrayAccess
      */
     public function createChild()
     {
-        return new static($this->event, $this);
+        return new static($this);
     }
 
     /**
