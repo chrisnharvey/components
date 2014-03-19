@@ -37,12 +37,12 @@ class Application extends Container
         $this->bind('app', $this);
     }
 
-    public function launching($callback)
+    public function launching(callable $callback)
     {
         $this['events']->listen('app.launching', $callback);
     }
 
-    public function quitting($callback)
+    public function quitting(callable $callback)
     {
         $this['events']->listen('app.quitting', $callback);
     }
