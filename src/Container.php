@@ -418,7 +418,7 @@ class Container implements \ArrayAccess
     protected function shouldBeDefinitionObject($concrete)
     {
         return (
-            (is_object($concrete) and ! $concrete instanceof Closure)
+            (is_object($concrete) and ! $concrete instanceof \Closure)
             or is_string($concrete)
         );
     }
