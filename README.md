@@ -3,6 +3,9 @@ Based on the deprecated [league/di](https:/github.com/thephpleague/di) package.
 
 The EncorePHP Container library provides a fast and powerful Dependency Injection Container for your application.
 
+As well as a dependency injection container, we also allow the use of service providers
+and proxies.
+
 ## Install
 
 Via Composer
