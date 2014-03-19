@@ -10,8 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "league/di": "1.2.x"
+        "php": ">=5.4.0"
     },
     "suggest": {
         "encorephp/events": "Allows registration of service providers when events are fired"
