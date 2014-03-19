@@ -1,4 +1,5 @@
 # EncorePHP Container
+[![Build Status](https://travis-ci.org/encorephp/container.png?branch=master)](https://travis-ci.org/encorephp/container)
 
 The EncorePHP Container library provides a fast and powerful Dependency Injection Container for your application.
 
