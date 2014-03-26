@@ -90,6 +90,10 @@ class Definition
             $object = $reflection->newInstanceArgs($arguments);
         }
 
+        if ($object instanceof ContainerAwareInterface) {
+            $this->withMethod('setContainer', [$this->container]);
+        }
+
         return $this->callMethods($object);
     }
 
