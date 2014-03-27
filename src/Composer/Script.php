@@ -17,7 +17,13 @@ class Script
     public static function init()
     {
         // Instantiate the application
-        $app = Application::fromCwd()->boot();
+        $app = Application::fromCwd();
+
+        // Give proxies an instance of the application
+        $app->initializeProxies();
+
+        // Boot the app
+        $app->boot();
 
         static::$appPath = \App::appPath();
         static::$vendorPath = \App::vendorPath();
