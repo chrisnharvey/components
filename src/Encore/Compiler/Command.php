@@ -2,10 +2,16 @@
 
 namespace Encore\Compiler;
 
-class Command extends \Encore\Console\Command
+use Encore\Container\ContainerAwareTrait;
+use Encore\Container\ContainerAwareInterface;
+use Encore\Console\Command as BaseCommand;
+
+class Command extends BaseCommand implements ContainerAwareInterface
 {
-    protected $name = 'compile';
-    protected $description = 'Compile the application for distribution';
+    use ContainerAwareTrait;
+
+    public $name = 'compile';
+    public $description = 'Compile the application for distribution';
 
     public function fire()
     {
