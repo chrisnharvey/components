@@ -24,7 +24,7 @@ class Application extends Container
     private $booted = false;
     private $os;
 
-    protected $mode;
+    protected $mode = 'dev';
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
@@ -62,14 +62,16 @@ class Application extends Container
 
     public function setMode($mode)
     {
-        $this->mode = empty($mode) ? 'dev' : $mode;
-
-        ini_set('display_errors', $this->mode === 'dev');
+        $this->mode = $mode;
     }
 
     public function boot()
     {
         if ($this->booted) return;
+
+        // Use proper error handling
+        ini_set('display_errors', $this->mode === 'dev');
+        error_reporting($this->mode === 'dev' ? -1 : 0);
 
         $this->addProvider(new ConfigServiceProvider($this));
 
