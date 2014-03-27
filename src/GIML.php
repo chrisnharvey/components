@@ -12,7 +12,6 @@ class GIML
 
     public function __construct(ReaderInterface $reader, CollectionInterface $collection, $namespace)
     {
-        dl('wxwidgets.so');
         $this->reader = $reader;
         $this->collection = $collection;
         $this->namespace = $namespace;
@@ -24,8 +23,6 @@ class GIML
         $parsed = $this->reader->parse();
 
         $data = $this->parseIt($parsed['value']);
-
-        //print_r($data); exit;
 
         return $this->collection;
     }
