@@ -48,4 +48,9 @@ trait ElementTrait
             ? $this->attributes[$property]
             : null;
     }
+
+    public function __clone()
+    {
+        $this->init();
+    }
 }
