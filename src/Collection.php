@@ -7,21 +7,21 @@ use Encore\GIML\Exception\DuplicateIdException;
 class ElementCollection implements CollectionInterface
 {
     protected $objects = [];
-    protected $ids = [];
 
     public function add(ElementInterface $element)
     {
-        if ($element->id === null) $id = $this->generateId();
+        $id = $element->id;
+
+        if ($id === null) $id = $this->generateId();
 
         $this->checkId($id);
 
-        $this->objects[] = $element;
-        $this->ids[array_search($element, $this->objects, true)] = $id;
+        $this->objects[$id] = $element;
     }
 
-    public function getTrueId($id)
+    public function getElementById($id)
     {
-        return array_search($id, $this->ids, true);
+        return $this->objects[$id];
     }
 
     public function generateId()
