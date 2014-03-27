@@ -10,10 +10,7 @@ trait ElementTrait
     protected $attributes = [];
     protected $children = [];
 
-    public function init()
-    {
-
-    }
+    public function init() {}
 
     public function setAttributes(array $attributes)
     {
