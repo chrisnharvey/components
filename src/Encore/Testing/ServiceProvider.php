@@ -4,8 +4,8 @@ namespace Encore\Testing;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
-    public function boot()
+    public function commands()
     {
-        $this->container['console']->add(new Command($this->container));
+        return [new Command];
     }
 }
