@@ -2,12 +2,14 @@
 
 namespace Encore\Kernel\Provider;
 
-use Encore\Kernel\Command\Run as RunCommand;
+use Encore\Kernel\Command\Debug as DebugCommand;
 
 class Application extends \Encore\Container\ServiceProvider
 {
-    public function boot()
+    public function commands()
     {
-        $this->container['console']->add(new RunCommand($this->container));
+        return [
+            new DebugCommand
+        ];
     }
 }
