@@ -38,6 +38,13 @@ class Application extends Container
         $this->bind('app', $this);
     }
 
+    public static function fromCwd()
+    {
+        $cwd = getcwd();
+
+        return new static("{$cwd}/app", "{$cwd}/resources", "{$cwd}/vendor");
+    }
+
     public function launching(callable $callback)
     {
         $this['events']->listen('app.launching', $callback);
