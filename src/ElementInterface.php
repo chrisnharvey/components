@@ -12,6 +12,8 @@ interface ElementInterface
 
     public function setParent(ElementInterface $parent);
 
+    public function setCollection(CollectionInterface $collection);
+
     public function addChild(ElementInterface $child);
 
     public function getRaw();

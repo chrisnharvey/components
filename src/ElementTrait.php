@@ -5,8 +5,9 @@ namespace Encore\GIML;
 trait ElementTrait
 {
     protected $parent;
-    protected $attributes = [];
+    protected $collection;
     protected $value;
+    protected $attributes = [];
     protected $children = [];
 
     public function init()
@@ -27,6 +28,11 @@ trait ElementTrait
     public function setParent(ElementInterface $parent)
     {
         $this->parent = $parent;
+    }
+
+    public function setCollection(CollectionInterface $collection)
+    {
+        $this->collection = $collection;
     }
 
     public function getParent()

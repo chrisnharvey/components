@@ -6,15 +6,15 @@ use Encore\GIML\Exception\InvalidElementException;
 
 class GIML
 {
-    protected $id;
+    protected $collection;
     protected $namespace;
     protected $reader;
 
-    public function __construct(ReaderInterface $reader, IdentifierInterface $id, $namespace)
+    public function __construct(ReaderInterface $reader, CollectionInterface $collection, $namespace)
     {
         dl('wxwidgets.so');
         $this->reader = $reader;
-        $this->id = $id;
+        $this->collection = $collection;
         $this->namespace = $namespace;
     }
 
@@ -27,7 +27,7 @@ class GIML
 
         //print_r($data); exit;
 
-        current($data)->getRaw()->Show();
+        return $this->collection;
     }
 
     protected function parseIt(array $elements, ElementInterface $parent = null)
@@ -35,17 +35,16 @@ class GIML
         foreach ($elements as $element) {
             $object = $this->newObject($element['name']);
 
-            if ( ! array_key_exists('id', $element['attributes'])) {
-                $element['attributes']['id'] = $this->id->generate();
-            } else {
-                $this->id->reserve($element['attributes']['id']);
-            }
-
+            // Set some stuff
+            $object->setCollection($this->collection);
             $object->setAttributes($element['attributes']);
 
             if ( ! is_array($element['value'])) {
                 $object->setValue(trim($element['value']));
             }
+
+            // Add the object to the collection
+            $this->collection->add($object);
 
             // Initialize object
             $object->init();
