@@ -2,6 +2,7 @@
 
 namespace Encore\Composer;
 
+use Encore\Kernel\Application;
 use Symfony\Component\Finder\Finder;
 use Composer\Script\Event;
 
@@ -15,6 +16,9 @@ class Script
 
     public static function init()
     {
+        // Instantiate the application
+        $app = Application::fromCwd()->boot();
+
         static::$appPath = \App::appPath();
         static::$vendorPath = \App::vendorPath();
         static::$resourcesPath = \App::resourcesPath();
