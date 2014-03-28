@@ -75,11 +75,13 @@ class FileLoader implements LoaderInterface
             $items = require $file;
         }
 
-        // Do we have an operating system specific config file?
-        $file = "{$path}/{$this->os}/{$group}.php";
+        if ($this->os) {
+            // Do we have an operating system specific config file?
+            $file = "{$path}/{$this->os}/{$group}.php";
 
-        if ($this->fs->exists($file)) {
-            $items = $this->mergeItems($items, $file);
+            if ($this->fs->exists($file)) {
+                $items = $this->mergeItems($items, $file);
+            }
         }
 
         // Do we have an application mode specific config file?
@@ -89,12 +91,14 @@ class FileLoader implements LoaderInterface
             $items = $this->mergeItems($items, $file);
         }
 
-        // And lastly we'll check if we have an mode and OS specific
-        // config file.
-        $file = "{$path}/{$this->os}/{$mode}/{$group}.php";
+        if ($this->os) {
+            // And lastly we'll check if we have an mode and OS specific
+            // config file.
+            $file = "{$path}/{$this->os}/{$mode}/{$group}.php";
 
-        if ($this->fs->exists($file)) {
-            $items = $this->mergeMode($items, $file);
+            if ($this->fs->exists($file)) {
+                $items = $this->mergeMode($items, $file);
+            }
         }
 
         return $items;
