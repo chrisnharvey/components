@@ -13,6 +13,11 @@
         "php": ">=5.4.0",
         "sabre/event": "dev-master"
     },
+    "require-dev": {
+        "encorephp/container": "dev-master",
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-4": {
             "Encore\\Events\\": "src/"
