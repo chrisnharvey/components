@@ -1,10 +1,5 @@
 <?php
 
-/**
-  * This class is a modified version of the Laravel
-  * Illuminate\Console\Application class.
-  */
-
 namespace Encore\Console;
 
 use Symfony\Component\Console\Input\ArrayInput;
