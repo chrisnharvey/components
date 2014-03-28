@@ -10,7 +10,7 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
 class Application extends \Symfony\Component\Console\Application
 {
     /**
-     * Run an Artisan console command by name.
+     * Run a console command by name.
      *
      * @param  string  $command
      * @param  array   $parameters
