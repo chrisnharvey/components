@@ -14,6 +14,10 @@
         "encorephp/namespacer": "dev-master",
         "symfony/filesystem": "2.4.x"
     },
+    "require-dev": {
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-4": {
             "Encore\\Config\\": "src/"
