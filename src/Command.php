@@ -55,6 +55,13 @@ abstract class Command extends \Symfony\Component\Console\Command\Command
     }
 
     /**
+     * Execute the command.
+     *
+     * @return void
+     */
+    abstract public function fire();
+
+    /**
      * Specify the arguments and options on the command.
      *
      * @return void
