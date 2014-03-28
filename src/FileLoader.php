@@ -2,11 +2,13 @@
 
 namespace Encore\Config;
 
-use Encore\Namespacer\Namespacable;
+use Encore\Namespacer\NamespacableTrait;
 use Symfony\Component\Filesystem\Filesystem;
 
-class FileLoader extends Namespacable implements LoaderInterface
+class FileLoader implements LoaderInterface
 {
+    use NamespacableTrait;
+
     /**
     * A cache of whether namespaces and groups exists.
     *
