@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/console",
+    "name": "encore/console",
     "description": "Simplified version of Symfony Console Component",
     "keywords": ["console"],
     "license": "MIT",
