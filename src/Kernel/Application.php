@@ -111,8 +111,6 @@ class Application extends Container
     public function quit()
     {
         $this['events']->fire('app.quitting', [$this]);
-
-        exit;
     }
 
     public function get()
