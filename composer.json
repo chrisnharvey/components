@@ -1,5 +1,5 @@
 {
-    "name": "encore/testing",
+    "name": "encorephp/testing",
     "description": "The EncorePHP unit testing package.",
     "keywords": ["unit testing", "encorephp"],
     "license": "MIT",
