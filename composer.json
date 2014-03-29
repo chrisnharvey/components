@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/container",
+    "name": "encore/container",
     "description": "Dependency injection container with service providers and proxies.",
     "keywords": ["ioc", "container", "dependency injection", "di", "service provider", "proxy"],
     "license": "MIT",
@@ -13,7 +13,7 @@
         "php": ">=5.4.0"
     },
     "suggest": {
-        "encorephp/events": "Allows registration of service providers when events are fired"
+        "encore/events": "Allows registration of service providers when events are fired"
     },
     "autoload": {
         "psr-4": {
