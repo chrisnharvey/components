@@ -88,10 +88,6 @@ class Application extends Container
         // Now run boot events on service providers
         array_walk($this->registered, function($p) {
             if (method_exists($p, 'boot')) $p->boot();
-
-            if ($this->hasCommands($p)) {
-                $this->registerCommands($p->commands());
-            }
         });
 
         if (file_exists($bootstrap = $this->appPath."/bootstrap/{$this->mode}.php")) {
@@ -147,8 +143,6 @@ class Application extends Container
      */
     protected function registerProvider(ServiceProvider $provider, $force = false)
     {
-        if ($this->hasCommands($provider)) $force = true;
-
         parent::registerProvider($provider, $force);
 
         if ( ! in_array($provider, $this->registered)) return;
@@ -157,34 +151,7 @@ class Application extends Container
             if (method_exists($provider, 'boot')) {
                 $provider->boot();
             }
-
-            if ($this->hasCommands($provider)) {
-                $this->registerCommands($provider->commands());
-            }
         }
-    }
-
-    protected function hasCommands(ServiceProvider $provider)
-    {
-        if ($this->mode == 'dev' and method_exists($provider, 'commands')) {
-            return true;
-        }
-    }
-
-    protected function registerCommands(array $commands)
-    {
-        foreach ($commands as $command) {
-            $this->registerCommand($command);
-        }
-    }
-
-    protected function registerCommand(Command $command)
-    {
-        $abstract = "command.{$command->name}";
-
-        $this->bind($abstract, $command);
-
-        $this['console']->add($this[$abstract]);
     }
 
     protected function findOS()
