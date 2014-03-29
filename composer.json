@@ -1,5 +1,5 @@
 {
-    "name": "encore/database",
+    "name": "encorephp/database",
     "description": "Database abstraction layer",
     "keywords": ["database", "abstraction", "query"],
     "license": "MIT",
