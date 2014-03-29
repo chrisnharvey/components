@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/namespacer",
+    "name": "encore/namespacer",
     "description": "String namespace resolver and abstracts",
     "keywords": ["namespacer", "namespace", "string", "loader"],
     "license": "MIT",
