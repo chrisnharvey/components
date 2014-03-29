@@ -1,5 +1,5 @@
 {
-    "name": "encore/events",
+    "name": "encorephp/events",
     "description": "Events dispatcher.",
     "keywords": ["events", "dispatcher"],
     "license": "MIT",
@@ -14,7 +14,7 @@
         "sabre/event": "dev-master"
     },
     "require-dev": {
-        "encore/container": "dev-master",
+        "encorephp/container": "dev-master",
         "mockery/mockery": "0.8.0",
         "phpunit/phpunit": "3.7.*"
     },
