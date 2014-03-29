@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/resource",
+    "name": "encore/resource",
     "description": "Unified resource loader.",
     "keywords": ["resource", "loader"],
     "license": "MIT",
@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.4.0",
         "symfony/filesystem": "2.4.x",
-        "encorephp/namespacer": "dev-master"
+        "encore/namespacer": "dev-master"
     },
     "autoload": {
         "psr-4": {
