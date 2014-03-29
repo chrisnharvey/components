@@ -103,6 +103,11 @@ class Container implements \ArrayAccess
         $this->registerProvider($provider);
     }
 
+    public function providers($registered = true)
+    {
+        return $registered ? $this->registered : $this->providers;
+    }
+
     /**
      * Initialize the proxies with this instance of the container
      *
