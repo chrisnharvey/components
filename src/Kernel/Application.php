@@ -89,7 +89,7 @@ class Application extends Container
         array_walk($this->registered, function($p) {
             if (method_exists($p, 'boot')) $p->boot();
 
-            if ($this->mode == 'dev' and method_exists($p, 'commands')) {
+            if ($this->hasCommands($p)) {
                 $this->registerCommands($p->commands());
             }
         });
@@ -147,6 +147,8 @@ class Application extends Container
      */
     protected function registerProvider(ServiceProvider $provider, $force = false)
     {
+        if ($this->hasCommands($provider)) $force = true;
+
         parent::registerProvider($provider, $force);
 
         if ( ! in_array($provider, $this->registered)) return;
@@ -156,9 +158,16 @@ class Application extends Container
                 $provider->boot();
             }
 
-            if ($this->mode == 'dev' and method_exists($provider, 'commands')) {
+            if ($this->hasCommands($provider)) {
                 $this->registerCommands($provider->commands());
             }
+        }
+    }
+
+    protected function hasCommands(ServiceProvider $provider)
+    {
+        if ($this->mode == 'dev' and method_exists($provider, 'commands')) {
+            return true;
         }
     }
 
