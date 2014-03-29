@@ -12,6 +12,13 @@ class Container implements \ArrayAccess
     protected $event;
 
     /**
+     * Array of all service providers, even those that aren't registered
+     *
+     * @var array
+     */
+    protected $providers = [];
+
+    /**
      * Array of service providers that resolve instances in the container
      *
      * @var array
@@ -81,6 +88,14 @@ class Container implements \ArrayAccess
         if (is_string($provider)) {
             $provider = new $provider($this);
         }
+
+        // Only allow a service provider to be registered
+        // once.
+        if (in_array($provider, $this->providers)) {
+            return;
+        }
+
+        $this->providers[] = $provider;
 
         $this->registerEvents($provider);
         $this->registerProvides($provider);
