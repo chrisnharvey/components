@@ -1,6 +1,6 @@
 {
     "name": "encorephp/console",
-    "description": "Console package based on illuminate/console.",
+    "description": "Simplified version of Symfony Console Component",
     "keywords": ["console"],
     "license": "MIT",
     "authors": [
