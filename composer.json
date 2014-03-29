@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/compiler",
+    "name": "encore/compiler",
     "description": "The EncorePHP Compiler.",
     "keywords": ["framework", "encorephp"],
     "license": "MIT",
