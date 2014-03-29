@@ -1,5 +1,5 @@
 {
-    "name": "encore/orm",
+    "name": "encorephp/orm",
     "description": "PHP object relational mapper",
     "keywords": ["object", "relational", "mapper", "orm"],
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "encore/database": "dev-master",
+        "encorephp/database": "dev-master",
         "nesbot/carbon": "1.*"
     },
     "autoload": {
