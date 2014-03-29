@@ -1,5 +1,5 @@
 {
-    "name": "encore/giml",
+    "name": "encorephp/giml",
     "description": "Graphical Interface Markup Language (GIML) parser",
     "keywords": ["giml", "parser", "graphical", "interface", "markup", "language"],
     "license": "MIT",
