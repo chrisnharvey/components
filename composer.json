@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/config",
+    "name": "encore/config",
     "description": "Config loader with OS and mode options.",
     "keywords": ["config"],
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "encorephp/namespacer": "dev-master",
+        "encore/namespacer": "dev-master",
         "symfony/filesystem": "2.4.x"
     },
     "require-dev": {
