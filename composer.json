@@ -1,5 +1,5 @@
 {
-    "name": "encorephp/development",
+    "name": "encore/development",
     "description": "EncorePHP Development Dependencies.",
     "keywords": ["framework", "encorephp"],
     "license": "MIT",
@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "encorephp/console": "dev-master",
-        "encorephp/testing": "dev-master",
-        "encorephp/compiler": "dev-master"
+        "encore/console": "dev-master",
+        "encore/testing": "dev-master",
+        "encore/compiler": "dev-master"
     },
     "minimum-stability": "dev"
 }
