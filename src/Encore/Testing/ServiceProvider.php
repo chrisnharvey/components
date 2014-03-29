@@ -6,6 +6,6 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function commands()
     {
-        return [new Command];
+        return ['Encore\Testing\Command'];
     }
 }
