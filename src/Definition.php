@@ -76,6 +76,17 @@ class Definition
             $object = $reflection->newInstanceArgs($arguments);
         }
 
+        $inheritance = array_merge(class_implements($object), class_parents($object));
+
+        foreach ($inheritance as $interface) {
+            $interface = $this->container->getRaw($interface);
+
+            if ($interface instanceof static) {
+                $this->withMethods($interface->getMethods());
+                $this->addArgs($interface->getArgs());
+            }
+        }
+
         if ($object instanceof ContainerAwareInterface) {
             $this->withMethod('setContainer', [$this->container]);
         }
