@@ -161,6 +161,22 @@ class Definition
     }
 
     /**
+     * Adds multiple method calls to be executed after instantiating.
+     *
+     * @param array  $methods   Array of methods to call with args.
+     *
+     * @return Definition
+     */
+    public function withMethods(array $methods)
+    {
+        foreach ($methods as $method => $args) {
+            $this->withMethod($method, $args);
+        }
+
+        return $this;
+    }
+
+    /**
      * Execute the methods added via call()
      *
      * @param object $object The instatiated $class on which to call the methods.
