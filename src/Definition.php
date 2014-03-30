@@ -84,6 +84,26 @@ class Definition
     }
 
     /**
+     * Get the arguments to be passed to the classes constructor.
+     *
+     * @return array
+     */
+    public function getArgs()
+    {
+        return $this->arguments;
+    }
+
+    /**
+     * Get the methods to be called after instantiating.
+     *
+     * @return array
+     */
+    public function getMethods()
+    {
+        return $this->methods;
+    }
+
+    /**
      * Add an argument to the class's constructor.
      *
      * @param string $arg The argument to add. Can be a class name.
