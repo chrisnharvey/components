@@ -45,14 +45,14 @@ class Application extends Container
         return new static("{$cwd}/app", "{$cwd}/resources", "{$cwd}/vendor");
     }
 
-    public function launching(callable $callback)
+    public function launching(callable $callback, $priority = 100)
     {
         $this['events']->listen('app.launching', $callback);
     }
 
-    public function quitting(callable $callback)
+    public function quitting(callable $callback, $priority = 100)
     {
-        $this['events']->listen('app.quitting', $callback);
+        $this['events']->listen('app.quitting', $callback, $priority);
     }
 
     public function mode()
