@@ -67,6 +67,19 @@ Alternatively, you can specify what to inject into the class upon instantiation.
 
     $container->resolve('\Foo\Bar\Baz');
 
+### Resolve Inherited Dependencies
+
+Another great feature of the the container is the ability to resolve the dependencies
+of inherited classes and interfaces. For example, you could bind an interface into the
+container which requires a dependency injected via a method, and all classes that implement
+that interface will also have that dependency injected automaticall.
+
+    $container->bind('\Foo\Bar\BazInterface')->withMethod('setQuux', ['\Foo\Bar\Quux']);
+
+    $container->bind('\Foo\Bar\Baz');
+
+    $container->resolve('\Foo\Bar\Baz');
+
 ### Child Containers and Scope Resolution
 
 A great feature of the container is it's ability to provide child containers with a separate resolution scope to that of it's parent container. If you bind a concrete class to an interface within one container, you can re-bind it in the child container, without fear of overwriting the original binding in the parent container.
