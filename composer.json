@@ -15,8 +15,7 @@
         "encorephp/config": "dev-master",
         "encorephp/events": "dev-master",
         "ircmaxell/password-compat": "1.0.*",
-        "monolog/monolog": "1.*",
-        "symfony/filesystem": "2.4.*"
+        "monolog/monolog": "1.*"
     },
     "require-dev": {
         "encorephp/development": "dev-master"
