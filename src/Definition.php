@@ -26,6 +26,13 @@ class Definition
     protected $container;
 
     /**
+     * Should we inherit this definition?
+     *
+     * @var bool
+     */
+    protected $inherit = true;
+
+    /**
      * Method to call on the newly created object for injection.
      *
      * @var array
@@ -81,7 +88,7 @@ class Definition
         foreach ($inheritance as $interface) {
             $interface = $this->container->getRaw($interface);
 
-            if ($interface instanceof static) {
+            if ($interface instanceof static and $interface->inherit()) {
                 $this->withMethods($interface->getMethods());
                 $this->addArgs($interface->getArgs());
             }
@@ -92,6 +99,28 @@ class Definition
         }
 
         return $this->callMethods($object);
+    }
+
+    /**
+     * Should dependencies be inherited?
+     *
+     * @return bool
+     */
+    public function inherit()
+    {
+        return $this->inherit;
+    }
+
+    /**
+     * Set the dependencies to not be inherited by children.
+     *
+     * @return Container
+     */
+    public function dontInherit()
+    {
+        $this->inherit = false;
+
+        return $this;
     }
 
     /**
