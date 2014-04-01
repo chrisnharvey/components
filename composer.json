@@ -16,5 +16,10 @@
         "encorephp/compiler": "dev-master",
         "d11wtq/boris": "1.0.x"
     },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Development\\": "src/"
+        }
+    }
     "minimum-stability": "dev"
 }
