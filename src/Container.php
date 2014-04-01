@@ -147,9 +147,11 @@ class Container implements \ArrayAccess
      * @param string $binding The binding to check.
      * @return bool
      */
-    public function bound($binding)
+    public function bound($binding, $lazy = true)
     {
-        return isset($this->bindings[$binding]) || (isset($this->parent) && $this->parent->bound($binding));
+        return isset($this->bindings[$binding]) or
+            ($lazy and isset($this->provides[$binding])) or
+            (isset($this->parent) and $this->parent->bound($binding, $lazy));
     }
 
     /**
@@ -192,7 +194,7 @@ class Container implements \ArrayAccess
     public function registerProvidersFor($binding)
     {
         foreach ($this->provides($binding) as $provider) {
-            $this->registerProvider($provider, true);
+            $this->registerProvider($provider, true, $binding);
         }
     }
 
@@ -385,15 +387,18 @@ class Container implements \ArrayAccess
      * @param bool $force Force register (register whether needed or not)
      * @return void
      */
-    protected function registerProvider(ServiceProvider $provider, $force = false)
+    protected function registerProvider(ServiceProvider $provider, $force = false, $binding = null)
     {
-        if ($this->providerIsRegistered($provider)) return;
+        if ($this->providerIsRegistered($provider) 
+            and $binding and $this->bound($binding, false)) return;
 
         $events = $provider->when();
         $provides = $provider->provides();
 
         if ($force or (empty($events) and empty($provides))) {
-            $provider->register();
+            if (method_exists($provider, 'register')) {
+                $provider->register($binding);
+            }
 
             $this->registered[] = $provider;
         }
