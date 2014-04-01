@@ -20,6 +20,6 @@
         "psr-4": {
             "Encore\\Development\\": "src/"
         }
-    }
+    },
     "minimum-stability": "dev"
 }
