@@ -3,7 +3,7 @@
 namespace Encore\Config;
 
 use Encore\Namespacer\Resolver;
-use Symfony\Component\Filesystem\Filesystem;
+use Encore\Filesystem\Filesystem;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {

@@ -3,7 +3,7 @@
 namespace Encore\Config;
 
 use Encore\Namespacer\NamespacableTrait;
-use Symfony\Component\Filesystem\Filesystem;
+use Encore\Filesystem\Filesystem;
 
 class FileLoader implements LoaderInterface
 {
