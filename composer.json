@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "symfony/filesystem": "2.4.x",
+        "encorephp/filesystem": "dev-master",
         "encorephp/namespacer": "dev-master"
     },
     "autoload": {
