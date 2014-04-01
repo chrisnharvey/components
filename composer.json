@@ -13,8 +13,7 @@
         "php": ">=5.4.0",
         "encorephp/console": "dev-master",
         "encorephp/testing": "dev-master",
-        "encorephp/compiler": "dev-master",
-        "d11wtq/boris": "1.0.x"
+        "encorephp/compiler": "dev-master"
     },
     "autoload": {
         "psr-4": {
