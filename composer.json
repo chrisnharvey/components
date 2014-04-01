@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Testing": "src/"
+            "Encore\\Testing\\": "src/"
         }
     },
     "minimum-stability": "dev"
