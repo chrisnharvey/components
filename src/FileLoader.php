@@ -72,7 +72,7 @@ class FileLoader implements LoaderInterface
         $file = "{$path}/{$group}.php";
 
         if ($this->fs->exists($file)) {
-            $items = require $file;
+            $items = $this->fs->getRequire($file);
         }
 
         if ($this->os) {
@@ -141,7 +141,7 @@ class FileLoader implements LoaderInterface
     */
     protected function mergeItems(array $items, $file)
     {
-        return array_merge_recursive($items, require $file);
+        return array_merge_recursive($items, $this->fs->getRequire($file));
     }
 
     /**
