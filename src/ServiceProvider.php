@@ -2,8 +2,6 @@
 
 namespace Encore\Resource;
 
-use Encore\Resource\Command\Publish as PublishCommand;
-
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
@@ -13,8 +11,8 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
         });
     }
 
-    public function boot()
+    public function commands()
     {
-        $this->container['console']->add(new PublishCommand($this->container));
+        return ['Encore\Resource\Command\Publish'];
     }
 }
