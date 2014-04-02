@@ -139,9 +139,9 @@ class Application extends Container
      * @param bool $force Force register (register whether needed or not)
      * @return void
      */
-    protected function registerProvider(ServiceProvider $provider, $force = false)
+    protected function registerProvider(ServiceProvider $provider, $force = false, $binding = null)
     {
-        parent::registerProvider($provider, $force);
+        parent::registerProvider($provider, $force, $binding);
 
         if ( ! in_array($provider, $this->registered)) return;
 
