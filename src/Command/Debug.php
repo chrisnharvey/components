@@ -10,8 +10,8 @@ class Debug extends Command implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    public $name = 'debug';
-    public $description = 'Run the application in debug mode';
+    protected $name = 'debug';
+    protected $description = 'Run the application in debug mode';
 
     public function fire()
     {
