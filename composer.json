@@ -12,6 +12,7 @@
     "require": {
         "php": ">=5.4.0",
         "encorephp/console": "dev-master",
+        "encorephp/repl": "dev-master",
         "encorephp/testing": "dev-master",
         "encorephp/compiler": "dev-master"
     },
