@@ -1,0 +1,27 @@
+{
+    "name": "encorephp/repl",
+    "description": "REPL",
+    "keywords": ["repl"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/console": "dev-master"
+    },
+    "require-dev": {
+        "encorephp/container": "dev-master",
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\REPL\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
