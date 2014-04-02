@@ -12,6 +12,8 @@ class Command extends BaseCommand implements ContainerAwareInterface
 
     public $name = 'compile';
     public $description = 'Compile the application for distribution';
+    protected $name = 'compile';
+    protected $description = 'Compile the application for distribution';
 
     public function fire()
     {
