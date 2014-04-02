@@ -28,14 +28,14 @@ abstract class Command extends \Symfony\Component\Console\Command\Command
      *
      * @var string
      */
-    public $name;
+    protected $name;
 
     /**
      * The console command description.
      *
      * @var string
      */
-    public $description;
+    protected $description;
 
     /**
      * Create a new console command instance.
