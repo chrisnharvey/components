@@ -94,8 +94,6 @@ class Application extends Container
             require $bootstrap;
         }
 
-        require $this->appPath.'/start.php';
-
         $this->booted = true;
     }
 
