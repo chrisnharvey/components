@@ -4,8 +4,8 @@ namespace Encore\Testing;
 
 class Command extends \Encore\Console\Command
 {
-    public $name = 'test';
-    public $description = 'Run application unit tests';
+    protected $name = 'test';
+    protected $description = 'Run application unit tests';
 
     public function fire()
     {
