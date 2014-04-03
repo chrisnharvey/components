@@ -49,6 +49,11 @@ trait ElementTrait
             : null;
     }
 
+    public function __set($property, $value)
+    {
+        $this->attributes[$property] = $value;
+    }
+
     public function __clone()
     {
         $this->init();
