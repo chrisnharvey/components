@@ -5,7 +5,7 @@ namespace Encore\Config;
 use Encore\Namespacer\ResolverInterface;
 use Encore\Namespacer\NamespacableInterface;
 
-class Repository implements NamespacableInterface
+class Repository implements NamespacableInterface, \ArrayAccess
 {
     /**
     * An instance of ResolverInterface.
@@ -51,6 +51,26 @@ class Repository implements NamespacableInterface
         $items = $this->load($group, $namespace, $collection);
         
         return $this->resolver->resolveKey($item, $items);
+    }
+
+    public function offsetSet($offset, $value)
+    {
+
+    }
+    
+    public function offsetExists($offset)
+    {
+        
+    }
+    
+    public function offsetUnset($offset)
+    {
+        
+    }
+    
+    public function offsetGet($offset)
+    {
+        return $this->get($offset);
     }
 
     /**
