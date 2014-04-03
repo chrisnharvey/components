@@ -4,7 +4,7 @@ namespace Encore\GIML;
 
 use Encore\GIML\Exception\InvalidElementException;
 
-class GIML
+class Parser
 {
     protected $collection;
     protected $namespace;
