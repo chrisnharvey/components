@@ -226,7 +226,7 @@ class Definition
     protected function callMethods($object)
     {
         if (! empty($this->methods)) {
-            foreach ($this->methods as $method => $args) {
+            foreach (array_reverse($this->methods) as $method => $args) {
                 $reflection = new \ReflectionMethod($object, $method);
 
                 $arguments = array();
