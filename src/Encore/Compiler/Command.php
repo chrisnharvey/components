@@ -10,8 +10,6 @@ class Command extends BaseCommand implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    public $name = 'compile';
-    public $description = 'Compile the application for distribution';
     protected $name = 'compile';
     protected $description = 'Compile the application for distribution';
 
