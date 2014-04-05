@@ -27,7 +27,7 @@ class Parser
         return $this->collection;
     }
 
-    protected function parseIt(array $elements, ElementInterface $parent = null)
+    protected function parseIt(array $elements, ElementInterface &$parent = null)
     {
         foreach ($elements as $element) {
             $object = $this->newObject($element['name']);

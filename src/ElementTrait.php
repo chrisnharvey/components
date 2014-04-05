@@ -22,9 +22,9 @@ trait ElementTrait
         $this->value = $value;
     }
 
-    public function setParent(ElementInterface $parent)
+    public function setParent(ElementInterface &$parent)
     {
-        $this->parent = $parent;
+        $this->parent =& $parent;
     }
 
     public function setCollection(CollectionInterface $collection)
@@ -37,9 +37,9 @@ trait ElementTrait
         return $this->parent;
     }
 
-    public function addChild(ElementInterface $child)
+    public function addChild(ElementInterface &$child)
     {
-        $this->children[] = $child;
+        $this->children[] =& $child;
     }
 
     public function __get($property)
