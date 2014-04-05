@@ -56,6 +56,9 @@ class Parser
             }
 
             $data[] = $object;
+
+            // Garbage collection
+            $object = null;
         }
 
         return $data;
