@@ -17,6 +17,11 @@ trait ElementTrait
         $this->attributes = $attributes;
     }
 
+    public function destroy()
+    {
+        $this->collection->destroy($this->id);
+    }
+
     public function setValue($value)
     {
         $this->value = $value;
