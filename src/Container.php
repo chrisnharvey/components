@@ -40,6 +40,13 @@ class Container implements \ArrayAccess
     protected $bindings = [];
 
     /**
+     * Array of container aliases.
+     *
+     * @var array
+     */
+    protected $aliases = [];
+
+    /**
      * The parent Container object.
      *
      * @var Container
@@ -287,10 +294,11 @@ class Container implements \ArrayAccess
      * Resolve the given binding.
      *
      * @param string $binding The binding to resolve.
+     * @param bool $alias Should we resolve aliases?
      *
      * @return mixed The results of invoking the binding callback.
      */
-    public function resolve($binding)
+    public function resolve($binding, $alias = true)
     {
         $this->registerProvidersFor($binding);
 
@@ -302,6 +310,10 @@ class Container implements \ArrayAccess
             $this->bind($binding, $binding);
 
             $rawObject = $this->getRaw($binding);
+        }
+
+        if ($alias and isset($this->aliases[$binding])) {
+            return $this->resolve($this->aliases[$binding], false);
         }
 
         return $rawObject($this);
@@ -399,6 +411,10 @@ class Container implements \ArrayAccess
         if ($force or (empty($events) and empty($provides))) {
             if (method_exists($provider, 'register')) {
                 $provider->register($binding);
+            }
+
+            if (method_exists($provider, 'aliases')) {
+                $this->aliases = array_merge($this->aliases, $provider->aliases());
             }
 
             $this->registered[] = $provider;
