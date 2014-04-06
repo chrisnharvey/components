@@ -35,7 +35,7 @@ class Container implements \ArrayAccess
     /**
      * Array of container bindings.
      *
-     * @var $array
+     * @var array
      */
     protected $bindings = [];
 
