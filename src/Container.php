@@ -320,6 +320,19 @@ class Container implements \ArrayAccess
     }
 
     /**
+     * Add an alias
+     *
+     * @param string $alias What are we aliasing as?
+     * @param bool $concrete The concrete binding for the alias.
+     *
+     * @return void
+     */
+    public function alias($alias, $concrete)
+    {
+        $this->aliases[$alias] = $concrete;
+    }
+
+    /**
      * Determine if a given offset exists.
      *
      * @param string $key
