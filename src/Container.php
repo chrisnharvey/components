@@ -145,6 +145,7 @@ class Container implements \ArrayAccess
      * parent Container's until it finds the $binding.
      *
      * @param string $binding The binding to check.
+     * @param bool $lazy Check lazy loaded too?
      * @return bool
      */
     public function bound($binding, $lazy = true)
