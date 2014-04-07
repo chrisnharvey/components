@@ -2,7 +2,7 @@
 
 namespace Encore\Container\Test\Stub;
 
-class Corge
+class Corge implements CorgeInterface
 {
     public $int;
 
