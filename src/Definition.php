@@ -60,6 +60,8 @@ class Definition
      */
     public function __invoke()
     {
+        $this->mergeInheritedDependencies();
+
         if (empty($this->arguments)) {
             if (empty($this->methods)) {
                 $object = $this->container->build($this->class);
@@ -81,17 +83,6 @@ class Definition
             }
 
             $object = $reflection->newInstanceArgs($arguments);
-        }
-
-        $inheritance = array_merge(class_implements($object), class_parents($object));
-
-        foreach ($inheritance as $interface) {
-            $interface = $this->container->getRaw($interface);
-
-            if ($interface instanceof static and $interface->inherit()) {
-                $this->withMethods($interface->getMethods());
-                $this->addArgs($interface->getArgs());
-            }
         }
 
         if ($object instanceof ContainerAwareInterface) {
@@ -245,5 +236,31 @@ class Definition
         }
 
         return $object;
+    }
+
+    /**
+     * Add methods and args from inherited classes/interfaces
+     *
+     * @return void
+     */
+    protected function mergeInheritedDependencies()
+    {
+        $reflection = new \ReflectionClass($this->class);
+
+        $inheritance = $reflection->getInterfaceNames();
+        $class = $reflection;
+
+        while ($parent = $class->getParentClass()) {
+            $inheritance[] = $parent->getName();
+            $class = $parent;
+        }
+
+        foreach ($inheritance as $interface) {
+            $interface = $this->container->getRaw($interface);
+            if ($interface instanceof static and $interface->inherit()) {
+                $this->addArgs($interface->getArgs());
+                $this->withMethods($interface->getMethods());
+            }
+        }
     }
 }
