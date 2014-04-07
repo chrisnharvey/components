@@ -112,6 +112,23 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests aliasing a binding that already exists.
+     *
+     * @return void
+     */
+    public function testAlias()
+    {
+        $this->container->bind('foo', 'Encore\\Container\\Test\\Stub\\Baz');
+        $this->container->alias('bar', 'foo');
+
+        $this->assertInstanceOf(
+            'Encore\\Container\\Test\\Stub\\Baz',
+            $this->container->resolve('bar'),
+            'Aliasing a binding should return the same binding as the concrete'
+        );
+    }
+
+    /**
      * Test binding a class, using the abstract as the concrete.
      *
      * @return void
