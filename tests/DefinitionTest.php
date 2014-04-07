@@ -100,6 +100,30 @@ class DefinitionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests invoking a class with inherited args.
+     *
+     * @return void
+     */
+    public function testInvokeWithInheritedArgs()
+    {
+        $int = rand(1, 5000);
+
+        $this->container->bind('Encore\\Container\\Test\\Stub\\CorgeInterface')
+            ->addArg($int);
+
+        $definition = new Definition($this->container, 'Encore\\Container\\Test\\Stub\\Corge');
+
+        $instance = $definition();
+
+        $this->assertAttributeEquals(
+            $int,
+            'int',
+            $instance,
+            'Invoking a Definition with inherited arguments should pass those args to the constructor.'
+        );
+    }
+
+    /**
      * Tests invoking a class with an integer as an args.
      *
      * @return void
@@ -150,6 +174,30 @@ class DefinitionTest extends \PHPUnit_Framework_TestCase
             'bar',
             $instance,
             'Invoking a Definition with a defined method call pass the defined args to the method.'
+        );
+    }
+
+    /**
+     * Tests invoking a class with inherited method call.
+     *
+     * @return void
+     */
+    public function testInvokeWithInheritedMethodCall()
+    {
+        $int = rand(1, 5000);
+
+        $this->container->bind('Encore\\Container\\Test\\Stub\\CorgeInterface')
+            ->withMethod('setInt', [$int]);
+
+        $definition = new Definition($this->container, 'Encore\\Container\\Test\\Stub\\Corge');
+
+        $instance = $definition();
+
+        $this->assertAttributeEquals(
+            $int,
+            'int',
+            $instance,
+            'Invoking a Definition with inherited method calls should pass those call those methods.'
         );
     }
 
