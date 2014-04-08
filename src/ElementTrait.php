@@ -17,6 +17,18 @@ trait ElementTrait
         $this->attributes = $attributes;
     }
 
+    public function setAttribute($key, $value)
+    {
+        $this->attributes[$key] = $value;
+    }
+
+    public function getAttribute($key)
+    {
+        return isset($this->attributes[$key])
+            ? $this->attributes[$key]
+            : null;
+    }
+
     public function destroy()
     {
         $this->collection->destroy($this->id);
@@ -25,6 +37,11 @@ trait ElementTrait
     public function setValue($value)
     {
         $this->value = $value;
+    }
+
+    public function getValue()
+    {
+        return $this->value;
     }
 
     public function setParent(ElementInterface &$parent)
@@ -47,16 +64,19 @@ trait ElementTrait
         $this->children[] =& $child;
     }
 
+    public function __toString()
+    {
+        return $this->getValue();
+    }
+
     public function __get($property)
     {
-        return isset($this->attributes[$property])
-            ? $this->attributes[$property]
-            : null;
+        return $this->getAttribute($property);
     }
 
     public function __set($property, $value)
     {
-        $this->attributes[$property] = $value;
+        $this->setAttribute($property, $value);
     }
 
     public function __clone()

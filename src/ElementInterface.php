@@ -8,7 +8,13 @@ interface ElementInterface
 
     public function setAttributes(array $attributes);
 
+    public function setAttribute($key, $value);
+
+    public function getAttribute($key);
+
     public function setValue($value);
+
+    public function getValue();
 
     public function setParent(ElementInterface &$parent);
 
@@ -19,4 +25,6 @@ interface ElementInterface
     public function addChild(ElementInterface &$child);
 
     public function getRaw();
+
+    public function __toString();
 }
