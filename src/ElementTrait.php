@@ -29,9 +29,9 @@ trait ElementTrait
             : null;
     }
 
-    public function destroy()
+    public function remove()
     {
-        $this->collection->destroy($this->id);
+        $this->collection->remove($this->id);
     }
 
     public function setValue($value)
