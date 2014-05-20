@@ -16,6 +16,10 @@ interface ElementInterface
 
     public function getValue();
 
+    public function remove();
+
+    public function destroy();
+
     public function setParent(ElementInterface $parent);
 
     public function getParent();
