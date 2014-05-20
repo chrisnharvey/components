@@ -44,7 +44,7 @@ trait ElementTrait
         return $this->value;
     }
 
-    public function setParent(ElementInterface &$parent)
+    public function setParent(ElementInterface $parent)
     {
         $this->parent =& $parent;
     }
@@ -59,7 +59,7 @@ trait ElementTrait
         return $this->parent;
     }
 
-    public function addChild(ElementInterface &$child)
+    public function addChild(ElementInterface $child)
     {
         $this->children[] =& $child;
     }
