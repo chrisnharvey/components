@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 error_reporting(-1);
 
 // Require the composer autoloader
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../../../autoload.php';
 
 // Instantiate the application
 $app = Encore\Kernel\Application::fromCwd();
