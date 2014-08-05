@@ -21,5 +21,6 @@
             "Encore\\Development\\": "src/"
         }
     },
+    "bin": ["bin/encore"],
     "minimum-stability": "dev"
 }
