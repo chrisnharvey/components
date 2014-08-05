@@ -46,7 +46,7 @@ trait ElementTrait
 
     public function setParent(ElementInterface $parent)
     {
-        $this->parent =& $parent;
+        $this->parent = $parent;
     }
 
     public function setCollection(CollectionInterface $collection)
@@ -61,7 +61,7 @@ trait ElementTrait
 
     public function addChild(ElementInterface $child)
     {
-        $this->children[] =& $child;
+        $this->children[] = $child;
     }
 
     public function __toString()
