@@ -10,7 +10,7 @@ class Command extends BaseCommand implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    public $name = 'repl';
+    protected $name = 'repl';
 
     public function fire()
     {
