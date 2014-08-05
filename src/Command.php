@@ -44,6 +44,7 @@ class Command extends BaseCommand implements ContainerAwareInterface
 
                 if ((new ShallowParser)->statements($buffer)) {
                     ob_start();
+                    $app = $this->container;
                     eval($buffer);
                     $response = ob_get_clean();
                     
