@@ -1,7 +1,7 @@
 {
-    "name": "encorephp/config",
-    "description": "Config loader with OS and mode options.",
-    "keywords": ["config"],
+    "name": "encorephp/error",
+    "description": "Error handler and exception handler.",
+    "keywords": ["error", "exception", "handler"],
     "license": "MIT",
     "authors": [
         {
@@ -10,9 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "encorephp/namespacer": "dev-master",
-        "encorephp/filesystem": "dev-master"
+        "php": ">=5.4.0"
     },
     "require-dev": {
         "mockery/mockery": "0.8.0",
@@ -20,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Config\\": "src/"
+            "Encore\\Error\\": "src/"
         }
     },
     "minimum-stability": "dev"
