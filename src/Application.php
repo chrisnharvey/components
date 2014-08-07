@@ -23,6 +23,19 @@ class Application extends \Symfony\Component\Console\Application
         return parent::doRun($input, $output);
     }
 
+    public function renderException($e, $output = null)
+    {
+        if ( ! $output) {
+            $output = $this->output;
+
+            if ($output instanceof ConsoleOutputInterface) {
+                $output = $output->getErrorOutput();
+            }
+        }
+
+        return parent::renderException($e, $output);
+    }
+
     /**
      * Run a console command by name.
      *
