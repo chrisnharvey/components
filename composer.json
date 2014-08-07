@@ -14,6 +14,7 @@
         "encorephp/container": "dev-master",
         "encorephp/config": "dev-master",
         "encorephp/events": "dev-master",
+        "encorephp/error": "dev-master",
         "ircmaxell/password-compat": "1.0.*",
         "monolog/monolog": "1.*"
     },
