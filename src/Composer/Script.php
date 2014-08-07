@@ -27,12 +27,10 @@ class Script
 
         static::$appPath = \App::appPath();
         static::$vendorPath = \App::vendorPath();
-        static::$resourcesPath = \App::resourcesPath();
 
         if (defined('COMPILING')) {
             static::$appPath = BUILD_PATH.'/app';
             static::$vendorPath = BUILD_PATH.'/vendor';
-            static::$resourcesPath = BUILD_PATH.'/resources';
         }
     }
 
