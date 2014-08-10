@@ -7,6 +7,7 @@ use Encore\Container\Container;
 use Symfony\Component\Debug\Debug;
 use Encore\Container\ServiceProvider;
 use Encore\Config\ServiceProvider as ConfigServiceProvider;
+use Encore\Error\ServiceProvider as ErrorServiceProvider;
 
 class Application extends Container
 {
@@ -34,6 +35,12 @@ class Application extends Container
 
         // First things first... Register this as the app
         $this->bind('app', $this);
+
+        // Register the base service providers
+        $this->registerBaseProviders();
+
+        // Register exception/error handling
+        $this['error']->register();
     }
 
     public static function fromCwd()
@@ -67,12 +74,6 @@ class Application extends Container
     {
         if ($this->booted) return;
 
-        // Use proper error handling
-        ini_set('display_errors', $this->mode === 'dev');
-        error_reporting($this->mode === 'dev' ? -1 : 0);
-
-        $this->addProvider(new ConfigServiceProvider($this));
-
         // Register service providers
         foreach ($this['config']->get('app.providers') as $provider) {
             $this->addProvider($provider);
@@ -97,6 +98,12 @@ class Application extends Container
         });
 
         $this->booted = true;
+    }
+
+    protected function registerBaseProviders()
+    {
+        $this->addProvider(new ErrorServiceProvider($this));
+        $this->addProvider(new ConfigServiceProvider($this));
     }
 
     public function launch()
