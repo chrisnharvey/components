@@ -14,21 +14,11 @@ class Command extends BaseCommand implements ContainerAwareInterface
 
     public function fire()
     {
-        register_shutdown_function([$this, 'handleFatal']);
-
         if (isset($this->container)) {
             $this->container->launching([$this, 'repl']);
 
             $this->container['launcher'];
         } else {
-            $this->repl();
-        }
-    }
-
-    public function handleFatal()
-    {        
-        if (error_get_last()) {
-            ob_end_flush();
             $this->repl();
         }
     }
