@@ -63,11 +63,7 @@ class Definition
         $this->mergeInheritedDependencies();
 
         if (empty($this->arguments)) {
-            if (empty($this->methods)) {
-                $object = $this->container->build($this->class);
-            } else {
-                $object = new $this->class;
-            }
+            $object = $this->container->build($this->class);
         } else {
             $reflection = new \ReflectionClass($this->class);
 
