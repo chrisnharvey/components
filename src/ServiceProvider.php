@@ -13,6 +13,8 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
 
     public function boot()
     {
-        $this->container['view.finder']->addExtension('gim');
+        if ($this->container->bound('view.viewfinder')) {
+            $this->container['view.viewfinder']->addExtension('gim');
+        }
     }
 }
