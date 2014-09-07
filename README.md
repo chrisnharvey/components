@@ -72,7 +72,7 @@ Alternatively, you can specify what to inject into the class upon instantiation.
 Another great feature of the the container is the ability to resolve the dependencies
 of inherited classes and interfaces. For example, you could bind an interface into the
 container which requires a dependency injected via a method, and all classes that implement
-that interface will also have that dependency injected automaticall.
+that interface will also have that dependency injected automatically.
 
     $container->bind('\Foo\Bar\BazInterface')->withMethod('setQuux', ['\Foo\Bar\Quux']);
 
