@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\GIML\\": "src/"
+            "Encore\\Giml\\": "src/"
         }
     },
     "minimum-stability": "dev"

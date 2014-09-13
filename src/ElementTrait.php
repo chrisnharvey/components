@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\GIML;
+namespace Encore\Giml;
 
 trait ElementTrait
 {

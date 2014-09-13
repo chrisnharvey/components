@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\GIML;
+namespace Encore\Giml;
 
-use Encore\GIML\Support\View as ViewParser;
+use Encore\Giml\Support\View as ViewParser;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {

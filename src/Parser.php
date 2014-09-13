@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\GIML;
+namespace Encore\Giml;
 
-use Encore\GIML\Exception\InvalidElementException;
+use Encore\Giml\Exception\InvalidElementException;
 
 class Parser
 {
@@ -10,7 +10,7 @@ class Parser
     protected $namespace;
     protected $reader;
 
-    public function __construct(ReaderInterface $reader, CollectionInterface $collection, $namespace)
+    public function __construct(ReaderInterface $reader, CollectionInterface $collection, ElementFactoryInterface $elementFactory)
     {
         $this->reader = $reader;
         $this->collection = $collection;

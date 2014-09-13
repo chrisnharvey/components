@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\GIML;
+namespace Encore\Giml;
 
-use Encore\GIML\Exception\DuplicateIdException;
+use Encore\Giml\Exception\DuplicateIdException;
 
 class ElementCollection implements CollectionInterface
 {
