@@ -7,14 +7,14 @@ use Encore\Giml\Exception\InvalidElementException;
 class Parser
 {
     protected $collection;
-    protected $namespace;
+    protected $elementFactory;
     protected $reader;
 
-    public function __construct(ReaderInterface $reader, CollectionInterface $collection, $namespace)
+    public function __construct(ReaderInterface $reader, CollectionInterface $collection, ElementFactoryInterface $elementFactory)
     {
         $this->reader = $reader;
         $this->collection = $collection;
-        $this->namespace = $namespace;
+        $this->elementFactory = $elementFactory;
     }
 
     public function parse($file)
@@ -30,7 +30,7 @@ class Parser
     protected function parseIt(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as $element) {
-            $object = $this->newObject($element['name']);
+            $object = $this->elementFactory->make($element['name']);
 
             // Set some stuff
             $object->setCollection($this->collection);
@@ -65,22 +65,5 @@ class Parser
     {
         // Reservations are classes that handle reserved elements,
         // like Require.
-    }
-
-    protected function newObject($element)
-    {
-        $class = "{$this->namespace}\\{$element}";
-
-        if ( ! class_exists($class)) {
-            throw new InvalidElementException("Handler for '{$element}' not found");
-        }
-
-        $object = new $class;
-
-        if ( ! $object instanceof ElementInterface) {
-            throw new InvalidElementException('Element must be an instance of ElementInterface');
-        }
-
-        return $object;
     }
 }
