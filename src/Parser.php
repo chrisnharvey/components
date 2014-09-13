@@ -10,7 +10,7 @@ class Parser
     protected $namespace;
     protected $reader;
 
-    public function __construct(ReaderInterface $reader, CollectionInterface $collection, ElementFactoryInterface $elementFactory)
+    public function __construct(ReaderInterface $reader, CollectionInterface $collection, $namespace)
     {
         $this->reader = $reader;
         $this->collection = $collection;
