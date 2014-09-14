@@ -43,13 +43,13 @@ class Parser
             // Add the object to the collection
             $this->collection->add($object);
 
-            // Initialize object
-            $object->init();
-
             if ($parent) {
                 $object->setParent($parent);
                 $parent->addChild($object);
             }
+
+            // Initialize object
+            $object->init();
 
             if (is_array($element['value'])) {
                 $this->parseIt($element['value'], $object);
