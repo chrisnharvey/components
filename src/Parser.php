@@ -30,8 +30,13 @@ class Parser
     protected function parseIt(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as $element) {
-            $object = $this->elementFactory->make($element['name']);
-
+            try {
+                $object = $this->elementFactory->make($element['name']);
+            } catch (InvalidElementException $e) {
+                // Try to find a reservation for this element and set $object to that
+                // If no reservation is found then rethrow $e
+                throw $e;
+            }
             // Set some stuff
             $object->setCollection($this->collection);
             $object->setAttributes($element['attributes']);
