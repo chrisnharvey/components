@@ -34,6 +34,8 @@ class Parser
                 $object = $this->elementFactory->make($element['name']);
             } catch (InvalidElementException $e) {
                 // Try to find a reservation for this element and set $object to that
+                // if its an instance of ElementInterface, if its an array then just set
+                // $element and try to re-make the object using element factory.
                 // If no reservation is found then rethrow $e
                 throw $e;
             }
