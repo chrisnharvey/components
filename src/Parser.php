@@ -22,12 +22,12 @@ class Parser
         $this->reader->open($file);
         $parsed = $this->reader->parse();
 
-        $data = $this->parseIt($parsed['value']);
+        $data = $this->parseElements($parsed['value']);
 
         return $this->collection;
     }
 
-    protected function parseIt(array $elements, ElementInterface $parent = null)
+    public function parseElements(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as $element) {
             try {
@@ -59,7 +59,7 @@ class Parser
             $object->init();
 
             if (is_array($element['value'])) {
-                $this->parseIt($element['value'], $object);
+                $this->parseElements($element['value'], $object);
             }
 
             $data[] = $object;
