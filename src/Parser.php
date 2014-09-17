@@ -74,4 +74,13 @@ class Parser
     {
         $this->reservations[$name] = $reservation;
     }
+
+    public function getReservation($name)
+    {
+        if (array_key_exists($name, $this->reservations)) {
+            return $this->reservations[$name];
+        }
+
+        throw new InvalidElementException("Element '{$name}' does not exist");
+    }
 }
