@@ -2,6 +2,7 @@
 
 namespace Encore\Giml;
 
+use Encore\Giml\Reservation\ReservationInterface;
 use Encore\Giml\Exception\InvalidElementException;
 
 class Parser
@@ -9,6 +10,7 @@ class Parser
     protected $collection;
     protected $elementFactory;
     protected $reader;
+    protected $reservations = [];
 
     public function __construct(ReaderInterface $reader, CollectionInterface $collection, ElementFactoryInterface $elementFactory)
     {
@@ -68,9 +70,8 @@ class Parser
         return $data;
     }
 
-    public function addReservation(ReservationInterface $reservation)
+    public function addReservation($name, ReservationInterface $reservation)
     {
-        // Reservations are classes that handle reserved elements,
-        // like Require.
+        $this->reservations[$name] = $reservation;
     }
 }
