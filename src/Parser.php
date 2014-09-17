@@ -29,6 +29,11 @@ class Parser
         return $this->collection;
     }
 
+    public function getReader()
+    {
+        return $this->reader;
+    }
+
     public function parseElements(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as $element) {
