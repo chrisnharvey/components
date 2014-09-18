@@ -67,7 +67,7 @@ class Parser
             }
 
             if ($object instanceof ReservationInterface) {
-                $object = $object->getElement($this);
+                $object = $object->getElement($this, $parent);
             }
 
             $data[] = $object;
