@@ -3,10 +3,14 @@
 namespace Encore\Giml\Reservation;
 
 use Encore\Giml\Parser;
+use Encore\Giml\ElementInterface;
+use Encore\Giml\ElementTrait;
 
 trait ReservationTrait
 {
-    public function getElement(Parser $parser)
+    use ElementTrait;
+
+    public function getElement(Parser $parser, ElementInterface $parent)
     {
         return $this;
     }
