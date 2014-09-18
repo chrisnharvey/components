@@ -10,4 +10,14 @@ trait ReservationTrait
     {
         return $this;
     }
+
+    public function getRaw()
+    {
+        return $this;
+    }
+
+    public function destroy()
+    {
+        
+    }
 }
