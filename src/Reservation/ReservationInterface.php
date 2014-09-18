@@ -7,5 +7,5 @@ use Encore\Giml\ElementInterface;
 
 interface ReservationInterface extends ElementInterface
 {
-    public function getElement(Parser $parser);
+    public function getElement(Parser $parser, ElementInterface $parent = null);
 }
