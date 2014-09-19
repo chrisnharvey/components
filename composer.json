@@ -1,0 +1,25 @@
+{
+    "name": "encorephp/view-controller",
+    "description": "The EncorePHP view and controller package.",
+    "keywords": ["controller", "view"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/container": "dev-master",
+        "encorephp/resource": "dev-master",
+        "symfony/yaml": "2.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Controller\\": "src/Controller/",
+            "Encore\\View\\": "src/View/"
+        }
+    },
+    "minimum-stability": "dev"
+}
