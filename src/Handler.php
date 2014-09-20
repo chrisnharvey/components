@@ -23,7 +23,6 @@ class Handler
 	{
 		$this->registerErrorHandler();
 		$this->registerExceptionHandler();
-		$this->registerShutdownHandler();
 	}
 
 	protected function registerErrorHandler()
@@ -35,10 +34,5 @@ class Handler
 	{
 		ExceptionHandler::register(true, $this->container)
 			->setDisplayer($this->displayer);
-	}
-
-	protected function registerShutdownHandler()
-	{
-
 	}
 }
