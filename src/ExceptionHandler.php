@@ -16,7 +16,7 @@ class ExceptionHandler extends BaseExceptionHandler implements ContainerAwareInt
         $this->displayer = $displayer;
     }
 
-	/**
+    /**
      * Registers the exception handler.
      *
      * @param bool    $debug
@@ -33,8 +33,8 @@ class ExceptionHandler extends BaseExceptionHandler implements ContainerAwareInt
         return $handler;
     }
 
-	public function handle(\Exception $exception)
-	{
-		$this->displayer->display($exception);
-	}
+    public function handle(\Exception $exception)
+    {
+        $this->displayer->display($exception);
+    }
 }
