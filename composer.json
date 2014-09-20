@@ -11,7 +11,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "encorephp/database": "dev-master"
+        "encorephp/database": "dev-master",
+        "aura/sqlschema": "2.0.x",
+        "doctrine/dbal": "2.5.x"
     },
     "autoload": {
         "psr-4": {
