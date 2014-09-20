@@ -12,6 +12,7 @@
     "require": {
         "php": ">=5.4.0",
         "encorephp/database": "dev-master",
+        "aura/sqlschema": "2.0.x",
         "nesbot/carbon": "1.*"
     },
     "autoload": {
