@@ -12,6 +12,10 @@ class ConsoleDisplayer implements ExceptionDisplayerInterface, ContainerAwareInt
 
 	public function display(\Exception $exception)
 	{
-		$this->container['console']->renderException($exception);
+        if ($this->container->bound('console')) {
+		  return $this->container['console']->renderException($exception);
+        }
+
+        echo PHP_EOL.$exception->getMessage().PHP_EOL;
 	}
 }
