@@ -4,15 +4,12 @@ namespace Encore\Error;
 
 use Encore\Container\Container;
 use Symfony\Component\Debug\ExceptionHandler as BaseExceptionHandler;
+use Encore\Container\ContainerAwareInterface;
+use Encore\Container\ContainerAwareTrait;
 
-class ExceptionHandler extends BaseExceptionHandler
+class ExceptionHandler extends BaseExceptionHandler implements ContainerAwareInterface
 {
-	protected $container = null;
-
-	public function setContainer(Container $container)
-	{
-		$this->container = $container;
-	}
+    use ContainerAwareTrait;
 
     public function setDisplayer($displayer)
     {
