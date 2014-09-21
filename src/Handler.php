@@ -6,10 +6,8 @@ use Symfony\Component\Debug\ErrorHandler;
 use Encore\Container\ContainerAwareInterface;
 use Encore\Container\ContainerAwareTrait;
 
-class Handler implements ContainerAwareInterface
+class Handler
 {
-    use ContainerAwareTrait;
-
     public function __construct(ExceptionDisplayerInterface $displayer)
     {
         $this->displayer = $displayer;
@@ -28,7 +26,7 @@ class Handler implements ContainerAwareInterface
 
     protected function registerExceptionHandler()
     {
-        ExceptionHandler::register(true, $this->container)
+        ExceptionHandler::register(true)
             ->setDisplayer($this->displayer);
     }
 }
