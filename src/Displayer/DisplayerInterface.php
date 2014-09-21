@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Error;
+namespace Encore\Error\Displayer;
 
-interface ExceptionDisplayerInterface
+interface DisplayerInterface
 {
     /**
      * Display the given exception to the user.
