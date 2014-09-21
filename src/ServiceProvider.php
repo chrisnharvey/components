@@ -6,7 +6,7 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
     {
-        $this->container->bind('Encore\Error\ExceptionDisplayerInterface', 'Encore\Error\ConsoleDisplayer');
+        $this->container->bind('Encore\Error\Displayer\DisplayerInterface', 'Encore\Error\Displayer\BasicDisplayer');
         $this->container->bind('error', 'Encore\Error\Handler');
     }
 }
