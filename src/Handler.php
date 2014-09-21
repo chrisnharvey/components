@@ -34,7 +34,7 @@ class Handler
 
     protected function registerExceptionHandler()
     {
-        ExceptionHandler::register(true)
-            ->setDisplayer($this->displayer);
+        $this->exceptionHandler = ExceptionHandler::register(true);
+        $this->exceptionHandler->setDisplayer($this->displayer);
     }
 }
