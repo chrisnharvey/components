@@ -2,6 +2,7 @@
 
 namespace Encore\Console;
 
+use Encore\Console\Error\ConsoleDisplayer;
 use Encore\Console\Application as Console;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
@@ -10,7 +11,13 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
     public function register()
     {
         $container = $this->container;
-        $this->container->bind('console', new Console('EncorePHP', $container::VERSION));
+        $console = new Console('EncorePHP', $container::VERSION);
+
+        $this->container->bind('console', $console);
+
+        if ($this->container->bound('error')) {
+            $this->container['error']->setDisplayer(new ConsoleDisplayer($console));
+        }
     }
 
     public function boot()
