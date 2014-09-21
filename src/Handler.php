@@ -2,13 +2,14 @@
 
 namespace Encore\Error;
 
+use Encore\Error\Displayer\DisplayerInterface;
 use Symfony\Component\Debug\ErrorHandler;
 use Encore\Container\ContainerAwareInterface;
 use Encore\Container\ContainerAwareTrait;
 
 class Handler
 {
-    public function __construct(ExceptionDisplayerInterface $displayer)
+    public function __construct(DisplayerInterface $displayer)
     {
         $this->displayer = $displayer;
     }
