@@ -2,11 +2,14 @@
 
 namespace Encore\Error;
 
+use Encore\Error\Displayer\BasicDisplayer;
+
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
     {
-        $this->container->bind('Encore\Error\Displayer\DisplayerInterface', 'Encore\Error\Displayer\BasicDisplayer');
-        $this->container->bind('error', 'Encore\Error\Handler');
+        $displayer = new BasicDisplayer;
+        $handler = new Handler($displayer);
+        $this->container->bind('error', $handler);
     }
 }
