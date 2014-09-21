@@ -1,4 +1,4 @@
-database
+Database
 ========
 
-Database abstraction layer and ORM based on Propel
+Database abstraction layer.
