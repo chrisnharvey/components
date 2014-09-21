@@ -14,6 +14,13 @@ class Handler
         $this->displayer = $displayer;
     }
 
+    public function setDisplayer(DisplayerInterface $displayer)
+    {
+        $this->displayer = $displayer;
+
+        $this->exceptionHandler->setDisplayer($displayer);
+    }
+
     public function register()
     {
         $this->registerErrorHandler();
