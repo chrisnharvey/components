@@ -80,9 +80,7 @@ class Application extends Container
         }
 
         // Register aliases
-        foreach ($this['config']->get('app.aliases') as $alias => $class) {
-            class_alias($class, $alias);
-        }
+        AliasLoader::getInstance($this['config']->get('app.aliases'))->register();
 
         // Now run boot events on service providers
         array_walk($this->registered, function($p) {
