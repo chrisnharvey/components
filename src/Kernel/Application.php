@@ -19,6 +19,7 @@ class Application extends Container
     const OS_OTHER = 'other';
 
     private $appPath;
+    private $basePath;
 
     private $booted = false;
     private $os;
@@ -27,9 +28,10 @@ class Application extends Container
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
-    public function __construct($appPath)
+    public function __construct($basePath, $appPath = null)
     {
-        $this->appPath = $appPath;
+        $this->basePath = $basePath;
+        $this->appPath = $appPath ?: $basePath.'/app';
 
         // First things first... Register this as the app
         $this->bind('app', $this);
@@ -43,9 +45,7 @@ class Application extends Container
 
     public static function fromCwd()
     {
-        $cwd = getcwd();
-
-        return new static("{$cwd}/app");
+        return new static(getcwd());
     }
 
     public function launching(callable $callback, $priority = 100)
@@ -120,6 +120,11 @@ class Application extends Container
     public function appPath()
     {
         return $this->appPath;
+    }
+    
+    public function basePath()
+    {
+        return $this->basePath;
     }
 
     public function os()
