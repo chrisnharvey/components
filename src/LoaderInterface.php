@@ -17,6 +17,14 @@ interface LoaderInterface extends NamespacableInterface
     public function load($environment, $group, $namespace = null);
 
     /**
+    * Add a location to config files.
+    *
+    * @param string $location
+    * @return void
+    */
+    public function addLocation($location);
+
+    /**
     * Determine if the given configuration group exists.
     *
     * @param string $group
