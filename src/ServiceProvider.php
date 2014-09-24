@@ -6,7 +6,11 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
 {
     public function register()
     {
-        //$this->container['config']->addPath($this->container->basePath().'/dev/config');
+        $this->container['config']->addLocation($this->container->basePath().'/dev/config');
+
+        foreach ($this->container['config']->get('app.providers') as $provider) {
+            $this->container->addProvider($provider);
+        }
     }
 
     public function commands()
