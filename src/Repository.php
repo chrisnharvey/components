@@ -105,12 +105,10 @@ class Repository implements NamespacableInterface, \ArrayAccess
     */
     protected function load($group, $namespace, $collection)
     {
-        $mode = $this->mode;
-
         // Is it already loaded? If so, just return it.
         if (isset($this->items[$collection])) return $this->items[$collection];
 
-        $items = $this->loader->load($mode, $group, $namespace);
+        $items = $this->loader->load($this->mode, $group, $namespace);
 
         return $this->items[$collection] = $items;
     }
