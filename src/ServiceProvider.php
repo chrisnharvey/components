@@ -15,7 +15,7 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
                 $this->container->appPath().'/config'
             ),
             new Resolver,
-            $this->container->mode()
+            $this->container->os()
         ));
     }
 }
