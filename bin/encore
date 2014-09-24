@@ -10,6 +10,9 @@ require __DIR__.'/../../../autoload.php';
 // Instantiate the application
 $app = Encore\Kernel\Application::fromCwd();
 
+// Register the dev service provider
+$app->addProvider('Encore\Development\ServiceProvider');
+
 // Give proxies an instance of the application
 $app->initializeProxies();
 
