@@ -7,8 +7,6 @@ use Encore\Filesystem\Filesystem;
 
 class FileLoader implements LoaderInterface
 {
-    use NamespacableTrait;
-
     /**
     * A cache of whether namespaces and groups exists.
     *
@@ -28,14 +26,14 @@ class FileLoader implements LoaderInterface
     *
     * @var string
     */
-    protected $path;
+    protected $locations;
 
     /**
-    * The operating system
-    *
-    * @var string
-    */
-    protected $os = null;
+     * All of the namespace hints.
+     *
+     * @var array
+     */
+    protected $hints = [];
 
     /**
     * The constructor
@@ -44,11 +42,10 @@ class FileLoader implements LoaderInterface
     * @param $path
     * @param $os
     */
-    public function __construct(Filesystem $fs, $path, $os = null)
+    public function __construct(Filesystem $fs, $path)
     {
         $this->fs = $fs;
-        $this->path = $path;
-        $this->os = $os;
+        $this->locations[] = $path;
     }
 
     /**
@@ -61,47 +58,12 @@ class FileLoader implements LoaderInterface
     */
     public function load($mode, $group, $namespace = null)
     {
-        $items = array();
+        // Lets find where the paths are
+        $paths = $this->getPaths($namespace);
 
-        // Lets find where the path is
-        $path = $this->getPath($namespace);
+        if (empty($paths)) return [];
 
-        if (is_null($path)) return $items;
-
-        // First things first... Is there a top-level config file?
-        $file = "{$path}/{$group}.php";
-
-        if ($this->fs->exists($file)) {
-            $items = $this->fs->getRequire($file);
-        }
-
-        if ($this->os) {
-            // Do we have an operating system specific config file?
-            $file = "{$path}/{$this->os}/{$group}.php";
-
-            if ($this->fs->exists($file)) {
-                $items = $this->mergeItems($items, $file);
-            }
-        }
-
-        // Do we have an application mode specific config file?
-        $file = "{$path}/{$mode}/{$group}.php";
-
-        if ($this->fs->exists($file)) {
-            $items = $this->mergeItems($items, $file);
-        }
-
-        if ($this->os) {
-            // And lastly we'll check if we have an mode and OS specific
-            // config file.
-            $file = "{$path}/{$this->os}/{$mode}/{$group}.php";
-
-            if ($this->fs->exists($file)) {
-                $items = $this->mergeMode($items, $file);
-            }
-        }
-
-        return $items;
+        return $this->findInPaths($paths, $group, $mode);
     }
 
     /**
@@ -118,30 +80,49 @@ class FileLoader implements LoaderInterface
         // Check if we have a cached answer
         if (isset($this->exists[$key])) return $this->exists[$key];
 
-        $path = $this->getPath($namespace);
+        $paths = $this->getPaths($namespace);
 
         // If the path is null then the file does not exist
-        if (is_null($path)) return $this->exists[$key] = false;
-
-        $file = "{$path}/{$group}.php";
+        if (empty($paths)) return $this->exists[$key] = false;
 
         // Does it exist?
-        $exists = $this->fs->exists($file);
+        $exists = $this->findInPaths($paths, $group, null, true);
 
         // Cache and return
         return $this->exists[$key] = $exists;
     }
 
     /**
-    * Merge the configuration items
+    * Add a location to config files.
     *
-    * @param array $items
-    * @param string $file
-    * @return array
+    * @param string $location
+    * @return void
     */
-    protected function mergeItems(array $items, $file)
+    public function addLocation($location)
     {
-        return array_merge_recursive($items, $this->fs->getRequire($file));
+        $this->locations[] = $location;
+    }
+
+    /**
+     * Add a namespace and provide a hint
+     *
+     * @param string $namespace
+     * @param string $hint
+     * @return void
+     */
+    public function addNamespace($namespace, $hint)
+    {
+        $this->hints[$namespace][] = $hint;
+    }
+
+    /**
+     * Return an array of all the registered namespaces
+     *
+     * @return array
+     */
+    public function getNamespaces()
+    {
+        return $this->hints;
     }
 
     /**
@@ -150,12 +131,42 @@ class FileLoader implements LoaderInterface
     * @param string $namespace
     * @return string
     */
-    protected function getPath($namespace)
+    protected function getPaths($namespace)
     {
         if (is_null($namespace)) {
-            return $this->path;
+            return $this->locations;
         } elseif (isset($this->hints[$namespace])) {
             return $this->hints[$namespace];
         }
+    }
+
+    /**
+    * Get the path for the specified namespace
+    *
+    * @param array $paths
+    * @param string $group
+    * @param string $mode
+    * @param bool $exists
+    * @return string
+    */
+    protected function findInPaths(array $paths, $group, $mode = null, $exists = false)
+    {
+        $items = [];
+
+        foreach ($paths as $path) {
+            if ($this->fs->exists($file = "{$path}/{$group}.php")) {
+                if ($exists) return true;
+
+                $items = array_merge_recursive($this->fs->getRequire($file), $items);
+            }
+
+            if ($mode and $this->fs->exists($file = "{$path}/{$mode}/{$group}.php")) {
+                if ($exists) return true;
+
+                $items = array_merge_recursive($this->fs->getRequire($file), $items);
+            }
+        }
+
+        return $items;
     }
 }
