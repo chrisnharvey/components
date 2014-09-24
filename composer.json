@@ -1,6 +1,6 @@
 {
     "name": "encorephp/config",
-    "description": "Config loader with OS and mode options.",
+    "description": "Config loader with namespaces and multiple paths.",
     "keywords": ["config"],
     "license": "MIT",
     "authors": [
