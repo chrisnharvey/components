@@ -12,8 +12,7 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
         $this->container->bind('config', new Repository(
             new FileLoader(
                 new Filesystem,
-                $this->container->appPath().'/config',
-                $this->container->os()
+                $this->container->appPath().'/config'
             ),
             new Resolver,
             $this->container->mode()
