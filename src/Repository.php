@@ -96,6 +96,17 @@ class Repository implements NamespacableInterface, \ArrayAccess
     }
 
     /**
+    * Add a location to config files.
+    *
+    * @param string $location
+    * @return void
+    */
+    public function addLocation($location)
+    {
+        $this->loader->addLocation($location);
+    }
+
+    /**
     * Load the configuration group for the key.
     *
     * @param string $group
