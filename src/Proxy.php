@@ -2,6 +2,9 @@
 
 namespace Encore\Container;
 
+use Mockery;
+use RuntimeException;
+
 abstract class Proxy
 {
 
@@ -48,7 +51,7 @@ abstract class Proxy
             $mock = static::createFreshMockInstance($name);
         }
 
-        return call_user_func_array(array($mock, 'shouldReceive'), func_get_args());
+        return call_user_func_array([$mock, 'shouldReceive'], func_get_args());
     }
 
     /**
@@ -78,7 +81,7 @@ abstract class Proxy
     {
         $class = static::getMockableClass($name);
 
-        return $class ? \Mockery::mock($class) : \Mockery::mock();
+        return $class ? Mockery::mock($class) : Mockery::mock();
     }
 
     /**
@@ -122,7 +125,7 @@ abstract class Proxy
      */
     protected static function getConcreteBinding()
     {
-        throw new \RuntimeException("Proxy does not implement getConcreteBinding method.");
+        throw new RuntimeException("Proxy does not implement getConcreteBinding method.");
     }
 
     /**
@@ -160,7 +163,7 @@ abstract class Proxy
      */
     public static function clearResolvedInstances()
     {
-        static::$instance = array();
+        static::$instance = [];
     }
 
     /**
@@ -212,7 +215,7 @@ abstract class Proxy
                 return $instance->$method($args[0], $args[1], $args[2], $args[3]);
 
             default:
-                return call_user_func_array(array($instance, $method), $args);
+                return call_user_func_array([$instance, $method], $args);
         }
     }
 

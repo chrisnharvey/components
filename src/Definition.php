@@ -9,7 +9,7 @@ class Definition
      *
      * @var array
      */
-    protected $arguments = array();
+    protected $arguments = [];
 
     /**
      * The class name for this Definition.
@@ -37,7 +37,7 @@ class Definition
      *
      * @var array
      */
-    protected $methods = array();
+    protected $methods = [];
 
     /**
      * Constructor
@@ -67,7 +67,7 @@ class Definition
         } else {
             $reflection = new \ReflectionClass($this->class);
 
-            $arguments = array();
+            $arguments = [];
 
             foreach ($this->arguments as $arg) {
                 if (is_string($arg) && (class_exists($arg) || $this->container->bound($arg))) {
@@ -167,7 +167,7 @@ class Definition
      */
     public function cleanArgs()
     {
-        $this->arguments = array();
+        $this->arguments = [];
 
         return $this;
     }
@@ -180,7 +180,7 @@ class Definition
      *
      * @return Definition
      */
-    public function withMethod($method, array $args = array())
+    public function withMethod($method, array $args = [])
     {
         $this->methods[$method] = $args;
 
@@ -216,7 +216,7 @@ class Definition
             foreach (array_reverse($this->methods) as $method => $args) {
                 $reflection = new \ReflectionMethod($object, $method);
 
-                $arguments = array();
+                $arguments = [];
 
                 foreach ($args as $arg) {
                     if (is_string($arg) && (class_exists($arg) || $this->container->bound($arg))) {

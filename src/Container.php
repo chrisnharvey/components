@@ -2,7 +2,9 @@
 
 namespace Encore\Container;
 
-class Container implements \ArrayAccess
+use ArrayAccess;
+
+class Container implements ArrayAccess
 {
     /**
      * The event dispatcher implementation.

@@ -2,6 +2,8 @@
 
 namespace Encore\Container;
 
+use UnexpectedValueException;
+
 trait ContainerAwareTrait
 {
     /**
@@ -20,7 +22,7 @@ trait ContainerAwareTrait
     public function getContainer()
     {
         if ( ! isset($this->container)) {
-            throw new \UnexpectedValueException('Container has not been set');
+            throw new UnexpectedValueException('Container has not been set');
         }
 
         return $this->container;

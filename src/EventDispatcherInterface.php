@@ -2,6 +2,8 @@
 
 namespace Encore\Container;
 
+use Closure;
+
 interface EventDispatcherInterface
 {
     /**
@@ -11,5 +13,5 @@ interface EventDispatcherInterface
      * @param Closure $trigger
      * @return void
      */
-    public function listen($event, \Closure $trigger);
+    public function listen($event, Closure $trigger);
 }
