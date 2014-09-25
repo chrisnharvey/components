@@ -2,6 +2,7 @@
 
 namespace Encore\Console\Error;
 
+use Exception;
 use Encore\Console\Application;
 use Encore\Error\Displayer\DisplayerInterface;
 
@@ -25,7 +26,7 @@ class ConsoleDisplayer implements DisplayerInterface
      * @param  Exception $exception
      * @return void
      */
-    public function display(\Exception $exception)
+    public function display(Exception $exception)
     {
         $this->console->renderException($exception);
     }
