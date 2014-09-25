@@ -8,6 +8,11 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
+    /**
+     * Register the console into the container.
+     *
+     * @return void
+     */
     public function register()
     {
         $container = $this->container;
@@ -20,6 +25,11 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
         }
     }
 
+    /**
+     * Register service provider commands on boot.
+     *
+     * @return void
+     */
     public function boot()
     {
         // Loop the providers and register commands
@@ -32,6 +42,11 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
         }
     }
 
+    /**
+     * Register an array of commands into the console.
+     *
+     * @return void
+     */
     protected function registerCommands(array $commands)
     {
         foreach ($commands as $command) {

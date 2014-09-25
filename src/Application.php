@@ -15,6 +15,14 @@ class Application extends \Symfony\Component\Console\Application
     protected $input;
     protected $output;
 
+    /**
+     * Runs the current application.
+     *
+     * @param InputInterface  $input  An Input instance
+     * @param OutputInterface $output An Output instance
+     *
+     * @return int 0 if everything went fine, or an error code
+     */
     public function doRun(InputInterface $input, OutputInterface $output)
     {
         $this->input = $input;
@@ -23,6 +31,12 @@ class Application extends \Symfony\Component\Console\Application
         return parent::doRun($input, $output);
     }
 
+    /**
+     * Renders a caught exception.
+     *
+     * @param \Exception      $e      An exception instance
+     * @param OutputInterface $output An OutputInterface instance
+     */
     public function renderException($e, $output = null)
     {
         if ( ! $output) {
