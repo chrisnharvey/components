@@ -4,9 +4,10 @@ namespace Encore\Console;
 
 use Encore\Console\Error\ConsoleDisplayer;
 use Encore\Console\Application as Console;
+use Encore\Container\ServiceProvider as BaseServiceProvider;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Register the console into the container.
