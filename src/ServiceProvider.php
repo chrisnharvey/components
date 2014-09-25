@@ -7,6 +7,11 @@ use Encore\Filesystem\Filesystem;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
+    /**
+     * Register the config loader into the container.
+     *
+     * @return void
+     */
     public function register()
     {
         $this->container->bind('config', new Repository(
