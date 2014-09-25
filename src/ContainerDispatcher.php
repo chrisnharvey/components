@@ -2,6 +2,8 @@
 
 namespace Encore\Events;
 
+use Closure;
+
 class ContainerDispatcher implements \Encore\Container\EventDispatcherInterface
 {
     /**
@@ -22,7 +24,7 @@ class ContainerDispatcher implements \Encore\Container\EventDispatcherInterface
      * @param Closure $trigger
      * @return void
      */
-    public function listen($event, \Closure $trigger)
+    public function listen($event, Closure $trigger)
     {
         $this->dispatcher->listen($event, $trigger);
     }
