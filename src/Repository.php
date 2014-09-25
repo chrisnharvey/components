@@ -2,10 +2,11 @@
 
 namespace Encore\Config;
 
+use ArrayAccess;
 use Encore\Namespacer\ResolverInterface;
 use Encore\Namespacer\NamespacableInterface;
 
-class Repository implements NamespacableInterface, \ArrayAccess
+class Repository implements NamespacableInterface, ArrayAccess
 {
     /**
     * An instance of ResolverInterface.

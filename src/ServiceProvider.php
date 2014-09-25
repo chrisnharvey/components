@@ -4,8 +4,9 @@ namespace Encore\Config;
 
 use Encore\Namespacer\Resolver;
 use Encore\Filesystem\Filesystem;
+use Encore\Container\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Register the config loader into the container.

@@ -12,7 +12,7 @@ class FileLoader implements LoaderInterface
     *
     * @var array
     */
-    protected $exists = array();
+    protected $exists = [];
 
     /**
     * The Symfony Filesystem component
