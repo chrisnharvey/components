@@ -8,6 +8,11 @@ class Dispatcher implements DispatcherInterface
 {
     protected $event;
 
+    /**
+     * Construct the object and assign properties from injected objects
+     *
+     * @param EventEmitterInterface $event
+     */
     public function __construct(EventEmitterInterface $event)
     {
         $this->event = $event;
