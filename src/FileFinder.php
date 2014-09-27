@@ -36,6 +36,14 @@ class FileFinder implements FinderInterface
         return $this->resolved[$name] = $this->findInPaths($name, $this->paths);
     }
 
+    /**
+     * Find the file in the possible paths
+     * 
+     * @param  string $name
+     * @param  array  $paths
+     * @throws InvalidArgumentException
+     * @return string Path the the view
+     */
     protected function findInPaths($name, array $paths)
     {
         foreach ($paths as $path) {

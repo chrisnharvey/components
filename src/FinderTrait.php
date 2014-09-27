@@ -30,11 +30,21 @@ trait FinderTrait
         $this->extensions[] = $extension;
     }
 
+    /**
+     * Return an array of all the registered locations
+     *
+     * @return array
+     */
     public function getLocations()
     {
         return $this->locations;
     }
 
+    /**
+     * Return an array of all the registered extensions
+     *
+     * @return array
+     */
     public function getExtensions()
     {
         return $this->extensions;
