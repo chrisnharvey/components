@@ -48,6 +48,14 @@ class Resolver implements ResolverInterface
         return $this->parsed[$key] = $parsed;
     }
 
+    /**
+     * Resolve a namespace key from an array
+     * 
+     * @param  string $key
+     * @param  array  $array
+     * @param  mixed $default
+     * @return mixed
+     */
     public function resolveKey($key, array $array, $default = null)
     {
         if (is_null($key)) return $array;
