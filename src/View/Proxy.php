@@ -2,7 +2,9 @@
 
 namespace Encore\View;
 
-class Proxy extends \Encore\Container\Proxy
+use Encore\Container\Proxy as BaseProxy;
+
+class Proxy extends BaseProxy
 {
     public static function getConcreteBinding()
     {

@@ -2,6 +2,7 @@
 
 namespace Encore\View;
 
+use InvalidArgumentException;
 use Encore\Resource\FinderInterface;
 use Encore\Container\ContainerAwareTrait;
 use Encore\Container\ContainerAwareInterface;
@@ -26,7 +27,7 @@ class Manager implements ContainerAwareInterface
 
         try {
             $stylePath = $this->styleFinder->find($style ?: $view);
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $stylePath = null;
         }
 
