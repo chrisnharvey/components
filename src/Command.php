@@ -12,6 +12,11 @@ class Command extends BaseCommand implements ContainerAwareInterface
 
     protected $name = 'repl';
 
+    /**
+     * Execute the command
+     * 
+     * @return void
+     */
     public function fire()
     {
         if (isset($this->container)) {
@@ -23,6 +28,11 @@ class Command extends BaseCommand implements ContainerAwareInterface
         }
     }
 
+    /**
+     * Run the REPL loop
+     * 
+     * @return void
+     */
     public function repl()
     {
         $input = $this->prompt();
@@ -52,6 +62,12 @@ class Command extends BaseCommand implements ContainerAwareInterface
         if ($input == 'exit;') exit;
     }
 
+    /**
+     * Prompt the user for an input
+     * 
+     * @param  boolean $indent
+     * @return string
+     */
     protected function prompt($indent = false)
     {
         $dialog = $this->getHelperSet()->get('dialog');
