@@ -4,8 +4,9 @@ namespace Encore\View;
 
 use Encore\Filesystem\Filesystem;
 use Encore\Resource\FileFinder;
+use Encore\Container\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Register bindings into the container
