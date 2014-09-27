@@ -28,6 +28,12 @@ class Application extends Container
     protected $serviceProviders = array();
     protected $loadedProviders = array();
 
+    /**
+     * Construct the application container
+     * 
+     * @param string $basePath
+     * @param string $appPath
+     */
     public function __construct($basePath, $appPath = null)
     {
         $this->basePath = $basePath;
@@ -43,31 +49,65 @@ class Application extends Container
         $this['error']->register();
     }
 
+    /**
+     * Create application from current working directory
+     * 
+     * @return Application An instance of the current class
+     */
     public static function fromCwd()
     {
         return new static(getcwd());
     }
 
+    /**
+     * Bind an event to be triggered when the application is launching
+     * 
+     * @param  callable $callback
+     * @param  integer  $priority
+     * @return void
+     */
     public function launching(callable $callback, $priority = 100)
     {
         $this['events']->listen('app.launching', $callback);
     }
 
+    /**
+     * Bind an event to be triggered when the application is quitting
+     * 
+     * @param  callable $callback
+     * @param  integer  $priority
+     * @return void
+     */
     public function quitting(callable $callback, $priority = 100)
     {
         $this['events']->listen('app.quitting', $callback, $priority);
     }
 
+    /**
+     * Get the current application mode
+     * 
+     * @return string The application mode
+     */
     public function mode()
     {
         return $this->mode;
     }
 
+    /**
+     * Set the application mode
+     * 
+     * @param string $mode
+     */
     public function setMode($mode)
     {
         $this->mode = $mode;
     }
 
+    /**
+     * Boot the application
+     * 
+     * @return void
+     */
     public function boot()
     {
         if ($this->booted) return;
@@ -96,37 +136,72 @@ class Application extends Container
         $this->booted = true;
     }
 
+    /**
+     * Register the base service providers
+     * 
+     * @return void
+     */
     protected function registerBaseProviders()
     {
         $this->addProvider(new ErrorServiceProvider($this));
         $this->addProvider(new ConfigServiceProvider($this));
     }
 
+    /**
+     * Fire the application launching events
+     * 
+     * @return void
+     */
     public function launch()
     {
         $this['events']->fire('app.launching', [$this]);
     }
 
+    /**
+     * Fire the application quitting events
+     * 
+     * @return void
+     */
     public function quit()
     {
         $this['events']->fire('app.quitting', [$this]);
     }
 
+    /**
+     * Get the instance of the app
+     * 
+     * @return Application An instance of this application
+     */
     public function get()
     {
         return $this;
     }
 
+    /**
+     * Get the path the the app directory
+     * 
+     * @return string
+     */
     public function appPath()
     {
         return $this->appPath;
     }
     
+    /**
+     * Get the path the base path
+     * 
+     * @return string
+     */
     public function basePath()
     {
         return $this->basePath;
     }
 
+    /**
+     * Get the current operating system
+     * 
+     * @return string
+     */
     public function os()
     {
         return isset($this->os) ? $this->os : $this->findOS();
@@ -137,6 +212,7 @@ class Application extends Container
      *
      * @param ServiceProvider $provider The service provider object.
      * @param bool $force Force register (register whether needed or not)
+     * @param string $binding The binding we're trying to register
      * @return void
      */
     protected function registerProvider(ServiceProvider $provider, $force = false, $binding = null)
@@ -152,6 +228,11 @@ class Application extends Container
         }
     }
 
+    /**
+     * Figure out which operating system we're running on
+     * 
+     * @return string The operating system
+     */
     protected function findOS()
     {
         if (isset($this->os)) return $this->os;

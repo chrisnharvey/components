@@ -14,6 +14,11 @@ class Script
 
     protected static $resources = [];
 
+    /**
+     * Initialise the application
+     * 
+     * @return void
+     */
     public static function init()
     {
         // Instantiate the application
@@ -34,6 +39,12 @@ class Script
         }
     }
 
+    /**
+     * Run composer post-install script
+     * 
+     * @param  Event  $event
+     * @return void
+     */
     public static function postInstall(Event $event)
     {
         static::init();
@@ -76,6 +87,12 @@ class Script
         file_put_contents(static::$resourcesPath.'/resources.lock', json_encode($data, JSON_PRETTY_PRINT));
     }
 
+    /**
+     * Run composer post-update script
+     * 
+     * @param  Event  $event
+     * @return void
+     */
     public static function postUpdate(Event $event)
     {
         return static::postInstall($event);
