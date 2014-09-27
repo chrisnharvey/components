@@ -2,6 +2,7 @@
 
 namespace Encore\Resource;
 
+use InvalidArgumentException;
 use Encore\Filesystem\Filesystem;
 
 class FileFinder implements FinderInterface
@@ -56,7 +57,7 @@ class FileFinder implements FinderInterface
             }
         }
 
-        throw new \InvalidArgumentException("Resource '$name' not found.");
+        throw new InvalidArgumentException("Resource '$name' not found.");
     }
 
     /**
