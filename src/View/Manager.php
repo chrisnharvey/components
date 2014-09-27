@@ -13,6 +13,14 @@ class Manager implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
+    /**
+     * Constructor
+     * 
+     * @param FinderInterface      $viewFinder
+     * @param ViewParserInterface  $viewParser
+     * @param FinderInterface      $styleFinder
+     * @param StyleParserInterface $styleParser
+     */
     public function __construct(FinderInterface $viewFinder, ViewParserInterface $viewParser, FinderInterface $styleFinder, StyleParserInterface $styleParser)
     {
         $this->viewFinder = $viewFinder;
@@ -21,6 +29,13 @@ class Manager implements ContainerAwareInterface
         $this->styleParser = $styleParser;
     }
 
+    /**
+     * Make a view object
+     * 
+     * @param  string $view
+     * @param  string $styl
+     * @return View
+     */
     public function make($view, $style = null)
     {
         $viewPath = $this->viewFinder->find($view);

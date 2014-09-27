@@ -7,11 +7,22 @@ use Encore\View\Style\StyleCollection;
 
 class Yaml implements ParserInterface
 {
+    /**
+     * Inject dependencies in constructor
+     * 
+     * @param SymfonyYaml $parser
+     */
     public function __construct(SymfonyYaml $parser)
     {
         $this->parser = $parser;
     }
 
+    /**
+     * Parse a view by path
+     * 
+     * @param  string $path
+     * @return \Encore\View\Style\StyleCollection
+     */
     public function parse($file)
     {
         if ( ! $file) return;

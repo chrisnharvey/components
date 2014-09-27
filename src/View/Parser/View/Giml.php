@@ -12,6 +12,13 @@ class Giml extends GimlParser implements ParserInterface, StyleAwareInterface
 {
     protected $style = null;
 
+    /**
+     * Parse view elements
+     * 
+     * @param  array  $elements
+     * @param  ElementInterface $parent
+     * @return array
+     */
     public function parseElements(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as &$element) {
@@ -21,11 +28,22 @@ class Giml extends GimlParser implements ParserInterface, StyleAwareInterface
         return parent::parseElements($elements, $parent);
     }
 
+    /**
+     * Set the style collection
+     * 
+     * @param StyleCollection $style
+     */
     public function setStyle(StyleCollection $style)
     {
         $this->style = $style;
     }
 
+    /**
+     * Apply the styles to the element
+     * 
+     * @param  array $element
+     * @return array
+     */
     protected function applyStyles($element)
     {
         if ( ! $this->style) return;
@@ -44,6 +62,13 @@ class Giml extends GimlParser implements ParserInterface, StyleAwareInterface
         return $element;
     }
 
+    /**
+     * Apply styles to the attributes tag
+     * 
+     * @param  array $element
+     * @param  array $styles
+     * @return array
+     */
     protected function applyStylesToElement($element, $styles)
     {
         foreach ($styles as $tag => $data) {

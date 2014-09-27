@@ -20,6 +20,14 @@ class View implements ControllerAwareInterface
     protected $styleParser;
     protected $parser;
 
+    /**
+     * Inject dependencies
+     * 
+     * @param ViewParserInterface  $viewParser
+     * @param string               $viewPath
+     * @param StyleParserInterface $styleParser
+     * @param string               $stylePath
+     */
     public function __construct(ViewParserInterface $viewParser, $viewPath, StyleParserInterface $styleParser = null, $stylePath = null)
     {
         $this->viewParser = $viewParser;
@@ -28,6 +36,12 @@ class View implements ControllerAwareInterface
         $this->stylePath = $stylePath;
     }
 
+    /**
+     * Get an element by ID
+     * 
+     * @param  string $id
+     * @return mixed
+     */
     public function getElementById($id)
     {
         $this->parse();
@@ -35,11 +49,23 @@ class View implements ControllerAwareInterface
         return $this->view->getElementById($id);
     }
 
+    /**
+     * Magic method to get element by ID.
+     * 
+     * @param  string $property
+     * @return mixed
+     */
     public function __get($property)
     {
         return $this->getElementById($property);
     }
 
+    /**
+     * Set element value
+     * 
+     * @param string $property
+     * @param mixed $value
+     */
     public function __set($property, $value)
     {
         if ($element = $this->getElementById($property)) {
@@ -49,6 +75,12 @@ class View implements ControllerAwareInterface
         $this->$property = $value;
     }
 
+    /**
+     * Parse a view by path
+     * 
+     * @param  string $path
+     * @return \Encore\View\Style\StyleCollection
+     */
     public function parse()
     {
         if (isset($this->view)) return;

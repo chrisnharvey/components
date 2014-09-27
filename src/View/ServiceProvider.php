@@ -7,6 +7,12 @@ use Encore\Resource\FileFinder;
 
 class ServiceProvider extends \Encore\Container\ServiceProvider
 {
+    /**
+     * Register bindings into the container
+     * 
+     * @param  string $binding
+     * @return void
+     */
     public function register($binding)
     {
         $finder = new FileFinder(new Filesystem, $this->container['config']['view.paths.style']);
@@ -20,11 +26,21 @@ class ServiceProvider extends \Encore\Container\ServiceProvider
         });
     }
 
+    /**
+     * Register the bindings this service provider provides
+     * 
+     * @return array
+     */
     public function provides()
     {
         return ['view', 'view.viewfinder', 'view.stylefinder'];
     }
 
+    /**
+     * Return a list of container aliases
+     * 
+     * @return array
+     */
     public function aliases()
     {
         return [
