@@ -13,6 +13,11 @@ abstract class Controller implements ContainerAwareInterface, \ArrayAccess
     protected $view;
     protected $style = null;
 
+    /**
+     * Setup the view and assign it to the controller
+     * 
+     * @return void
+     */
     public function setupView()
     {
         if ( ! isset($this->view)) return;
@@ -23,16 +28,35 @@ abstract class Controller implements ContainerAwareInterface, \ArrayAccess
         $this->view = $view;
     }
 
+    /**
+     * Get magic method
+     * @param  string $property
+     * @return mixed
+     */
     public function __get($property)
     {
         return $this->view->$property;
     }
 
+    /** 
+     * Set magic method
+     * 
+     * @param string $property
+     * @param mixed $value
+     * @return mixed
+     */
     public function __set($property, $value)
     {
         $this->view->$property = $value;
     }
 
+    /**
+     * Call magic method
+     * 
+     * @param  string $method
+     * @param  array $arguments
+     * @return mixed
+     */
     public function __call($method, $arguments)
     {
         return call_user_func_array([$this->view, $method], $arguments);
