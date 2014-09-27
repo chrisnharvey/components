@@ -2,7 +2,9 @@
 
 namespace Encore\Kernel\Proxy;
 
-class App extends \Encore\Container\Proxy
+use Encore\Container\Proxy;
+
+class App extends Proxy
 {
     public static function getConcreteBinding()
     {
