@@ -4,8 +4,47 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9503f3cfb05beb74bc35016a18c9ee1f",
+    "hash": "9b789b6bce47f3f51bfd951b394e2d40",
     "packages": [
+        {
+            "name": "chrisnharvey/gh-sculpin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrisnharvey/gh-sculpin.git",
+                "reference": "5bc8812f79a7f6814863ceaf44871cca48eb915f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrisnharvey/gh-sculpin/zipball/5bc8812f79a7f6814863ceaf44871cca48eb915f",
+                "reference": "5bc8812f79a7f6814863ceaf44871cca48eb915f",
+                "shasum": ""
+            },
+            "bin": [
+                "gh-sculpin"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Harvey",
+                    "email": "chris@chrisnharvey.com"
+                }
+            ],
+            "description": "Automatic Sculpin deployment to GitHub pages using Travis CI.",
+            "keywords": [
+                "ci",
+                "deployment",
+                "github",
+                "pages",
+                "sculpin",
+                "travis"
+            ],
+            "time": "2014-09-27 14:54:05"
+        },
         {
             "name": "components/bootstrap",
             "version": "2.3.2",
@@ -2608,7 +2647,8 @@
         "sculpin/sculpin": 20,
         "dflydev/embedded-composer-console": 20,
         "dflydev/embedded-composer-core": 20,
-        "composer/composer": 20
+        "composer/composer": 20,
+        "chrisnharvey/gh-sculpin": 20
     },
     "prefer-stable": false,
     "platform": [],
