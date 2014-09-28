@@ -8,9 +8,13 @@ php:
   - 5.5
 
 before_script:
+    - git clone https://github.com/encorephp/kernel
+    - composer install -d kernel
     - curl -O https://download.sculpin.io/sculpin.phar
 
-script: php ./sculpin.phar generate --env=prod
+script: 
+    - php ./sculpin.phar generate --env=prod
+    - php bin/sami.php update api.php
 
 after_success:
     - sh ./deploy.sh
