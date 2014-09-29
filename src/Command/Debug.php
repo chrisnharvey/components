@@ -13,6 +13,11 @@ class Debug extends Command implements ContainerAwareInterface
     protected $name = 'debug';
     protected $description = 'Run the application in debug mode';
 
+    /**
+     * Execute the command
+     * 
+     * @return void
+     */
     public function fire()
     {
         require $this->container->appPath().'/start.php';
