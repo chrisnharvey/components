@@ -12,7 +12,7 @@ class ExceptionHandler extends BaseExceptionHandler
      * 
      * @param DisplayerInterface $displayer
      */
-    public function setDisplayer(DisplayerInterface $displayer)
+    public function setDisplayer($displayer)
     {
         $this->displayer = $displayer;
     }
