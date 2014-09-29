@@ -9,6 +9,8 @@ use Encore\Container\ContainerAwareTrait;
 
 class Handler
 {
+    protected $exceptionHandler;
+
     /**
      * Construct the exception handler
      * 
