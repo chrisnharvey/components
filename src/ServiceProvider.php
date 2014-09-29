@@ -2,7 +2,9 @@
 
 namespace Encore\Development;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+use Encore\Container\ServiceProvider as BaseServiceProvider;
+
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Register the dev config directory and register providers.
