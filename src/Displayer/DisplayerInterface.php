@@ -2,6 +2,8 @@
 
 namespace Encore\Error\Displayer;
 
+use Exception;
+
 interface DisplayerInterface
 {
     /**
@@ -9,5 +11,5 @@ interface DisplayerInterface
      *
      * @param  \Exception  $exception
      */
-    public function display(\Exception $exception);
+    public function display(Exception $exception);
 }

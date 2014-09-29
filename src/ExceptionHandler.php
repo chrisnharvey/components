@@ -2,6 +2,7 @@
 
 namespace Encore\Error;
 
+use Exception;
 use Symfony\Component\Debug\ExceptionHandler as BaseExceptionHandler;
 
 class ExceptionHandler extends BaseExceptionHandler
@@ -27,7 +28,7 @@ class ExceptionHandler extends BaseExceptionHandler
         return $handler;
     }
 
-    public function handle(\Exception $exception)
+    public function handle(Exception $exception)
     {
         $this->displayer->display($exception);
     }
