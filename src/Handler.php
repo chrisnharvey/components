@@ -30,6 +30,8 @@ class Handler
     {
         $this->displayer = $displayer;
 
+        if ( ! isset($this->exceptionHandler)) return;
+
         $this->exceptionHandler->setDisplayer($displayer);
     }
 
