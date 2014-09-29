@@ -2,7 +2,9 @@
 
 namespace Encore\Resource;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+use Encore\Container\ServiceProvider as BaseServiceProvider;
+
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Register the command for publishing resources.
