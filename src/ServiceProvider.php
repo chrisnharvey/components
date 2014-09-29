@@ -3,8 +3,9 @@
 namespace Encore\Error;
 
 use Encore\Error\Displayer\BasicDisplayer;
+use Encore\Container\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     public function register()
     {
