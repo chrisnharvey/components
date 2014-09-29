@@ -7,7 +7,7 @@ use Symfony\Component\Debug\ExceptionHandler as BaseExceptionHandler;
 
 class ExceptionHandler extends BaseExceptionHandler
 {
-    public function setDisplayer($displayer)
+    public function setDisplayer(DisplayerInterface $displayer)
     {
         $this->displayer = $displayer;
     }
