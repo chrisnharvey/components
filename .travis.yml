@@ -8,13 +8,13 @@ php:
   - 5.5
 
 before_script:
-    - composer install
-    - git clone https://github.com/encorephp/kernel
-    - composer install -d kernel
+    - travis_retry composer install
+    - travis_retry git clone https://github.com/encorephp/kernel
+    - travis_retry composer install -d kernel
 
 script: 
     - php bin/sculpin generate --env=prod
     - php bin/sami.php update api.php
 
 after_success:
-    - sh ./deploy.sh
+    - travis_retry sh ./deploy.sh
