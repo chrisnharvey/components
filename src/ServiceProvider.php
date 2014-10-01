@@ -3,8 +3,9 @@
 namespace Encore\Giml;
 
 use Encore\Giml\Support\View as ViewParser;
+use Encore\Container\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends \Encore\Container\ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     public function register()
     {
