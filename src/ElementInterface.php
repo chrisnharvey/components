@@ -31,4 +31,8 @@ interface ElementInterface
     public function getRaw();
 
     public function __toString();
+
+    public function __get($property);
+
+    public function __set($property, $value);
 }
