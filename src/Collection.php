@@ -8,6 +8,11 @@ class ElementCollection implements CollectionInterface
 {
     protected $objects = [];
 
+    /**
+     * Add an element to the collection
+     * 
+     * @param ElementInterface $element
+     */
     public function add(ElementInterface $element)
     {
         $id = $element->id;
@@ -19,16 +24,31 @@ class ElementCollection implements CollectionInterface
         $this->objects[$id] = $element;
     }
 
+    /**
+     * Get an element by its ID
+     * @param  string $id
+     * @return ElementInterface
+     */
     public function getElementById($id)
     {
         return $this->objects[$id];
     }
 
+    /**
+     * Generate a unique ID for the element
+     * @return string
+     */
     public function generateId()
     {
         return uniqid('auto', true);
     }
 
+    /**
+     * Check an ID has not been used before
+     * 
+     * @param  string $id
+     * @throws DuplicateIdException
+     */
     protected function checkId($id)
     {
         if (in_array($id, $this->ids)) {

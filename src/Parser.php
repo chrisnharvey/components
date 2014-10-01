@@ -12,6 +12,13 @@ class Parser
     protected $reader;
     protected $reservations = [];
 
+    /**
+     * Construct the parser object
+     * 
+     * @param ReaderInterface         $reader
+     * @param CollectionInterface     $collection
+     * @param ElementFactoryInterface $elementFactory
+     */
     public function __construct(ReaderInterface $reader, CollectionInterface $collection, ElementFactoryInterface $elementFactory)
     {
         $this->reader = $reader;
@@ -19,6 +26,12 @@ class Parser
         $this->elementFactory = $elementFactory;
     }
 
+    /**
+     * Parse a .gim file
+     * 
+     * @param  string $file
+     * @return CollectionInterface
+     */
     public function parse($file)
     {
         $this->reader->open($file);
@@ -29,11 +42,23 @@ class Parser
         return $this->collection;
     }
 
+    /**
+     * Get the injected reader object
+     * 
+     * @return ReaderInterface
+     */
     public function getReader()
     {
         return $this->reader;
     }
 
+    /**
+     * Parse the elements retrieved from a parsed .gim file
+     * 
+     * @param  array  $elements
+     * @param  ElementInterface $parent
+     * @return array
+     */
     public function parseElements(array $elements, ElementInterface $parent = null)
     {
         foreach ($elements as $element) {
@@ -76,11 +101,23 @@ class Parser
         return $data;
     }
 
+    /**
+     * Add a reservation to an element name
+     * 
+     * @param string $name
+     * @param ReservationInterface $reservation
+     */
     public function addReservation($name, ReservationInterface $reservation)
     {
         $this->reservations[$name] = $reservation;
     }
 
+    /**
+     * Get a reservation by name
+     * 
+     * @param  string $name
+     * @return ReservationInterface
+     */
     public function getReservation($name)
     {
         if (array_key_exists($name, $this->reservations)) {
