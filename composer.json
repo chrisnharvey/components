@@ -22,7 +22,6 @@
         "encorephp/development": "dev-master",
         "encorephp/wxwidgets": "dev-master",
         "encorephp/view-controller": "dev-master"
-
     },
     "autoload": {
         "psr-4": {
