@@ -27,7 +27,9 @@ class Timezone
 
     public function getSystemTimezone()
     {
-        if ($this->app->os() === $this->app::OS_WIN) {
+        $app = $this->app;
+
+        if ($app->os() === $app::OS_WIN) {
             return $this->getWindowsTimezone();
         }
 
