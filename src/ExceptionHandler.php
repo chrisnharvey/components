@@ -24,9 +24,9 @@ class ExceptionHandler extends BaseExceptionHandler
      *
      * @return ExceptionHandler The registered exception handler
      */
-    public static function register($debug = true)
+    public static function register($debug = true, $fileLinkFormat = null)
     {
-        $handler = new static($debug);
+        $handler = new static($debug, $fileLinkFormat);
 
         set_exception_handler(array($handler, 'handle'));
 
