@@ -1,0 +1,3 @@
+# EncorePHP Translation
+
+Translation component
