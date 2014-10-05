@@ -13,6 +13,7 @@
         "php": ">=5.4.0",
         "encorephp/container": "dev-master",
         "encorephp/config": "dev-master",
+        "encorephp/translation": "dev-master",
         "encorephp/events": "dev-master",
         "encorephp/error": "dev-master",
         "ircmaxell/password-compat": "1.0.*",
