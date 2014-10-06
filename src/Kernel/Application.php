@@ -129,10 +129,6 @@ class Application extends Container
             require $bootstrap;
         }
 
-        $this->quitting(function() {
-            exit(0);
-        });
-
         $this->booted = true;
     }
 
