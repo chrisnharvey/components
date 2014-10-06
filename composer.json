@@ -13,6 +13,9 @@
         "php": ">=5.4.0",
         "symfony/console": "2.6.*"
     },
+    "require-dev": {
+        "encorephp/error": "dev-master"
+    },
     "suggest": {
         "encorephp/error": "Allows the use of consoles error and exception displayer"
     },
