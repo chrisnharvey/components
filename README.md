@@ -1,3 +1,3 @@
 # EncorePHP Translation
 
-Translation component
+Translation component based on symfony/translation
