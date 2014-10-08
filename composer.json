@@ -13,7 +13,7 @@
         "php": ">=5.4.0",
         "encorephp/console": "dev-master",
         "encorephp/filesystem": "dev-master",
-        "symfony/process": "2.4.x",
+        "symfony/process": "2.6.*",
         "guzzlehttp/guzzle": "4.0.0-rc.1",
         "composer/composer": "1.0.*"
     },
