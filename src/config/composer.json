@@ -1,0 +1,27 @@
+{
+    "name": "encorephp/config",
+    "description": "Config loader with namespaces and multiple paths.",
+    "keywords": ["config"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/namespacer": "dev-master",
+        "encorephp/filesystem": "dev-master"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Config\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
