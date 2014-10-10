@@ -1,0 +1,25 @@
+{
+    "name": "encorephp/container",
+    "description": "Dependency injection container with service providers and proxies.",
+    "keywords": ["ioc", "container", "dependency injection", "di", "service provider", "proxy"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "suggest": {
+        "encorephp/events": "Allows registration of service providers when events are fired"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Container\\": "src/",
+            "Encore\\Container\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}
