@@ -1,0 +1,27 @@
+{
+    "name": "encorephp/translation",
+    "description": "Translation package based on Symfony Translation.",
+    "keywords": ["translation", "translator", "lauguage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/resource": "dev-master",
+        "symfony/translation": "2.6.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.0",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Translation\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
