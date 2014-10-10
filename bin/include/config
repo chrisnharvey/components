@@ -1,0 +1,27 @@
+#!/bin/bash
+
+branch=$(git rev-parse --abbrev-ref HEAD);
+
+repos="
+    compiler
+    config
+    console
+    container
+    database
+    debug
+    development
+    error
+    events
+    filesystem
+    giml
+    kernel
+    migration
+    namespacer
+    orm
+    repl
+    resource
+    testing
+    translation
+    view-controller
+    wxwidgets
+";

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cur_dir="$(dirname "$0")"
+
+source $cur_dir/include/config
+
+for repo in ${repos}; do
+    git subtree push --prefix=src/$repo https://github.com/encorephp/$repo $branch
+done
