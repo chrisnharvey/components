@@ -9,6 +9,6 @@ require __DIR__.'/../vendor/autoload.php';
 
 $app = new Encore\Console\Application('REPL', 0.1);
 
-$app->add(new Encore\REPL\Command);
+$app->add(new Encore\Repl\Command);
 
 $app->call('repl', [], new ConsoleOutput);

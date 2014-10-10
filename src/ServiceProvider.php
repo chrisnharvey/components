@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\REPL;
+namespace Encore\Repl;
 
 use Encore\Container\ServiceProvider as BaseServiceProvider;
 
@@ -13,6 +13,6 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function commands()
     {
-        return ['Encore\REPL\Command'];
+        return ['Encore\Repl\Command'];
     }
 }

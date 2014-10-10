@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\REPL;
+namespace Encore\Repl;
 
 use Encore\Console\Command as BaseCommand;
 use Encore\Container\ContainerAwareTrait;

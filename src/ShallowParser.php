@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\REPL;
+namespace Encore\Repl;
 
 /* vim: set shiftwidth=2 expandtab softtabstop=2: */
 

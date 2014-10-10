@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\REPL\\": "src/"
+            "Encore\\Repl\\": "src/"
         }
     },
     "minimum-stability": "dev"
