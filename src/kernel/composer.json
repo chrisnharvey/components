@@ -22,7 +22,9 @@
     "require-dev": {
         "encorephp/development": "dev-master",
         "encorephp/wxwidgets": "dev-master",
-        "encorephp/view-controller": "dev-master"
+        "encorephp/view-controller": "dev-master",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.3.*"
     },
     "autoload": {
         "psr-4": {
