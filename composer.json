@@ -46,6 +46,7 @@
             "Encore\\Repl\\": "src/repl/src",
             "Encore\\Resource\\": "src/resource/src",
             "Encore\\Testing\\": "src/testing/src",
+            "Encore\\Threads": "src/threads/src",
             "Encore\\Translation\\": "src/translation/src",
             "Encore\\View\\": "src/view-controller/src/View",
             "Encore\\Controller\\": "src/view-controller/src/Controller",
