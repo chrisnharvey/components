@@ -21,6 +21,7 @@ repos="
     repl
     resource
     testing
+    threads
     translation
     view-controller
     wxwidgets
