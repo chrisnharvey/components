@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Threads": "src/"
+            "Encore\\Threads\\": "src/"
         }
     },
     "minimum-stability": "dev"
