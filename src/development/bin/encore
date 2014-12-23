@@ -4,8 +4,12 @@
 ini_set('display_errors', 1);
 error_reporting(-1);
 
+$autoload = __DIR__.'/../../../autoload.php';
+
+if (file_exists($autoload)) require $autoload;
+
 // Require the composer autoloader
-require __DIR__.'/../../../autoload.php';
+require __DIR__.'/../../../../../autoload.php';
 
 // Instantiate the application
 $app = Encore\Kernel\Application::fromCwd();
