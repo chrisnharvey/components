@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/encorephp/container/master.svg?style=flat-square)](https://travis-ci.org/encorephp/container)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/encorephp/container.svg?style=flat-square)](https://scrutinizer-ci.com/g/encorephp/container/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/encorephp/container.svg?style=flat-square)](https://scrutinizer-ci.com/g/encorephp/container)
-[![Total Downloads](https://img.shields.io/packagiencorephp/container.svg?style=flat-square)](https://packagist.org/pacencorephp/container)
+[![Total Downloads](https://img.shields.io/packagist/encorephp/container.svg?style=flat-square)](https://packagist.org/packages/encorephp/container)
 
 The EncorePHP Container library provides a fast and powerful Dependency Injection Container for your application.
 
@@ -134,7 +134,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email chris@chrisnharvey.com instead of using the issue tracker.
 
 ## Credits
 
