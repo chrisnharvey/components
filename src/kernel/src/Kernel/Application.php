@@ -20,6 +20,7 @@ class Application extends Container
 
     private $appPath;
     private $basePath;
+    private $resourcesPath;
 
     private $booted = false;
     private $os;
@@ -33,11 +34,13 @@ class Application extends Container
      * 
      * @param string $basePath
      * @param string $appPath
+     * @param string $resourcesPath
      */
-    public function __construct($basePath, $appPath = null)
+    public function __construct($basePath, $appPath = null, $resourcesPath = null)
     {
         $this->basePath = $basePath;
         $this->appPath = $appPath ?: $basePath.'/app';
+        $this->resourcesPath = $resourcesPath ?: $basePath.'/resources';
 
         // First things first... Register this as the app
         $this->bind('app', $this);
@@ -191,6 +194,16 @@ class Application extends Container
     public function basePath()
     {
         return $this->basePath;
+    }
+
+    /**
+     * Get the path to resources
+     * 
+     * @return string
+     */
+    public function resourcesPath()
+    {
+        return $this->resourcesPath;
     }
 
     /**
