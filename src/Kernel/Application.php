@@ -187,7 +187,7 @@ class Application extends Container
     }
     
     /**
-     * Get the path the base path
+     * Get the base path
      * 
      * @return string
      */
