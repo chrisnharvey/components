@@ -40,7 +40,7 @@ class Application extends Container
     {
         $this->basePath = $basePath;
         $this->appPath = $appPath ?: $basePath.'/app';
-        $this->resourcesPath = $resourcesPath ?: $basePath.'/resources';
+        $this->resourcesPath = $resourcesPath ?: $this->appPath.'/resources';
 
         // First things first... Register this as the app
         $this->bind('app', $this);
