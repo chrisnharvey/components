@@ -15,7 +15,6 @@ repos="
     filesystem
     giml
     kernel
-    migration
     namespacer
     repl
     resource
