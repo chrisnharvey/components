@@ -1,7 +1,7 @@
 {
     "name": "encorephp/database",
-    "description": "Database abstraction layer",
-    "keywords": ["database", "abstraction", "query"],
+    "description": "Database abstraction, ORM and migrations",
+    "keywords": ["database", "abstraction", "query", "propel", "orm", "migration"],
     "license": "MIT",
     "authors": [
         {
@@ -11,8 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "aura/sql": "2.1.x",
-        "aura/sqlquery": "2.1.x"
+        "propel/propel": "~2.0@dev"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
