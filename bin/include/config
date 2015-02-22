@@ -17,9 +17,9 @@ repos="
     kernel
     migration
     namespacer
-    orm
     repl
     resource
+    seed
     testing
     threads
     translation
