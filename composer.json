@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "propel/propel": "~2.0@dev",
         "symfony/debug": "2.6.*",
         "symfony/finder": "2.6.*",
         "symfony/translation": "2.6.*",
