@@ -14,7 +14,8 @@
         "encorephp/console": "dev-master",
         "encorephp/repl": "dev-master",
         "encorephp/testing": "dev-master",
-        "encorephp/compiler": "dev-master"
+        "encorephp/compiler": "dev-master",
+        "codegyre/robo": "*"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
