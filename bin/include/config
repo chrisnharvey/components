@@ -18,7 +18,6 @@ repos="
     namespacer
     repl
     resource
-    seed
     testing
     threads
     translation
