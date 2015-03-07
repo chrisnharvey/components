@@ -2,9 +2,9 @@
 
 namespace Encore\Development;
 
-use Robo\Tasks;
+use Robo\Tasks as BaseTasks;
 
-class Tasks
+class Tasks extends BaseTasks
 {
     
 }
