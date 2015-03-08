@@ -7,6 +7,8 @@ use Robo\Runner;
 use Robo\Result;
 use Symfony\Component\Console\Input\InputInterface;
 use Encore\Container\ServiceProvider as BaseServiceProvider;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Robo\Config;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -44,6 +46,8 @@ class ServiceProvider extends BaseServiceProvider
 
         $tasks = new TaskFile;
         $runner = new Runner;
+
+        Config::setOutput(new ConsoleOutput());
 
         $commandNames = array_filter(get_class_methods($tasks), function($m) {
             return strpos($m, '__') === false;
