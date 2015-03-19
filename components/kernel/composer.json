@@ -1,0 +1,43 @@
+{
+    "name": "encorephp/kernel",
+    "description": "The EncorePHP Kernel.",
+    "keywords": ["framework", "kernel", "encorephp"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/container": "dev-master",
+        "encorephp/config": "dev-master",
+        "encorephp/translation": "dev-master",
+        "encorephp/events": "dev-master",
+        "encorephp/error": "dev-master",
+        "ircmaxell/password-compat": "1.0.*",
+        "monolog/monolog": "1.*"
+    },
+    "require-dev": {
+        "encorephp/development": "dev-master",
+        "encorephp/wxwidgets": "dev-master",
+        "encorephp/view-controller": "dev-master",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\": "src/"
+        },
+        "files": [
+            "src/Kernel/helpers.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
