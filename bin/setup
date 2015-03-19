@@ -5,5 +5,5 @@ cur_dir="$(dirname "$0")"
 source $cur_dir/include/config
 
 for repo in ${repos}; do
-    git subtree add --prefix=src/$repo https://github.com/encorephp/$repo $branch
+    git subtree add --prefix=components/$repo https://github.com/encorephp/$repo $branch
 done
