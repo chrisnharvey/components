@@ -1,4 +1,0 @@
-Database
-========
-
-Database abstraction layer.

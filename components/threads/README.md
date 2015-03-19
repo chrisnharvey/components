@@ -1,4 +1,0 @@
-Threads
-=========
-
-EncorePHP threading functionality

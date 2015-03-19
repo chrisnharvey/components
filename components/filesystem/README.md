@@ -1,4 +1,0 @@
-filesystem
-==========
-
-Filesystem helper class
