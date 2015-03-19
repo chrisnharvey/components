@@ -1,0 +1,20 @@
+language: php
+
+env:
+    global:
+    - secure: "EFiiOhppAWDnoGjIHOkTY08F5EF87uPlqBLY9UfNSLA83JBsqYOPTxIfk8Y1cmNctK2x5bwl6/VFB65qkYBw0zwr3iQsqxjaJ/EfoX3yDIyrPOd+dqXcJQWkYhjs3UjslCS0yrUCTgfrzkaHNoFspFMbC1n73//vhaNtIyDAMm0="
+
+php:
+  - 5.5
+
+before_script:
+    - travis_retry composer install
+    - travis_retry git clone https://github.com/encorephp/kernel
+    - travis_retry composer install -d kernel
+
+script: 
+    - php bin/sculpin generate --env=prod
+    - php bin/sami.php update api.php
+
+after_success:
+    - travis_retry sh ./deploy.sh
