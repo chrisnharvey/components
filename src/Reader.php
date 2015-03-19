@@ -2,7 +2,7 @@
 
 namespace Encore\Giml;
 
-class Reader extends \Sabre\XML\Reader implements ReaderInterface
+class Reader extends \Sabre\Xml\Reader implements ReaderInterface
 {
     /**
      * Returns the current nodename in clark-notation.
