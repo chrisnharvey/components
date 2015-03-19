@@ -15,4 +15,4 @@ script:
     - php site/bin/sami.php update api.php
 
 after_success:
-    - travis_retry sh ./deploy.sh
+    - travis_retry bin/deploy
