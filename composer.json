@@ -1,0 +1,35 @@
+{
+    "name": "encorephp/compiler",
+    "description": "The EncorePHP Compiler.",
+    "keywords": ["framework", "encorephp"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Harvey",
+            "email": "chris@chrisnharvey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "encorephp/console": "dev-master",
+        "encorephp/filesystem": "dev-master",
+        "symfony/process": "2.6.*",
+        "guzzlehttp/guzzle": "4.0.0-rc.1",
+        "composer/composer": "1.0.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.3.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
