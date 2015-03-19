@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+if (file_exists($file = __DIR__.'/../../../autoload.php')) require $file;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app = new Encore\Console\Application('REPL', 0.1);
+
+$app->add(new Encore\Repl\Command);
+
+$app->call('repl', [], new ConsoleOutput);
