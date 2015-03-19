@@ -12,6 +12,6 @@ $iterator = Finder::create()
     ->in('kernel/vendor/encorephp/*/src');
 
 return new Sami($iterator, [
-    'build_dir'            => (is_dir(__DIR__.'/output_prod') ? __DIR__.'/output_prod' : __DIR__.'/output_dev').'/api',
+    'build_dir'            => (is_dir(__DIR__.'/site/output_prod') ? __DIR__.'/site/output_prod' : __DIR__.'/site/output_dev').'/api',
     'default_opened_level' => 2,
 ]);
