@@ -8,7 +8,7 @@ $iterator = Finder::create()
     ->name('*.php')
     ->exclude('Resources')
     ->exclude('Tests')
-    ->in('kernel/src')
+    ->in('components/*/src')
     ->in('kernel/vendor/encorephp/*/src');
 
 return new Sami($iterator, [
