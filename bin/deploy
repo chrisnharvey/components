@@ -5,9 +5,9 @@ if [ "${TRAVIS_PULL_REQUEST}" = "1" ]; then
     exit
 fi
 
-echo encorephp.com > ./output_prod/CNAME
+cd ../site/output_prod
 
-cd ./output_prod
+echo encorephp.com > CNAME
 
 git init
 echo "https://${GH_TOKEN}:@github.com" > .git/credentials
