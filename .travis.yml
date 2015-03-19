@@ -11,7 +11,7 @@ before_script:
     - travis_retry composer install -d site
 
 script: 
-    - php site/bin/sculpin generate --env=prod
+    - php site/bin/sculpin generate --project-dir=site --env=prod
     - php site/bin/sami.php update api.php
 
 after_success:
