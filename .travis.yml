@@ -5,13 +5,14 @@ env:
     - secure: "EFiiOhppAWDnoGjIHOkTY08F5EF87uPlqBLY9UfNSLA83JBsqYOPTxIfk8Y1cmNctK2x5bwl6/VFB65qkYBw0zwr3iQsqxjaJ/EfoX3yDIyrPOd+dqXcJQWkYhjs3UjslCS0yrUCTgfrzkaHNoFspFMbC1n73//vhaNtIyDAMm0="
 
 php:
-  - 5.5
+  - 5.6
 
 before_script:
+	- curl -O https://download.sculpin.io/sculpin.phar
     - travis_retry composer install -d site
 
 script: 
-    - php site/bin/sculpin generate --project-dir=site --env=prod
+    - php sculpin.phar generate --project-dir=site --env=prod
     - php site/bin/sami.php update api.php
 
 after_success:
