@@ -8,8 +8,7 @@ $iterator = Finder::create()
     ->name('*.php')
     ->exclude('Resources')
     ->exclude('Tests')
-    ->in('components/*/src')
-    ->in('kernel/vendor/encorephp/*/src');
+    ->in('components/*/src');
 
 return new Sami($iterator, [
     'build_dir'            => (is_dir(__DIR__.'/site/output_prod') ? __DIR__.'/site/output_prod' : __DIR__.'/site/output_dev').'/api',
