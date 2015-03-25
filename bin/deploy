@@ -5,7 +5,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "1" ]; then
     exit
 fi
 
-cd ../site/output_prod
+cd site/output_prod
 
 echo encorephp.com > CNAME
 
