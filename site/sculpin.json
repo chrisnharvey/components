@@ -3,7 +3,6 @@
         "sami/sami": "2.0.x"
     },
     "config": {
-        "component-dir": "source/components",
-        "bin-dir": "./bin"
+        "component-dir": "source/components"
     }
 }
