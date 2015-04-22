@@ -13,7 +13,7 @@ before_script:
 
 script: 
     - php sculpin.phar generate --project-dir=site --env=prod
-    - php site/bin/sami.php update api.php
+    - php site/vendor/bin/sami.php update api.php
 
 after_success:
     - travis_retry bin/deploy
