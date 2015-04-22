@@ -1,7 +1,4 @@
 {
-    "require": {
-        "sami/sami": "2.0.x"
-    },
     "config": {
         "component-dir": "source/components"
     }
