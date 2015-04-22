@@ -1,0 +1,5 @@
+{
+    "require": {
+        "sami/sami": "2.0.x"
+    }
+}
