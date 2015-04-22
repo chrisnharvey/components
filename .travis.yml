@@ -8,8 +8,9 @@ php:
   - 5.6
 
 before_script:
-    - curl -O https://download.sculpin.io/sculpin.phar
+    - travis_retry curl -O https://download.sculpin.io/sculpin.phar
     - travis_retry php sculpin.phar install --project-dir=site
+    - travis_retry composer install -d site
 
 script: 
     - php sculpin.phar generate --project-dir=site --env=prod
