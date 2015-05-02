@@ -53,7 +53,10 @@
             "Encore\\View\\": "components/view-controller/src/View",
             "Encore\\Controller\\": "components/view-controller/src/Controller",
             "Encore\\Wx\\": "components/wxwidgets/src"
-        }
+        },
+        "files": [
+            "components/wxwidgets/src/helpers.php"
+        ]
     },
     "bin": ["components/development/bin/encore"],
     "minimum-stability": "dev"
