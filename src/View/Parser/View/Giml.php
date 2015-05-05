@@ -46,7 +46,7 @@ class Giml extends GimlParser implements ParserInterface, StyleAwareInterface
      */
     protected function applyStyles($element)
     {
-        if ( ! $this->style) return;
+        if ( ! $this->style) return $element;
 
         if (array_key_exists('class', $element['attributes'])) {
             $classes = explode(' ', $element['attributes']['class']);
