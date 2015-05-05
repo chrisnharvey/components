@@ -33,3 +33,19 @@ So an example GIML view for this controller would be:
     </Frame>
 </GIML>
 ```
+
+This view is also attached to a style under the same name ```main.yml```.
+
+```yaml
+"#window":
+    width: 250
+    height: 100
+    x: 200
+    y: 200
+    style:
+        - closeBox
+
+"#text":
+    style:
+        - processEnter
+```
