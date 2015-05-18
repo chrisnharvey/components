@@ -1,4 +1,0 @@
-EncorePHP Documentation
-====
-
-WIP

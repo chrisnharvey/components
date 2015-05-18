@@ -11,6 +11,6 @@ $iterator = Finder::create()
     ->in('components/*/src');
 
 return new Sami($iterator, [
-    'build_dir'            => (is_dir(__DIR__.'/site/output_prod') ? __DIR__.'/site/output_prod' : __DIR__.'/site/output_dev').'/api',
+    'build_dir'            => __DIR__.'/api',
     'default_opened_level' => 2,
 ]);

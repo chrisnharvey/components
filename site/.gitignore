@@ -1,7 +1,0 @@
-bin
-vendor
-.sculpin
-cache
-output_dev
-output_prod
-source/components

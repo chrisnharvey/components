@@ -28,6 +28,9 @@
         "mockery/mockery": "0.8.0",
         "phpunit/phpunit": "3.7.*"
     },
+    "require-dev": {
+        "sami/sami": "2.0.*"
+    },
     "autoload": {
         "psr-4": {
             "Encore\\Compiler\\": "components/compiler/src",
