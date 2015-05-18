@@ -4,4 +4,6 @@ EncorePHP
 
 *Note: Please submit issues to the repository in which your issue relates to.*
 
-EncorePHP super-project of all components, website and documentation.
+EncorePHP super-project of all components.
+
+This repository is also used to generate the EncorePHP API using [Sami](https://packagist.org/packages/sami/sami).
