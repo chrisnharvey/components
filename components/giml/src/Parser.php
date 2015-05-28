@@ -91,12 +91,12 @@ class Parser
                 $this->parseElements($element['value'], $object);
             }
 
-            // Ready
-            $object->ready();
-
             if ($object instanceof ReservationInterface) {
                 $object = $object->getElement($this, $parent);
             }
+
+            // Ready
+            $object->ready();
 
             $data[] = $object;
         }
