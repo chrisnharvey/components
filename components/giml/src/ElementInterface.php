@@ -12,6 +12,13 @@ interface ElementInterface
     public function init();
 
     /**
+     * Called when the element is ready
+     * 
+     * @return void
+     */
+    public function ready();
+
+    /**
      * Set the elements attributes
      * 
      * @param array $attributes

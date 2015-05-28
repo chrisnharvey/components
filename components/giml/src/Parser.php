@@ -84,12 +84,15 @@ class Parser
                 $parent->addChild($object);
             }
 
+            // Initialize object
+            $object->init();
+
             if (is_array($element['value'])) {
                 $this->parseElements($element['value'], $object);
             }
 
-            // Initialize object
-            $object->init();
+            // Ready
+            $object->ready();
 
             if ($object instanceof ReservationInterface) {
                 $object = $object->getElement($this, $parent);
