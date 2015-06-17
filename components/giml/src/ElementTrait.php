@@ -31,7 +31,9 @@ trait ElementTrait
      */
     public function setAttributes(array $attributes)
     {
-        $this->attributes = $attributes;
+        foreach ($attributes as $key => $value) {
+            $this->setAttribute($key, $value);
+        }
     }
 
     /**
