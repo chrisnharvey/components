@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Encore\Kernel\Proxy\App | API</title>
+                    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../../classes.html">Classes</a></li>
+                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../../traits.html">Traits</a></li>
+            <li><a href="../../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../../Encore/Kernel/Proxy.html">Encore\Kernel\Proxy</a>\App</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>App</strong>        extends <a href="../../../Encore/Container/Proxy.html"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    static&nbsp;void
+                </td>
+                <td class="last">
+                    <a href="#method_swap">swap</a>(mixed $instance)
+                    <p>Hotswap the underlying instance behind the proxy.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_swap"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;<abbr title="Mockery\Expectation">Expectation</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_shouldReceive">shouldReceive</a>()
+                    <p>Initiate a mock expectation on the proxy.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_shouldReceive"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;mixed
+                </td>
+                <td class="last">
+                    <a href="#method_getConcreteInstance">getConcreteInstance</a>()
+                    <p>Get the root object behind the proxy.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_getConcreteInstance"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;void
+                </td>
+                <td class="last">
+                    <a href="#method_clearResolvedInstance">clearResolvedInstance</a>(string $name)
+                    <p>Clear a resolved proxy instance.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_clearResolvedInstance"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;void
+                </td>
+                <td class="last">
+                    <a href="#method_clearResolvedInstances">clearResolvedInstances</a>()
+                    <p>Clear all of the resolved instances.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_clearResolvedInstances"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;<a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getContainer">getContainer</a>()
+                    <p>Get the container instance behind the proxy.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_getContainer"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;void
+                </td>
+                <td class="last">
+                    <a href="#method_setContainer">setContainer</a>(<a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a> $container)
+                    <p>Set the container instance.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method_setContainer"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;mixed
+                </td>
+                <td class="last">
+                    <a href="#method___callStatic">__callStatic</a>(string $method, array $args)
+                    <p>Handle dynamic, static calls to the object.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Encore/Container/Proxy.html#method___callStatic"><abbr title="Encore\Container\Proxy">Proxy</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;string
+                </td>
+                <td class="last">
+                    <a href="#method_getConcreteBinding">getConcreteBinding</a>()
+                    <p>Get the name of the concrete binding in the container.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_swap">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_swap"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 31</div>
+        <code>        static    public            void
+    <strong>swap</strong>(mixed $instance)</code>
+    </h3>
+    <div class="details">
+        <p>Hotswap the underlying instance behind the proxy.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>mixed</td>
+                <td>$instance</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_shouldReceive">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_shouldReceive"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 44</div>
+        <code>        static    public            <abbr title="Mockery\Expectation">Expectation</abbr>
+    <strong>shouldReceive</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Initiate a mock expectation on the proxy.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Mockery\Expectation">Expectation</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getConcreteInstance">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_getConcreteInstance"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 114</div>
+        <code>        static    public            mixed
+    <strong>getConcreteInstance</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the root object behind the proxy.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_clearResolvedInstance">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_clearResolvedInstance"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 154</div>
+        <code>        static    public            void
+    <strong>clearResolvedInstance</strong>(string $name)</code>
+    </h3>
+    <div class="details">
+        <p>Clear a resolved proxy instance.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_clearResolvedInstances">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_clearResolvedInstances"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 164</div>
+        <code>        static    public            void
+    <strong>clearResolvedInstances</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Clear all of the resolved instances.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getContainer">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_getContainer"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 174</div>
+        <code>        static    public            <a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a>
+    <strong>getContainer</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the container instance behind the proxy.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setContainer">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method_setContainer"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 185</div>
+        <code>        static    public            void
+    <strong>setContainer</strong>(<a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a> $container)</code>
+    </h3>
+    <div class="details">
+        <p>Set the container instance.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a></td>
+                <td>$container</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___callStatic">
+        <div class="location">in <a href="../../../Encore/Container/Proxy.html#method___callStatic"><abbr title="Encore\Container\Proxy">Proxy</abbr></a> at line 197</div>
+        <code>        static    public            mixed
+    <strong>__callStatic</strong>(string $method, array $args)</code>
+    </h3>
+    <div class="details">
+        <p>Handle dynamic, static calls to the object.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$method</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getConcreteBinding">
+        <div class="location">at line 14</div>
+        <code>        static    public            string
+    <strong>getConcreteBinding</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the name of the concrete binding in the container.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

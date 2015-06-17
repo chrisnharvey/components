@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Encore\Events\DispatcherInterface | API</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Interface</div>
+    <h1><a href="../../Encore/Events.html">Encore\Events</a>\DispatcherInterface</h1>
+    </div>
+        <div class="content">
+                <p>    interface
+    <strong>DispatcherInterface</strong></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    void
+                </td>
+                <td class="last">
+                    <a href="#method_listen">listen</a>(string $event, callable $callback, int $priority = 100)
+                    <p>Subscribe to an event.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    void
+                </td>
+                <td class="last">
+                    <a href="#method_once">once</a>(string $event, callable $callback, int $priority = 100)
+                    <p>Subscribe to an event exactly once.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_fire">fire</a>(string $event, array $arguments = array())
+                    <p>Emits an event.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_listeners">listeners</a>(string $event)
+                    <p>Returns the list of listeners for an event.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    void
+                </td>
+                <td class="last">
+                    <a href="#method_forgetListener">forgetListener</a>(string $event, callable $listener)
+                    <p>Removes a specific listener from an event.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    void
+                </td>
+                <td class="last">
+                    <a href="#method_forget">forget</a>(string $event)
+                    <p>Removes all listeners from the specified event.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_listen">
+        <div class="location">at line 15</div>
+        <code>            public            void
+    <strong>listen</strong>(string $event, callable $callback, int $priority = 100)</code>
+    </h3>
+    <div class="details">
+        <p>Subscribe to an event.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>callable</td>
+                <td>$callback</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$priority</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_once">
+        <div class="location">at line 25</div>
+        <code>            public            void
+    <strong>once</strong>(string $event, callable $callback, int $priority = 100)</code>
+    </h3>
+    <div class="details">
+        <p>Subscribe to an event exactly once.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>callable</td>
+                <td>$callback</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$priority</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_fire">
+        <div class="location">at line 37</div>
+        <code>            public            bool
+    <strong>fire</strong>(string $event, array $arguments = array())</code>
+    </h3>
+    <div class="details">
+        <p>Emits an event.</p>
+        <p>This method will return true if 0 or more listeners were succesfully
+handled. false is returned if one of the events broke the event chain.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$arguments</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_listeners">
+        <div class="location">at line 51</div>
+        <code>            public            array
+    <strong>listeners</strong>(string $event)</code>
+    </h3>
+    <div class="details">
+        <p>Returns the list of listeners for an event.</p>
+        <p>The list is returned as an array. Every item is another array with 2
+elements: priority and the callback.</p>
+
+<p>The array is returned by reference, and can therefore be used to
+manipulate the list of events.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_forgetListener">
+        <div class="location">at line 60</div>
+        <code>            public            void
+    <strong>forgetListener</strong>(string $event, callable $listener)</code>
+    </h3>
+    <div class="details">
+        <p>Removes a specific listener from an event.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>callable</td>
+                <td>$listener</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_forget">
+        <div class="location">at line 68</div>
+        <code>            public            void
+    <strong>forget</strong>(string $event)</code>
+    </h3>
+    <div class="details">
+        <p>Removes all listeners from the specified event.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$event</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

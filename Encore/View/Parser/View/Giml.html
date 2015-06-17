@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Encore\View\Parser\View\Giml | API</title>
+                    <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../../../classes.html">Classes</a></li>
+                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../../../traits.html">Traits</a></li>
+            <li><a href="../../../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../../../Encore/View/Parser/View.html">Encore\View\Parser\View</a>\Giml</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>Giml</strong>        extends <a href="../../../../Encore/Giml/Parser.html"><abbr title="Encore\Giml\Parser">Parser</abbr></a>        implements
+        <a href="../../../../Encore/View/Parser/View/ParserInterface.html"><abbr title="Encore\View\Parser\View\ParserInterface">ParserInterface</abbr></a>, <a href="../../../../Encore/View/Style/StyleAwareInterface.html"><abbr title="Encore\View\Style\StyleAwareInterface">StyleAwareInterface</abbr></a></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a> $reader, <a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a> $collection, <a href="../../../../Encore/Giml/ElementFactoryInterface.html"><abbr title="Encore\Giml\ElementFactoryInterface">ElementFactoryInterface</abbr></a> $elementFactory)
+                    <p>Construct the parser object</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../../Encore/Giml/Parser.html#method___construct"><abbr title="Encore\Giml\Parser">Parser</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_parse">parse</a>(string $file)
+                    <p>Parse a .gim file</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../../Encore/Giml/Parser.html#method_parse"><abbr title="Encore\Giml\Parser">Parser</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getReader">getReader</a>()
+                    <p>Get the injected reader object</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../../Encore/Giml/Parser.html#method_getReader"><abbr title="Encore\Giml\Parser">Parser</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_parseElements">parseElements</a>(array $elements, <a href="../../../../Encore/Giml/ElementInterface.html"><abbr title="Encore\Giml\ElementInterface">ElementInterface</abbr></a> $parent = null)
+                    <p>Parse view elements</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_addReservation">addReservation</a>(string $name, <a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a> $reservation)
+                    <p>Add a reservation to an element name</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../../Encore/Giml/Parser.html#method_addReservation"><abbr title="Encore\Giml\Parser">Parser</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getReservation">getReservation</a>(string $name)
+                    <p>Get a reservation by name</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../../Encore/Giml/Parser.html#method_getReservation"><abbr title="Encore\Giml\Parser">Parser</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setStyle">setStyle</a>(<a href="../../../../Encore/View/Style/StyleCollection.html"><abbr title="Encore\View\Style\StyleCollection">StyleCollection</abbr></a> $style)
+                    <p>Set the style collection</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">in <a href="../../../../Encore/Giml/Parser.html#method___construct"><abbr title="Encore\Giml\Parser">Parser</abbr></a> at line 22</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a> $reader, <a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a> $collection, <a href="../../../../Encore/Giml/ElementFactoryInterface.html"><abbr title="Encore\Giml\ElementFactoryInterface">ElementFactoryInterface</abbr></a> $elementFactory)</code>
+    </h3>
+    <div class="details">
+        <p>Construct the parser object</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a></td>
+                <td>$reader</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a></td>
+                <td>$collection</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Encore/Giml/ElementFactoryInterface.html"><abbr title="Encore\Giml\ElementFactoryInterface">ElementFactoryInterface</abbr></a></td>
+                <td>$elementFactory</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_parse">
+        <div class="location">in <a href="../../../../Encore/Giml/Parser.html#method_parse"><abbr title="Encore\Giml\Parser">Parser</abbr></a> at line 35</div>
+        <code>            public            <a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a>
+    <strong>parse</strong>(string $file)</code>
+    </h3>
+    <div class="details">
+        <p>Parse a .gim file</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$file</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../../Encore/Giml/CollectionInterface.html"><abbr title="Encore\Giml\CollectionInterface">CollectionInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getReader">
+        <div class="location">in <a href="../../../../Encore/Giml/Parser.html#method_getReader"><abbr title="Encore\Giml\Parser">Parser</abbr></a> at line 50</div>
+        <code>            public            <a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a>
+    <strong>getReader</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the injected reader object</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../../Encore/Giml/ReaderInterface.html"><abbr title="Encore\Giml\ReaderInterface">ReaderInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_parseElements">
+        <div class="location">at line 22</div>
+        <code>            public            array
+    <strong>parseElements</strong>(array $elements, <a href="../../../../Encore/Giml/ElementInterface.html"><abbr title="Encore\Giml\ElementInterface">ElementInterface</abbr></a> $parent = null)</code>
+    </h3>
+    <div class="details">
+        <p>Parse view elements</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$elements</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Encore/Giml/ElementInterface.html"><abbr title="Encore\Giml\ElementInterface">ElementInterface</abbr></a></td>
+                <td>$parent</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addReservation">
+        <div class="location">in <a href="../../../../Encore/Giml/Parser.html#method_addReservation"><abbr title="Encore\Giml\Parser">Parser</abbr></a> at line 113</div>
+        <code>            public            
+    <strong>addReservation</strong>(string $name, <a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a> $reservation)</code>
+    </h3>
+    <div class="details">
+        <p>Add a reservation to an element name</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a></td>
+                <td>$reservation</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getReservation">
+        <div class="location">in <a href="../../../../Encore/Giml/Parser.html#method_getReservation"><abbr title="Encore\Giml\Parser">Parser</abbr></a> at line 124</div>
+        <code>            public            <a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a>
+    <strong>getReservation</strong>(string $name)</code>
+    </h3>
+    <div class="details">
+        <p>Get a reservation by name</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../../Encore/Giml/Reservation/ReservationInterface.html"><abbr title="Encore\Giml\Reservation\ReservationInterface">ReservationInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setStyle">
+        <div class="location">at line 36</div>
+        <code>            public            
+    <strong>setStyle</strong>(<a href="../../../../Encore/View/Style/StyleCollection.html"><abbr title="Encore\View\Style\StyleCollection">StyleCollection</abbr></a> $style)</code>
+    </h3>
+    <div class="details">
+        <p>Set the style collection</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../../../Encore/View/Style/StyleCollection.html"><abbr title="Encore\View\Style\StyleCollection">StyleCollection</abbr></a></td>
+                <td>$style</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
