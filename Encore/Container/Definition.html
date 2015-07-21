@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Encore\Container\Definition | API</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../Encore/Container.html">Encore\Container</a>\Definition</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>Definition</strong></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a> $container, string $class)
+                    <p>Constructor</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    object
+                </td>
+                <td class="last">
+                    <a href="#method___invoke">__invoke</a>()
+                    <p>Magic method.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_inherit">inherit</a>()
+                    <p>Should dependencies be inherited?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_dontInherit">dontInherit</a>()
+                    <p>Set the dependencies to not be inherited by children.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getArgs">getArgs</a>()
+                    <p>Get the arguments to be passed to the classes constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getMethods">getMethods</a>()
+                    <p>Get the methods to be called after instantiating.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_addArg">addArg</a>(string $arg)
+                    <p>Add an argument to the class's constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_addArgs">addArgs</a>(array $args)
+                    <p>Add multiple arguments to the class's constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_cleanArgs">cleanArgs</a>()
+                    <p>Remove all available arguments</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_withMethod">withMethod</a>(string $method, array $args = array())
+                    <p>Adds a method call to be executed after instantiating.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_withMethods">withMethods</a>(array $methods)
+                    <p>Adds multiple method calls to be executed after instantiating.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 48</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a> $container, string $class)</code>
+    </h3>
+    <div class="details">
+        <p>Constructor</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a></td>
+                <td>$container</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___invoke">
+        <div class="location">at line 61</div>
+        <code>            public            object
+    <strong>__invoke</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Magic method.</p>
+        <p>Runs when using this class as a function.
+Ex: $object = new Definition($container, $class);
+    $invoked = $object();</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>object</td>
+            <td>The instantiated $class with optional args passed to the constructor and methods called.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_inherit">
+        <div class="location">at line 96</div>
+        <code>            public            bool
+    <strong>inherit</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Should dependencies be inherited?</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_dontInherit">
+        <div class="location">at line 106</div>
+        <code>            public            <a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a>
+    <strong>dontInherit</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Set the dependencies to not be inherited by children.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Container.html"><abbr title="Encore\Container\Container">Container</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getArgs">
+        <div class="location">at line 118</div>
+        <code>            public            array
+    <strong>getArgs</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the arguments to be passed to the classes constructor.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getMethods">
+        <div class="location">at line 128</div>
+        <code>            public            array
+    <strong>getMethods</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the methods to be called after instantiating.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addArg">
+        <div class="location">at line 140</div>
+        <code>            public            <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+    <strong>addArg</strong>(string $arg)</code>
+    </h3>
+    <div class="details">
+        <p>Add an argument to the class's constructor.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$arg</td>
+                <td>The argument to add. Can be a class name.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addArgs">
+        <div class="location">at line 154</div>
+        <code>            public            <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+    <strong>addArgs</strong>(array $args)</code>
+    </h3>
+    <div class="details">
+        <p>Add multiple arguments to the class's constructor.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_cleanArgs">
+        <div class="location">at line 168</div>
+        <code>            public            <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+    <strong>cleanArgs</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Remove all available arguments</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_withMethod">
+        <div class="location">at line 183</div>
+        <code>            public            <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+    <strong>withMethod</strong>(string $method, array $args = array())</code>
+    </h3>
+    <div class="details">
+        <p>Adds a method call to be executed after instantiating.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$method</td>
+                <td>The method name to call.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>Array of arguments to pass to the call.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_withMethods">
+        <div class="location">at line 197</div>
+        <code>            public            <a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a>
+    <strong>withMethods</strong>(array $methods)</code>
+    </h3>
+    <div class="details">
+        <p>Adds multiple method calls to be executed after instantiating.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$methods</td>
+                <td>Array of methods to call with args.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Encore/Container/Definition.html"><abbr title="Encore\Container\Definition">Definition</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
